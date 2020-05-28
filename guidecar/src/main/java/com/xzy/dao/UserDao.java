@@ -1,6 +1,7 @@
 package com.xzy.dao;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import com.xzy.entity.User;
 
 =======
@@ -20,11 +21,16 @@ import com.xzy.entity.User;
 
 >>>>>>> master
 >>>>>>> zhangyunjie
+=======
+import com.xzy.entity.User;
+
+>>>>>>> 1779c293b6c2f14e0ca7c01dbf5c819a56ee1e7d
 public interface UserDao {
 	
 	User findById(int id);
 	
 	User findByUsername(String username);
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -43,5 +49,7 @@ public interface UserDao {
 =======
 >>>>>>> master
 >>>>>>> zhangyunjie
+=======
+>>>>>>> 1779c293b6c2f14e0ca7c01dbf5c819a56ee1e7d
 	
 }

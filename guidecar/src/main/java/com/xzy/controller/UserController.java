@@ -2,6 +2,7 @@ package com.xzy.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import org.springframework.web.bind.annotation.RequestMapping;
 =======
 
@@ -19,6 +20,9 @@ import com.xzy.entity.User;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 >>>>>>> zhangyunjie
+=======
+import org.springframework.web.bind.annotation.RequestMapping;
+>>>>>>> 1779c293b6c2f14e0ca7c01dbf5c819a56ee1e7d
 
 
 
@@ -26,6 +30,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/user")
 public class UserController {
 	
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 	@Autowired
@@ -93,6 +98,8 @@ public class UserController {
 	
 
 >>>>>>> zhangyunjie
+=======
+>>>>>>> 1779c293b6c2f14e0ca7c01dbf5c819a56ee1e7d
 	
 	
 	

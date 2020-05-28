@@ -13,17 +13,21 @@ public class UserService {
 	private UserDao userDao;
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> master
 >>>>>>> zhangyunjie
+=======
+>>>>>>> 1779c293b6c2f14e0ca7c01dbf5c819a56ee1e7d
 	
 	public User findById(int id) {
 		return userDao.findById(id);
 	}
 	
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -37,10 +41,13 @@ public class UserService {
 =======
 >>>>>>> master
 >>>>>>> zhangyunjie
+=======
+>>>>>>> 1779c293b6c2f14e0ca7c01dbf5c819a56ee1e7d
 	public User findByUsername(String username) {
 		return userDao.findByUsername(username);
 	}
 	
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -64,5 +71,7 @@ public class UserService {
 =======
 >>>>>>> master
 >>>>>>> zhangyunjie
+=======
+>>>>>>> 1779c293b6c2f14e0ca7c01dbf5c819a56ee1e7d
 
 }
