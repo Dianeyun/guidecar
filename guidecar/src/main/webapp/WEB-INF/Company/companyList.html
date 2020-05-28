@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+	<!-- 导入layUIcss文件 -->
+  <link rel="stylesheet" href="../layui/css/layui.css">
+</head>
+<body>
+	<!-- 自定义头工具栏 -->
+	<script type="text/html" id="toolbar">
+  		<div class="layui-btn-container">
+    		<button class="layui-btn layui-btn-sm" lay-event="add">添加</button>
+   			 <button class="layui-btn layui-btn-sm" lay-event="delete">批量删除</button>
+  		</div>
+	</script>
+
+	<!-- 行工具栏 -->
+		<script type="text/html" id="rowbar">
+  			<a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+  			<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+		</script>
+
+	<!-- 查询条件 -->
+	<div class="demoTable">
+  		    公司简称：
+  		<div class="layui-inline">
+    		<input class="layui-input" name="fshort"  id="fshort" autocomplete="off">
+  		</div>
+  		 法人：
+  		<div class="layui-inline">
+    		<input class="layui-input" name="corname"  id="corname" autocomplete="off">
+  		</div>
+  		<button class="layui-btn"  id="searchid">查询</button>
+	</div>
+	
+	<!-- 显示表格数据 -->
+	<table id="dataTable" lay-filter="test"></table>
+	
+	
+	<!-- 导入layUI核心js文件 -->
+ 		<script src="../layui/layui.js"></script>
+ 		<script type="text/javascript">
+ 		  //模块化加载layui  用到哪个模块才去加载
+ 		 	layui.use(['layer', 'jquery','table'], function(){
+	  		//获得组件对象
+	 		 var layer = layui.layer;//获得弹出层组件
+	 		 var $ = layui.jquery;//获得jquery模块
+	 		 var table = layui.table;//获得table模块
+			   //使用layUI表格组件异步加载数据,生成数据表格
+			  table.render({
+	 		 	  title:"公司列表"
+				 ,elem: '#dataTable'   
+	             ,url: 'findCompanyList'//layui对ajax进行了封装,是一个异步请求, 服务器返回一个json
+	             ,toolbar:'#toolbar'
+	             ,page:true
+	             ,limit:2
+	             ,limits:[2,4,6,8] 
+	             ,cols: [[ //表头
+	    			  {field: 'id', type:'checkbox',fixed: 'left'}
+	    			  ,{field: 'comnumber', title: '公司编号'}
+	                  ,{field: 'fshort', title: '公司简称'} 
+	                  ,{field: 'name', title: '公司全称'}
+	                  ,{field: 'regtime', title: '注册时间'}
+	                  ,{field: 'bulino', title: '营业证号'}
+	                  ,{field: 'corname', title: '公司法人'}
+	                  ,{field: 'phone', title: '公司电话'}
+	                  ,{field: 'detaress', title: '公司地址'}
+	                  ,{field: 'comadmin', title: '公司账号'}
+	                  ,{fixed: 'right', width:150, align:'center', toolbar: '#rowbar'}
+	            ]]
+	      });		 
+			//执行查询条件重载表格数据
+		      $("#searchid").click(function(){
+		    	  //执行重载
+		          table.reload('dataTable', {
+		            page: {
+		              curr: 1 //重新从第 1 页开始
+		            }
+		            ,where: {
+		            	fshort: $("#fshort").val(),
+		            	corname:$("#corname").val()//查询条件
+		            }
+		          }, 'data');
+		      });		
+		    //监听表格头工具栏事件
+			  table.on('toolbar(test)', function(obj){
+			    var checkStatus = table.checkStatus(obj.config.id);
+			    switch(obj.event){
+			      case 'add':
+			    	  layer.open({
+			  		    title:"编辑公司信息",//标题
+			  		    type:2,//弹出框类型 type=2 页面层 iframe
+			  		    offset: '10px',
+			  		    content:"toAddCompany",//加载页面中某个标签内容
+			  		    area: ['500px', '400px'],//宽高
+			  		    move: false//是否可拖动   
+			  	   });
+			      break;
+			      case 'delete':
+			    	  layer.confirm('真的删除行么', function(index){
+				    	  //获得选中的多个id
+				    	  var data = checkStatus.data;//获得都是选中的
+				    	  var ids = "";
+				    	  for(var i=0;i<data.length;i++){
+				    		  ids += data[i].id+","
+				    	  }
+				    	  deleteArticle(ids);//删除用户公共方法
+				    	  layer.close(index);
+				      });
+			      break;
+			    };			    
+			  });		    
+			//监听行工具栏事件
+			  table.on('tool(test)', function(obj){ //注：tool 是工具条事件名，test 是 table 原始容器的属性 lay-filter="对应的值"
+			    var data = obj.data; //获得当前行数据
+			    var layEvent = obj.event; //获得 lay-event 对应的值（也可以是表头的 event 参数对应的值）
+			    var tr = obj.tr; //获得当前行 tr 的 DOM 对象（如果有的话）
+			    if(layEvent === 'del'){ //删除
+			      layer.confirm('真的删除行么', function(index){
+			    	  deleteArticle(data.id);
+			    	  layer.close(index);
+			      });
+			    } else if(layEvent === 'edit'){ //编辑
+			    	layer.open({
+			           	type:2,//表示使用iframe嵌入一个窗口引入一个页面
+			           	title:"编辑公司",
+			           	content:"?id="+data.id,//访问控制器,查询部门,菜单数据
+			           	area: ['500px', '370px'],//设置宽高
+			           	offset: '10px'
+			        });
+			    } 
+			  });
+			  //批量,单个删除使用同一个方法
+			   function deleteArticle(id){
+				   $.post("", {id:id},function(data){
+				   	    if(data==1){
+				   	     table.reload('dataTable','data');//重新加载表格数据
+				   	    }else{
+				   	    	layer.msg(data.msg, {icon: 2});
+				   	    }
+				      })
+			   }
+	});
+   
+ </script>
+	
+
+</body>
+</html>
