@@ -10,21 +10,36 @@ public class User {
 	private int id; //用户id
 	private String name;  //用户账号
 	private String password;  //用户密码
+<<<<<<< HEAD
 	private String nickName;  //用户昵称
+=======
+	private String nickName;  //用户昵称nickName
+>>>>>>> yq
 	private String sex;  //用户性别
 	private String phone;  //用户电话
 	private String email;  //用户邮箱
 	private Date regtime;  //用户注册时间
+<<<<<<< HEAD
 	private int daptId;  //用户部门id
 	private int type;  //用户类型 '0-平台管理员  1-公司管理员 2-公司用户'
 	private String location;  //用户地址
 	private int companyId;  //用户公司id
+=======
+	private int deptId;  //用户部门id
+	private int type;  //用户类型 '0-平台管理员  1-公司管理员 2-公司用户'
+	private String location;  //用户地址
+	private int companyId;  //用户公司id companyId
+>>>>>>> yq
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	public User(int id, String name, String password, String nickName, String sex, String phone, String email,
+<<<<<<< HEAD
 			Date regtime, int daptId, int type, String location, int companyId) {
+=======
+			Date regtime, int deptId, int type, String location, int companyId) {
+>>>>>>> yq
 		super();
 		this.id = id;
 		this.name = name;
@@ -34,7 +49,11 @@ public class User {
 		this.phone = phone;
 		this.email = email;
 		this.regtime = regtime;
+<<<<<<< HEAD
 		this.daptId = daptId;
+=======
+		this.deptId = deptId;
+>>>>>>> yq
 		this.type = type;
 		this.location = location;
 		this.companyId = companyId;
@@ -87,11 +106,19 @@ public class User {
 	public void setRegtime(Date regtime) {
 		this.regtime = regtime;
 	}
+<<<<<<< HEAD
 	public int getDaptId() {
 		return daptId;
 	}
 	public void setDaptId(int daptId) {
 		this.daptId = daptId;
+=======
+	public int getDeptId() {
+		return deptId;
+	}
+	public void setDeptId(int deptId) {
+		this.deptId = deptId;
+>>>>>>> yq
 	}
 	public int getType() {
 		return type;
@@ -114,7 +141,11 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", password=" + password + ", nickName=" + nickName + ", sex="
+<<<<<<< HEAD
 				+ sex + ", phone=" + phone + ", email=" + email + ", regtime=" + regtime + ", daptId=" + daptId
+=======
+				+ sex + ", phone=" + phone + ", email=" + email + ", regtime=" + regtime + ", deptId=" + deptId
+>>>>>>> yq
 				+ ", type=" + type + ", location=" + location + ", companyId=" + companyId + "]";
 	}
 	

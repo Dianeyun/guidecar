@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<!-- 导入layUIcss文件 -->
+  <link rel="stylesheet" href="../layui/css/layui.css">
+</head>
+<body>
+	<form class="layui-form" action="">
+	  <div class="layui-form-item">
+	    <label class="layui-form-label">公司全称</label>
+	    <div class="layui-input-block">
+	      <input type="text" id="name" name="name" required  lay-verify="required" placeholder="请输入名字" autocomplete="off" class="layui-input">
+	    </div>
+	  </div>
+	  <div class="layui-form-item">
+	    <label class="layui-form-label">公司简称</label>
+	    <div class="layui-input-inline">
+	      <input type="text" id="fshort" name="fshort" required lay-verify="required" placeholder="请输入简称" autocomplete="off" class="layui-input">
+	    </div>
+	  </div>
+	   <div class="layui-form-item">
+	    <label class="layui-form-label">营业证号</label>
+	    <div class="layui-input-inline">
+	      <input type="text" id="bulino" name="bulino" required lay-verify="required" placeholder="请输入号码" autocomplete="off" class="layui-input">
+	    </div>
+	  </div>
+	   <div class="layui-form-item">
+	    <label class="layui-form-label">公司法人</label>
+	    <div class="layui-input-inline">
+	      <input type="text" id="corname" name="corname" required lay-verify="required" placeholder="请输入法人" autocomplete="off" class="layui-input">
+	    </div>
+	  </div>
+	   <div class="layui-form-item">
+	    <label class="layui-form-label">公司电话</label>
+	    <div class="layui-input-inline">
+	      <input type="text" id="phone" name="phone" required lay-verify="required" placeholder="请输入电话" autocomplete="off" class="layui-input">
+	    </div>
+	  </div>
+	   <div class="layui-form-item">
+	    <label class="layui-form-label">公司地址</label>
+	    <div class="layui-input-inline">
+	      <input type="text" id="detaress" name="detaress" required lay-verify="required" placeholder="请输入地址" autocomplete="off" class="layui-input">
+	    </div>
+	  </div>
+	   <div class="layui-form-item">
+	    <label class="layui-form-label">公司账号</label>
+	    <div class="layui-input-inline">
+	      <input type="text" id="comadmin" name="comadmin" required lay-verify="required" placeholder="请输入账号" autocomplete="off" class="layui-input">
+	    </div>
+	  </div>
+	  <div class="layui-form-item">
+	    <div class="layui-input-block">
+	      <button class="layui-btn" lay-submit lay-filter="formDemo">立即添加</button>
+	      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+	    </div>
+	  </div>
+	</form>
+
+	<!-- 导入layUI核心js文件 -->
+ 	<script src="../layui/layui.js"></script>
+ 	<script type="text/javascript">
+ 		//模块化加载layui  用到哪个模块才去加载
+ 		layui.use(['form','jquery','layer'], function () {
+		  	//获得组件对象
+		  	var form   = layui.form;//获得from模块
+        	
+        	var layer  = layui.layer;//获得弹出层组件
+		 	
+		 	var $ = layui.jquery;//获得jquery模块
+		 	  //监听提交
+		 	  form.on('submit(formDemo)', function(data){
+		 		  console.log(data.field);
+				 		  $.ajax({
+				         	url:'addCompany',
+				            data:data.field,
+				            dataType:'json',
+				            type:'post',
+				            success:function (data) {
+				            	console.log(data);
+				                if (data.status == '1'){
+				                	layer.msg(data.msg);
+				                    location.href = "toLogin";
+				                }else{
+				                	layer.msg(data.msg);
+				                }
+				            }
+				         }) 
+		 	  });
+		 	});
+   
+ </script>
+
+</body>
+</html>

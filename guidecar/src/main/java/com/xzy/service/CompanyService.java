@@ -1,0 +1,41 @@
+package com.xzy.service;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+/**
+ * 公司业务处理
+ * @author J·Y
+ *
+ */
+
+import com.xzy.dao.CompanyDao;
+@Service
+public class CompanyService {
+	@Autowired
+	private CompanyDao companyDao;
+	/**
+	 * 查询公司列表
+	 * @param page 起始条数
+	 * @param limit 每页显示几条
+	 * @return 全部的公司信息
+	 */
+	public List<Map<String,Object>> findCompanyList(int page,int limit){
+		//把查询条件,分页条件,排序都封装在map对象中
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("pageSize", limit);
+		map.put("start", (page-1)*limit);
+		return  companyDao.findCompanyList(map);
+	}
+	/**
+	 * 统计全部公司
+	 * @return  总条数
+	 */
+	public int findCompanyCount() {
+		return companyDao.findCompanyCount();
+	}
+	
+}
