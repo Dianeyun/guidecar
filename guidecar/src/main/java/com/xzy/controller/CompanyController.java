@@ -80,7 +80,8 @@ public class CompanyController {
 	 */
 	@RequestMapping(value="/addCompany", produces = "application/json;charset=utf-8")
 	@ResponseBody
-	public String addCompany() {
+	public String addCompany(Company company) {
+		
 		DataStatus ds=new DataStatus();
 		
 		return ds.toGson(ds);
