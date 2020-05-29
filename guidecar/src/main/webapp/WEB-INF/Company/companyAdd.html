@@ -65,9 +65,7 @@
  		layui.use(['form','jquery','layer'], function () {
 		  	//获得组件对象
 		  	var form   = layui.form;//获得from模块
-        	
-        	var layer  = layui.layer;//获得弹出层组件
-		 	
+        	var layer  = layui.layer;//获得弹出层组件		 	
 		 	var $ = layui.jquery;//获得jquery模块
 		 	  //监听提交
 		 	  form.on('submit(formDemo)', function(data){
@@ -81,12 +79,13 @@
 				            	console.log(data);
 				                if (data.status == '1'){
 				                	layer.msg(data.msg);
-				                    location.href = "toLogin";
+				                	layer.closeAll('iframe');//关闭所有的iframe层  
 				                }else{
 				                	layer.msg(data.msg);
 				                }
 				            }
-				         }) 
+				         })
+				      
 		 	  });
 		 	});
    

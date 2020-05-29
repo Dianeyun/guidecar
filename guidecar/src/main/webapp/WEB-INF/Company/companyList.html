@@ -133,7 +133,7 @@
 			  });
 			  //批量,单个删除使用同一个方法
 			   function deleteArticle(id){
-				   $.post("", {id:id},function(data){
+				   $.post("companyDel", {id:id},function(data){
 				   	    if(data==1){
 				   	     table.reload('dataTable','data');//重新加载表格数据
 				   	    }else{

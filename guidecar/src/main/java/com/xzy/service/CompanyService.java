@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
  */
 
 import com.xzy.dao.CompanyDao;
+import com.xzy.entity.Company;
 @Service
 public class CompanyService {
 	@Autowired
@@ -37,5 +38,12 @@ public class CompanyService {
 	public int findCompanyCount() {
 		return companyDao.findCompanyCount();
 	}
-	
+	/**
+	 * 添加公司
+	 * @param company  公司信息
+	 * @return 1-成功  0-失败
+	 */
+	public int addCompany(Company company) {
+		return companyDao.addCompany(company);
+	}
 }

@@ -1,29 +1,15 @@
 package com.xzy.dao;
-
-<<<<<<< HEAD
-<<<<<<< HEAD
 import com.xzy.entity.User;
 
-=======
 import org.apache.ibatis.annotations.Param;
 
 import com.xzy.entity.User;
 
-
->>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
-=======
-import com.xzy.entity.User;
-
->>>>>>> master
 public interface UserDao {
 	
 	User findById(int id);
 	
 	User findByUsername(String username);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    	
 	//×¢²á
 	void update(User user);
 	//µÇÂ¼
@@ -32,8 +18,5 @@ public interface UserDao {
 	
 	
 	
->>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
-=======
->>>>>>> master
 	
 }

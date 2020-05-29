@@ -80,10 +80,34 @@ public class CompanyController {
 	 */
 	@RequestMapping(value="/addCompany", produces = "application/json;charset=utf-8")
 	@ResponseBody
-	public String addCompany() {
+	public String addCompany(Company company) {
+		//System.out.println(company);
+		company.setComnumber((int)((Math.random()*9+1)*1000));
+		int i=companyService.addCompany(company);
 		DataStatus ds=new DataStatus();
-		
+		if(i>0) {
+			ds.setStatus("1");
+			ds.setMsg("添加成功！！");
+		}else{
+			ds.setStatus("0");
+			ds.setMsg("添加失败！！");
+		}
 		return ds.toGson(ds);
 	}
-	
+	/**
+	 * 删除公司控制器
+	 * @param id 公司id
+	 * @return  删除成功与否信息
+	 */
+	public String delCompany(int id) {
+		DataStatus ds=new DataStatus();
+		if(1=1) {
+			ds.setStatus("1");
+			ds.setMsg("删除成功！！");
+		}else{
+			ds.setStatus("0");
+			ds.setMsg("删除失败！！");
+		}
+		return ds.toGson(ds);
+	}
 }
