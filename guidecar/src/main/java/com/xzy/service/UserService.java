@@ -12,6 +12,7 @@ public class UserService {
 	@Autowired
 	private UserDao userDao;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	
 	
 	public User findById(int id) {
@@ -22,17 +23,24 @@ public class UserService {
 
 	
 
+=======
+	
+>>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
 	//根据用户id查询用户
 	public User findById(int id) {
 		return userDao.findById(id);
 	}
 	//根据用户名查询用户
+<<<<<<< HEAD
 
 >>>>>>> yq
+=======
+>>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
 	public User findByUsername(String username) {
 		return userDao.findByUsername(username);
 	}
 	
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 =======
@@ -56,4 +64,21 @@ public class UserService {
 
 
 >>>>>>> yq
+=======
+	//新增用户
+	
+	public void update(User user) {
+		userDao.update(user);
+	}
+	//登录
+	//根据用户id和密码查询
+	public void findByUsernameAndPwd(String name,String password) {
+		userDao.findByUsernameAndPwd(name, password);
+	}
+
+	
+	
+	
+
+>>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
 }

@@ -10,7 +10,11 @@
         select * from user where username=#{username}
         </select>
         <!-- 用户注册 -->
+<<<<<<< HEAD
         <insert id="findAdd" parameterType="com.xzy.entity.User" >
+=======
+        <insert id="add" parameterType="com.xzy.dao.UserDao">
+>>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
            insert into
                   user
               (
@@ -23,11 +27,16 @@
                   dept_id,
                   location,
                   company_id
+<<<<<<< HEAD
               )  
+=======
+              )    
+>>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
                values
                (
                  #{name},
                  #{password},
+<<<<<<< HEAD
                  #{nickName},
                  #{sex},
                  #{phone},
@@ -35,6 +44,15 @@
                  #{deptId},
                  #{location},
                  #{companyId}
+=======
+                 #{nick_name},
+                 #{sex},
+                 #{phone},
+                 #{email},
+                 #{dept_id},
+                 #{location},
+                 #{company_id}
+>>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
                )
      </insert>
      <!-- 用户登录 -->
