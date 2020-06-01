@@ -8,8 +8,22 @@
 		select id,name,regtime,fshort,bulino,corname,phone,detaress,comnumber,comadmin
 		 from company limit #{start},#{pageSize}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		
+>>>>>>> zhangyunjie
+=======
+		
+=======
+<<<<<<< HEAD
+		
+=======
+<<<<<<< HEAD
+=======
+		
+>>>>>>> zhangyunjie
+>>>>>>> d47052da0dd85e409feae8f7ffd0417c82ba2fe8
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
 >>>>>>> zhangyunjie
 	</select>
 	<!-- 查询公司总数 -->
@@ -18,14 +32,49 @@
            where 1 = 1       
     </select>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    <!-- 根据id查询公司信息 -->
+    <select id="findCompanyById" parameterType="int" resultType="com.xzy.entity.Company">
+    	select id,name,regtime,fshort,bulino,corname,phone,detaress,comnumber,comadmin
+		 from company  where id=#{id}
+    </select>
+	<!-- 根据id删除公司信息 -->
+	<delete id="delCompany" parameterType="int">
+		delete from company where id=#{id}
+	</delete>
+    <!-- 添加公司 -->
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> zhangyunjie
 =======
 <<<<<<< HEAD
     <!-- 添加公司 -->
 =======
 >>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
 >>>>>>> zhangyunjie
+<<<<<<< HEAD
+=======
+>>>>>>> d47052da0dd85e409feae8f7ffd0417c82ba2fe8
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
+>>>>>>> zhangyunjie
     <insert id="addCompany" parameterType="com.xzy.entity.Company">
     	insert into company(name,fshort,bulino,corname,phone,detaress,comadmin,comnumber) 
     		values(#{name},#{fshort},#{bulino},#{corname},#{phone},#{detaress},#{comadmin},#{comnumber})
     </insert>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    <!-- 根据公司编号修改公司信息 -->
+    <update id="companyModify" parameterType="com.xzy.entity.Company">
+    	UPDATE company SET name=#{name},fshort=#{fshort},bulino=#{bulino},
+    		regtime=#{regtime},corname=#{corname},phone=#{phone},detaress=#{detaress}
+    		 where comnumber=#{comnumber}
+    </update>
+    
+=======
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
+>>>>>>> zhangyunjie
 </mapper>

@@ -11,6 +11,19 @@
         </select>
         <!-- 用户注册 -->
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+        <insert id="add" parameterType="com.xzy.dao.UserDao">
+
+=======
+<<<<<<< HEAD
+
+        <insert id="findAdd" parameterType="com.xzy.entity.User" >
+
+=======
+<<<<<<< HEAD
+>>>>>>> zhangyunjie
         <insert id="add" parameterType="com.xzy.dao.UserDao">
 =======
 <<<<<<< HEAD
@@ -22,6 +35,11 @@
         <insert id="add" parameterType="com.xzy.dao.UserDao">
 >>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
 >>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
+>>>>>>> zhangyunjie
+<<<<<<< HEAD
+=======
+>>>>>>> d47052da0dd85e409feae8f7ffd0417c82ba2fe8
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
 >>>>>>> zhangyunjie
            insert into
                   user
@@ -36,6 +54,29 @@
                   location,
                   company_id
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+              )     
+=======
+<<<<<<< HEAD
+
+              )  
+
+                  
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
+
+               values
+               (
+                 #{name},
+<<<<<<< HEAD
+                 #{password},
+
+=======
+                 #{password},                
+=======
+<<<<<<< HEAD
+>>>>>>> zhangyunjie
               )    
 =======
 <<<<<<< HEAD
@@ -57,6 +98,11 @@
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d47052da0dd85e409feae8f7ffd0417c82ba2fe8
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
+>>>>>>> zhangyunjie
                  #{nickName},
                  #{sex},
                  #{phone},
@@ -64,8 +110,21 @@
                  #{deptId},
                  #{location},
                  #{companyId}
+<<<<<<< HEAD
 =======
 >>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
+>>>>>>> zhangyunjie
+=======
+<<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
+
+=======
+=======
+>>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
+>>>>>>> zhangyunjie
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
 >>>>>>> zhangyunjie
                  #{nick_name},
                  #{sex},
@@ -75,11 +134,22 @@
                  #{location},
                  #{company_id}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+=======
+<<<<<<< HEAD
+>>>>>>> zhangyunjie
 =======
 <<<<<<< HEAD
 =======
 >>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
 >>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
+>>>>>>> zhangyunjie
+<<<<<<< HEAD
+=======
+>>>>>>> d47052da0dd85e409feae8f7ffd0417c82ba2fe8
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
 >>>>>>> zhangyunjie
                )
      </insert>
@@ -87,7 +157,29 @@
       <select id="findByUsernameAndPwd"  parameterType="map" resultType="com.xzy.entity.User">
             select name,password from user  where name=#{name} and password=#{password}
       
+<<<<<<< HEAD
       </select>     
      
         
         </mapper>
+=======
+<<<<<<< HEAD
+      </select>     
+     
+        
+        </mapper>
+=======
+<<<<<<< HEAD
+      </select> 
+      </mapper>    
+     
+        
+      
+=======
+      </select>     
+     
+        
+        </mapper>
+>>>>>>> d47052da0dd85e409feae8f7ffd0417c82ba2fe8
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
+>>>>>>> zhangyunjie

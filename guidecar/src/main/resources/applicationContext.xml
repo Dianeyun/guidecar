@@ -23,10 +23,49 @@
 	<context:component-scan base-package="com.xzy"></context:component-scan>
 	<!-- 开启标注 -->
 	<mvc:annotation-driven/> 
-	<!-- 视图解析器 -->
+	<!-- 视图解析器
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/"></property>
 		<property name="suffix" value=".html"></property>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+	</bean> -->
+	
+	<!-- 配置html视图解析器 -->
+	<!-- html视图解析器 必须先配置freemarkerConfig,注意html是没有prefix前缀属性的-->  
+    <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">    
+       <property name="templateLoaderPath">    
+           <value>/WEB-INF/</value>    
+       </property>    
+       <property name="freemarkerSettings">
+       		<props>
+                <prop key="template_update_delay">1</prop>
+                <!--关键解决点-->
+                <prop key="default_encoding">UTF-8</prop>
+                 <!--关键解决点-->
+              </props>
+       </property>
+    </bean>    
+    <bean id="htmlviewResolver"    
+       class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">    
+       <property name="suffix" value=".html" />   
+       <property name="order" value="0"></property>   
+       <property name="contentType" value="text/html;charset=UTF-8"></property>           
+   </bean>   
+	
+	<!-- jsp视图解析器 -->
+	<bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<!-- <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" /> -->
+		<!-- 如果配置的有html视图解析器，不能用jstl的那个 -->
+		<property name="viewClass" value="org.springframework.web.servlet.view.InternalResourceView"/> 
+		<property name="prefix" value="/WEB-INF/" />   <!-- jsp前缀 -->
+		<property name="suffix" value=".jsp" />		<!-- jsp后缀 -->
+		<property name="contentType" value="text/html;charset=UTF-8"/>
+		<property name="order" value="0" />		<!-- 配置优先等级，越小优先级越高 -->
+=======
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
+>>>>>>> zhangyunjie
 	</bean>
 	<!-- 配置连接池对象 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">

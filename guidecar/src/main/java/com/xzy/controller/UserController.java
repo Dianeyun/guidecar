@@ -5,6 +5,19 @@ import org.springframework.web.bind.annotation.RestController;
 <<<<<<< HEAD
 =======
 
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+=======
+<<<<<<< HEAD
+import org.springframework.web.bind.annotation.RequestMapping;
+
+=======
+<<<<<<< HEAD
+>>>>>>> zhangyunjie
+<<<<<<< HEAD
+=======
+
 import org.springframework.web.bind.annotation.RequestMapping;
 =======
 <<<<<<< HEAD
@@ -25,11 +38,57 @@ import org.springframework.web.bind.annotation.RequestMapping;
 >>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
 >>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
 >>>>>>> zhangyunjie
+<<<<<<< HEAD
+=======
+>>>>>>> d47052da0dd85e409feae8f7ffd0417c82ba2fe8
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
+>>>>>>> zhangyunjie
 import org.springframework.web.servlet.ModelAndView;
 
 import com.xzy.service.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import org.springframework.ui.Model;
+
+import org.springframework.web.bind.annotation.RequestBody;
+
+import org.springframework.web.bind.annotation.ResponseBody;
+import com.xzy.entity.User;
+
+
+
+
+
+
+import com.xzy.entity.DataStatus;
+
+
+
+
+=======
+<<<<<<< HEAD
+
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.xzy.entity.DataStatus;
+
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.xzy.entity.User;
+
+
+
+
+
+
+
+
+=======
+>>>>>>> zhangyunjie
 import org.springframework.ui.Model;
 <<<<<<< HEAD
 =======
@@ -73,11 +132,25 @@ import com.xzy.entity.User;
 
 >>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
 >>>>>>> zhangyunjie
+<<<<<<< HEAD
+=======
+>>>>>>> d47052da0dd85e409feae8f7ffd0417c82ba2fe8
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
+>>>>>>> zhangyunjie
 
 @RestController
 @RequestMapping("/user")
 public class UserController {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+=======
+<<<<<<< HEAD
+	
+=======
+<<<<<<< HEAD
+>>>>>>> zhangyunjie
 	
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -97,6 +170,11 @@ public class UserController {
 	
 >>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
 >>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
+>>>>>>> zhangyunjie
+<<<<<<< HEAD
+=======
+>>>>>>> d47052da0dd85e409feae8f7ffd0417c82ba2fe8
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
 >>>>>>> zhangyunjie
 	@Autowired
 	private UserService userservice;
@@ -122,19 +200,47 @@ public class UserController {
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d47052da0dd85e409feae8f7ffd0417c82ba2fe8
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
+>>>>>>> zhangyunjie
 	@RequestMapping("/toIndex")
 	public ModelAndView index() {
 		ModelAndView mdv3=new ModelAndView();
 		mdv3.setViewName("index");
 		return mdv3;
 	}
+<<<<<<< HEAD
 	
 	
 =======
+<<<<<<< HEAD
+
+=======
+	
+	
+<<<<<<< HEAD
+
+=======
+>>>>>>> zhangyunjie
+=======
 >>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
 >>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
+>>>>>>> zhangyunjie
+<<<<<<< HEAD
+=======
+>>>>>>> d47052da0dd85e409feae8f7ffd0417c82ba2fe8
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
 >>>>>>> zhangyunjie
      
 	
@@ -166,8 +272,19 @@ public class UserController {
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d47052da0dd85e409feae8f7ffd0417c82ba2fe8
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
+>>>>>>> zhangyunjie
 	 * ◊¢≤·
 	 * @param user
 	 */
@@ -199,7 +316,20 @@ public class UserController {
 	@RequestMapping(value="/login" ,produces="application/json;charset=utf-8")
 	@ResponseBody
 	public String login(@RequestParam("name") String name,@RequestParam("password")String password) {
+<<<<<<< HEAD
 	    User user=new User();
+=======
+<<<<<<< HEAD
+	    User user=new User();
+=======
+<<<<<<< HEAD
+		System.out.println(name+" "+password);
+		User user=new User();
+=======
+	    User user=new User();
+>>>>>>> d47052da0dd85e409feae8f7ffd0417c82ba2fe8
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
+>>>>>>> zhangyunjie
 	    user.setName(name);
 	    user.setPassword(password);
 	    DataStatus ds=new DataStatus();
@@ -214,9 +344,32 @@ public class UserController {
 	    	ds.setStatus("’À∫≈ªÚ√‹¬Î¥ÌŒÛ£°");
 	    }
 	    return ds.toGson(ds);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+	}
+	/**
+=======
+<<<<<<< HEAD
+	}
+	    
+
+	
+	
+	
+	
+	
+
+	
+=======
+>>>>>>> zhangyunjie
 	    
 =======
 >>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
+>>>>>>> zhangyunjie
+<<<<<<< HEAD
+=======
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
 >>>>>>> zhangyunjie
 	 * 
 	 * @param user
@@ -224,6 +377,17 @@ public class UserController {
 	@RequestMapping("/update")
 	@ResponseBody
 	public void update(@RequestBody User user) {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+		 userservice.update(user);
+	}
+	
+
+	
+	
+=======
+>>>>>>> zhangyunjie
 		userservice.update(user);
 	}
 	
@@ -263,6 +427,11 @@ public class UserController {
 >>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
 >>>>>>> zhangyunjie
 	
+<<<<<<< HEAD
+=======
+>>>>>>> d47052da0dd85e409feae8f7ffd0417c82ba2fe8
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
+>>>>>>> zhangyunjie
 	
 	
 
