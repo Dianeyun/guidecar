@@ -80,6 +80,7 @@ public class CompanyController {
 	 */
 	@RequestMapping(value="/addCompany", produces = "application/json;charset=utf-8")
 	@ResponseBody
+<<<<<<< HEAD
 	public String addCompany(Company company) {
 		//System.out.println(company);
 		company.setComnumber((int)((Math.random()*9+1)*1000));
@@ -110,4 +111,12 @@ public class CompanyController {
 		}
 		return ds.toGson(ds);
 	}
+=======
+	public String addCompany() {
+		DataStatus ds=new DataStatus();
+		
+		return ds.toGson(ds);
+	}
+	
+>>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
 }

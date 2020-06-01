@@ -11,16 +11,71 @@ import com.xzy.entity.User;
 public class UserService {
 	@Autowired
 	private UserDao userDao;
+<<<<<<< HEAD
 		
 	
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+	
+	
+	public User findById(int id) {
+		return userDao.findById(id);
+	}
+	
+=======
+
+	
+
+=======
+	
+>>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
+>>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
 	//根据用户id查询用户
 	public User findById(int id) {
 		return userDao.findById(id);
 	}
 	//根据用户名查询用户
+<<<<<<< HEAD
 	public User findByUsername(String username) {
 		return userDao.findByUsername(username);
 	}
+=======
+<<<<<<< HEAD
+
+>>>>>>> yq
+=======
+>>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
+	public User findByUsername(String username) {
+		return userDao.findByUsername(username);
+	}
+	
+<<<<<<< HEAD
+
+<<<<<<< HEAD
+=======
+	//新增用户
+	
+	public int findAdd(User user) {
+		return userDao.findAdd(user);
+		
+	}
+	//登录
+	//根据用户id和密码查询
+	/*public User findByUsernameAndPwd(String name,String password) {
+		User user=userDao.findByUsernameAndPwd(name, password);
+		return user;
+	}*/
+	public User findByUsernameAndPwd(User user) {
+		User u=userDao.findByUsernameAndPwd(user);
+		return u;
+	}
+
+
+
+>>>>>>> yq
+=======
+>>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
 	//新增用户
 	
 	public void update(User user) {
@@ -33,6 +88,13 @@ public class UserService {
 	}
 
 	
+<<<<<<< HEAD
 
 
+=======
+	
+	
+
+>>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
+>>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
 }

@@ -14,7 +14,10 @@
        select count(*) from company 
            where 1 = 1       
     </select>
+<<<<<<< HEAD
     <!-- 添加公司 -->
+=======
+>>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
     <insert id="addCompany" parameterType="com.xzy.entity.Company">
     	insert into company(name,fshort,bulino,corname,phone,detaress,comadmin,comnumber) 
     		values(#{name},#{fshort},#{bulino},#{corname},#{phone},#{detaress},#{comadmin},#{comnumber})
