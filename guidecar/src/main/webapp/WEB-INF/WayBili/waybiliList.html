@@ -23,13 +23,13 @@
 
 	<!-- 查询条件 -->
 	<div class="demoTable">
-  		    公司简称：
+  		    货物名称：
   		<div class="layui-inline">
-    		<input class="layui-input" name="fshort"  id="fshort" autocomplete="off">
+    		<input class="layui-input" name="name"  id="name" autocomplete="off">
   		</div>
-  		 法人：
+  		 订单号：
   		<div class="layui-inline">
-    		<input class="layui-input" name="corname"  id="corname" autocomplete="off">
+    		<input class="layui-input" name="wbId"  id="wbId" autocomplete="off">
   		</div>
   		<button class="layui-btn"  id="searchid">查询</button>
 	</div>
@@ -49,24 +49,32 @@
 	 		 var table = layui.table;//获得table模块
 			   //使用layUI表格组件异步加载数据,生成数据表格
 			  table.render({
-	 		 	  title:"公司列表"
+	 		 	  title:"运单列表"
 				 ,elem: '#dataTable'   
-	             ,url: 'findCompanyList'//layui对ajax进行了封装,是一个异步请求, 服务器返回一个json
+	             ,url: 'findWayBiliList'//layui对ajax进行了封装,是一个异步请求, 服务器返回一个json
 	             ,toolbar:'#toolbar'
 	             ,page:true
 	             ,limit:2
 	             ,limits:[2,4,6,8] 
 	             ,cols: [[ //表头
 	    			  {field: 'id', type:'checkbox',fixed: 'left'}
-	    			  ,{field: 'comnumber', title: '公司编号'}
-	                  ,{field: 'fshort', title: '公司简称'} 
-	                  ,{field: 'name', title: '公司全称'}
-	                  ,{field: 'regtime', title: '注册时间'}
-	                  ,{field: 'bulino', title: '营业证号'}
-	                  ,{field: 'corname', title: '公司法人'}
-	                  ,{field: 'phone', title: '公司电话'}
-	                  ,{field: 'detaress', title: '公司地址'}
-	                  ,{field: 'comadmin', title: '公司账号'}
+	    			  ,{field: 'wb_id', title: '运单号'}
+	                  ,{field: 'name', title: '货物名称'} 
+	                  ,{field: 'consignee_name', title: '收货人姓名'}
+	                  ,{field: 'consignee_phone', title: '收货人电话'}
+	                  ,{field: 'consignor_name', title: '发货人姓名'}
+	                  ,{field: 'consignor_phone', title: '发货人电话'}
+	                  ,{field: 'packing', title: '包装'}
+	                  ,{field: 'number', title: '件数'}
+	                  ,{field: 'weight', title: '重量'}
+	                  ,{field: 'freight', title: '运费'}
+	                  ,{field: 'deliveryfee', title: '送货费'}
+	                  ,{field: 'pickupfee', title: '提货费'}
+	                  ,{field: 'damages', title: '赔偿费'}
+	                  ,{field: 'dept', title: '目的部门'}
+	                  ,{field: 'wb_status', title: '运单状态'}
+	                  ,{field: 'recordingtime', title: '录单时间'}
+	                  ,{field: 'remarks', title: '备注'}
 	                  ,{fixed: 'right', width:150, align:'center', toolbar: '#rowbar'}
 	            ]]
 	      });		 
@@ -78,8 +86,8 @@
 		              curr: 1 //重新从第 1 页开始
 		            }
 		            ,where: {
-		            	fshort: $("#fshort").val(),
-		            	corname:$("#corname").val()//查询条件
+		            	wbId: $("#wbId").val(),
+		            	name:$("#name").val()//查询条件
 		            }
 		          }, 'data');
 		      });		
@@ -89,10 +97,10 @@
 			    switch(obj.event){
 			      case 'add':
 			    	  layer.open({
-			  		    title:"编辑公司信息",//标题
+			  		    title:"编辑运单信息",//标题
 			  		    type:2,//弹出框类型 type=2 页面层 iframe
 			  		    offset: '10px',
-			  		    content:"toAddCompany",//加载页面中某个标签内容
+			  		    content:"toAddWayBili",//加载页面中某个标签内容
 			  		    area: ['500px', '400px'],//宽高
 			  		    move: false//是否可拖动   
 			  	   });
@@ -124,7 +132,7 @@
 			    } else if(layEvent === 'edit'){ //编辑
 			    	layer.open({
 			           	type:2,//表示使用iframe嵌入一个窗口引入一个页面
-			           	title:"编辑公司",
+			           	title:"编辑订单",
 			           	content:"?id="+data.id,//访问控制器,查询部门,菜单数据
 			           	area: ['500px', '370px'],//设置宽高
 			           	offset: '10px'
@@ -133,19 +141,7 @@
 			  });
 			  //批量,单个删除使用同一个方法
 			   function deleteArticle(id){
-<<<<<<< HEAD
 				   $.post("", {id:id},function(data){
-=======
-<<<<<<< HEAD
-				   $.post("", {id:id},function(data){
-=======
-<<<<<<< HEAD
-				   $.post("companyDel", {id:id},function(data){
-=======
-				   $.post("", {id:id},function(data){
->>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
->>>>>>> zhangyunjie
->>>>>>> d47052da0dd85e409feae8f7ffd0417c82ba2fe8
 				   	    if(data==1){
 				   	     table.reload('dataTable','data');//重新加载表格数据
 				   	    }else{

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.xzy.dao.WayBiliDao">
+	<!--查询订单列表  -->
+	<select id="findWayBiliList" parameterType="map" resultType="map">
+		select 
+		wb_id,
+		name,
+		consignee_name,
+		consignee_phone,
+		consignor_name,
+		consignor_phone,
+		packing,
+		number,
+		weight,
+		freight,
+		deliveryfee,
+		pickupfee,
+		damages,
+		dept,
+		wb_status,
+		recordingtime,
+		remarks
+		
+		 from waybill limit #{start},#{pageSize}
+		
+	</select>
+	<!-- 查询订单总数 -->
+	<select id="findWayBiliCount" resultType="int">
+       select count(*) from 
+            waybill 
+           where 1 = 1       
+    </select>
+    <!-- 添加订单 -->
+    <insert id="addWaBili" parameterType="com.xzy.entity.WayBill">
+    	insert 
+    	into waybill
+    	(
+    	wb_id,
+    	name,
+    	consignee_name,
+    	consignee_phone,
+    	consignor_name,
+    	consignor_phone,
+    	packing,
+    	number,
+    	weight,
+    	freight,
+    	deliveryfee,
+    	pickupfee,
+    	damages,
+    	dept,
+    	wb_status,
+    	recordingtime,
+    	remarks
+    	
+    	) 
+    	values
+    		(
+    		#{wbId},
+    		#{name},
+    		#{consigneeName},
+    		#{consigneePhone},
+    		#{consignorName},
+    		#{consignorPhone},
+    		#{packing},
+    		#{number},
+    		#{weight},
+    		#{freight},
+    		#{deliveryfee},
+    		#{pickupfee},
+    		#{damages},
+    		#{dept},
+    		#{wbStatus},
+    		#{recordingtime},
+    		#{remarks}
+    		
+    		)
+    </insert>
+   
+</mapper>

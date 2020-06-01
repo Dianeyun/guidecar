@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<!-- 导入layUIcss文件 -->
+  <link rel="stylesheet" href="../layui/css/layui.css">
+</head>
+<body>
+	<form class="layui-form" action="">
+	  <div class="layui-form-item">
+	    <label class="layui-form-label">订单号</label>
+	    <div class="layui-input-block">
+	      <input type="text" id="wbId" name="wbId" required  lay-verify="required" placeholder="请输入订单号" autocomplete="off" class="layui-input">
+	    </div>
+	  </div>
+	  <div class="layui-form-item">
+	    <label class="layui-form-label">货物名称</label>
+	    <div class="layui-input-inline">
+	      <input type="text" id="name" name="name" required lay-verify="required" placeholder="请输入货物" autocomplete="off" class="layui-input">
+	    </div>
+	  </div>
+	   <div class="layui-form-item">
+	    <label class="layui-form-label">收货人姓名</label>
+	    <div class="layui-input-inline">
+	      <input type="text" id="consigneeName" name="consigneeName" required lay-verify="required" placeholder="请输入收货人姓名" autocomplete="off" class="layui-input">
+	    </div>
+	  </div>
+	   <div class="layui-form-item">
+	    <label class="layui-form-label">收货人电话</label>
+	    <div class="layui-input-inline">
+	      <input type="text" id="consigneePhone" name="consigneePhone" required lay-verify="required" placeholder="请输入收货人电话" autocomplete="off" class="layui-input">
+	    </div>
+	  </div>
+	   <div class="layui-form-item">
+	    <label class="layui-form-label">发货人姓名</label>
+	    <div class="layui-input-inline">
+	      <input type="text" id="consignorName" name="consignorName" required lay-verify="required" placeholder="请输入发货人姓名" autocomplete="off" class="layui-input">
+	    </div>
+	  </div>
+	   <div class="layui-form-item">
+	    <label class="layui-form-label">发货人电话</label>
+	    <div class="layui-input-inline">
+	      <input type="text" id="consignorPhone" name="consignorPhone" required lay-verify="required" placeholder="请输入发货人电话" autocomplete="off" class="layui-input">
+	    </div>
+	  </div>
+	   <div class="layui-form-item">
+	    <label class="layui-form-label">包装</label>
+	    <div class="layui-input-inline">
+	      <input type="text" id="packing" name="packing" required lay-verify="required" placeholder="请输入包装" autocomplete="off" class="layui-input">
+	    </div>
+	  </div>
+	    <div class="layui-form-item">
+	    <label class="layui-form-label">件数</label>
+	    <div class="layui-input-inline">
+	      <input type="text" id="number" name="number" required lay-verify="required" placeholder="请输入件数" autocomplete="off" class="layui-input">
+	    </div>
+	  </div>
+	    <div class="layui-form-item">
+	    <label class="layui-form-label">重量</label>
+	    <div class="layui-input-inline">
+	      <input type="text" id="weight" name="weight" required lay-verify="required" placeholder="请输入重量" autocomplete="off" class="layui-input">
+	    </div>
+	  </div>
+	    <div class="layui-form-item">
+	    <label class="layui-form-label">运费</label>
+	    <div class="layui-input-inline">
+	      <input type="text" id="freight" name="freight" required lay-verify="required" placeholder="请输入费用" autocomplete="off" class="layui-input">
+	    </div>
+	  </div>
+	    <div class="layui-form-item">
+	    <label class="layui-form-label">送货费</label>
+	    <div class="layui-input-inline">
+	      <input type="text" id="deliveryfee" name="deliveryfee" required lay-verify="required" placeholder="请输入送货费" autocomplete="off" class="layui-input">
+	    </div>
+	  </div>
+	    <div class="layui-form-item">
+	    <label class="layui-form-label">提货费</label>
+	    <div class="layui-input-inline">
+	      <input type="text" id="pickupfee" name="pickupfee" required lay-verify="required" placeholder="请输入提货费" autocomplete="off" class="layui-input">
+	    </div>
+	  </div>
+	   <div class="layui-form-item">
+	    <label class="layui-form-label">赔偿费</label>
+	    <div class="layui-input-inline">
+	      <input type="text" id="damages" name="damages" required lay-verify="required" placeholder="请输入赔偿费" autocomplete="off" class="layui-input">
+	    </div>
+	  </div>
+	   <div class="layui-form-item">
+	    <label class="layui-form-label">目的部门</label>
+	    <div class="layui-input-inline">
+	      <input type="text" id="dept" name="dept" required lay-verify="required" placeholder="请输入目的部门" autocomplete="off" class="layui-input">
+	    </div>
+	  </div>
+	   <div class="layui-form-item">
+	    <label class="layui-form-label">运单状态</label>
+	    <div class="layui-input-inline">
+	      <input type="text" id="wbStatus" name="wbStatus" required lay-verify="required" placeholder="请输入运单状态" autocomplete="off" class="layui-input">
+	    </div>
+	  </div>
+	   <div class="layui-form-item">
+	    <label class="layui-form-label">录单时间</label>
+	    <div class="layui-input-inline">
+	      <input type="text" id="recordingtime" name="recordingtime" required lay-verify="required" placeholder="请输入录单时间" autocomplete="off" class="layui-input">
+	    </div>
+	  </div>
+	   <div class="layui-form-item">
+	    <label class="layui-form-label">备注</label>
+	    <div class="layui-input-inline">
+	      <input type="text" id="remarks" name="remarks" required lay-verify="required" placeholder="请输入备注" autocomplete="off" class="layui-input">
+	    </div>
+	  </div>
+	  <div class="layui-form-item">
+	    <div class="layui-input-block">
+	      <button class="layui-btn" lay-submit lay-filter="formDemo">立即添加</button>
+	      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+	    </div>
+	  </div>
+	</form>
+
+	<!-- 导入layUI核心js文件 -->
+ 	<script src="../layui/layui.js"></script>
+ 	<script type="text/javascript">
+ 		//模块化加载layui  用到哪个模块才去加载
+ 		layui.use(['form','jquery','layer'], function () {
+		  	//获得组件对象
+		  	var form   = layui.form;//获得from模块
+        	
+        	var layer  = layui.layer;//获得弹出层组件
+		 	
+		 	var $ = layui.jquery;//获得jquery模块
+		 	  //监听提交
+		 	  form.on('submit(formDemo)', function(data){
+		 		  console.log(data.field);
+				 		  $.ajax({
+				         	url:'addMayBili',
+				            data:data.field,
+				            dataType:'json',
+				            type:'post',
+				            success:function (data) {
+				            	console.log(data);
+				                if (data.status == '1'){
+				                	layer.msg(data.msg);
+				                    location.href = "toUser";
+				                }else{
+				                	layer.msg(data.msg);
+				                }
+				            }
+				         }) 
+		 	  });
+		 	});
+   
+ </script>
+
+</body>
+</html>
