@@ -1,57 +1,35 @@
 package com.xzy.controller;
 
 import org.springframework.web.bind.annotation.RestController;
-<<<<<<< HEAD
-<<<<<<< HEAD
 import org.springframework.web.bind.annotation.RequestMapping;
-=======
 
-
-
-
-
-
-=======
->>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
 import org.springframework.web.servlet.ModelAndView;
 
 import com.xzy.service.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
-<<<<<<< HEAD
-import org.springframework.web.bind.annotation.RequestMapping;
+
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.xzy.entity.DataStatus;
-=======
+
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
->>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
+
 import com.xzy.entity.User;
 
 
 
-<<<<<<< HEAD
->>>>>>> yq
+
+
+
 
 
 
 @RestController
 @RequestMapping("/user")
 public class UserController {
-<<<<<<< HEAD
 	
-	
-=======
-=======
-@RestController
-@RequestMapping("/user")
-public class UserController {
-	
->>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
 	@Autowired
 	private UserService userservice;
 	
@@ -73,7 +51,7 @@ public class UserController {
 		return mdv2;
 	}
 	
-<<<<<<< HEAD
+
 	@RequestMapping("/toIndex")
 	public ModelAndView index() {
 		ModelAndView mdv3=new ModelAndView();
@@ -82,8 +60,7 @@ public class UserController {
 	}
 	
 	
-=======
->>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
+
      
 	
 	
@@ -143,7 +120,8 @@ public class UserController {
 	@RequestMapping(value="/login" ,produces="application/json;charset=utf-8")
 	@ResponseBody
 	public String login(@RequestParam("name") String name,@RequestParam("password")String password) {
-	    User user=new User();
+		System.out.println(name+" "+password);
+		User user=new User();
 	    user.setName(name);
 	    user.setPassword(password);
 	    DataStatus ds=new DataStatus();
@@ -158,33 +136,15 @@ public class UserController {
 	    	ds.setStatus("ÕËºÅ»òÃÜÂë´íÎó£¡");
 	    }
 	    return ds.toGson(ds);
+	}
 	    
-=======
-	 * 
-	 * @param user
-	 */
-	@RequestMapping("/update")
-	@ResponseBody
-	public void update(@RequestBody User user) {
-		userservice.update(user);
-	}
-	
-	@RequestMapping("/login")
-	@ResponseBody
-	public void login(String name,String password,Model model) {
-		//System.out.println("ÓÃ»§µÇÂ¼£º"+name+password);
->>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
-	}
-	
-	
-	
-<<<<<<< HEAD
 
 	
->>>>>>> yq
 	
-=======
->>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
+	
+	
+	
+
 	
 	
 	
