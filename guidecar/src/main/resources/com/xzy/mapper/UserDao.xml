@@ -10,7 +10,19 @@
         select * from user where username=#{username}
         </select>
         <!-- 用户注册 -->
+<<<<<<< HEAD
         <insert id="add" parameterType="com.xzy.dao.UserDao">
+=======
+<<<<<<< HEAD
+        <insert id="add" parameterType="com.xzy.dao.UserDao">
+=======
+<<<<<<< HEAD
+        <insert id="findAdd" parameterType="com.xzy.entity.User" >
+=======
+        <insert id="add" parameterType="com.xzy.dao.UserDao">
+>>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
+>>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
+>>>>>>> zhangyunjie
            insert into
                   user
               (
@@ -23,11 +35,38 @@
                   dept_id,
                   location,
                   company_id
+<<<<<<< HEAD
               )    
+=======
+<<<<<<< HEAD
+              )    
+=======
+<<<<<<< HEAD
+              )  
+=======
+              )    
+>>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
+>>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
+>>>>>>> zhangyunjie
                values
                (
                  #{name},
                  #{password},
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                 #{nickName},
+                 #{sex},
+                 #{phone},
+                 #{email},
+                 #{deptId},
+                 #{location},
+                 #{companyId}
+=======
+>>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
+>>>>>>> zhangyunjie
                  #{nick_name},
                  #{sex},
                  #{phone},
@@ -35,6 +74,13 @@
                  #{dept_id},
                  #{location},
                  #{company_id}
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
+>>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
+>>>>>>> zhangyunjie
                )
      </insert>
      <!-- 用户登录 -->

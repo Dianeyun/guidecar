@@ -18,6 +18,22 @@
 		<div class="login_face"><img src="../images/face.jpg" class="user"></div>
 		<div class="layui-form-item input-item">
 			<label for="userName">用户名</label>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+			<input type="text" placeholder="请输入用户名" autocomplete="off" id="userName" name="name" class="layui-input" lay-verify="required">
+		</div>
+		<div class="layui-form-item input-item">
+			<label for="password">密码</label>
+			<input type="password" placeholder="请输入密码" autocomplete="off" id="password"  name="password" class="layui-input" lay-verify="required">
+		</div>
+		<div class="layui-form-item">
+			<button class="layui-btn layui-block" lay-filter="formDemo" lay-submit >登录</button>
+=======
+>>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
+>>>>>>> zhangyunjie
 			<input type="text" placeholder="请输入用户名" autocomplete="off" id="userName" class="layui-input" lay-verify="required">
 		</div>
 		<div class="layui-form-item input-item">
@@ -26,6 +42,13 @@
 		</div>
 		<div class="layui-form-item">
 			<button class="layui-btn layui-block" lay-filter="login" lay-submit >登录</button>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
+>>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
+>>>>>>> zhangyunjie
 		</div>
 		<div class="layui-form-item">
 			<!--<button class="layui-btn layui-block" lay-filter="register" lay-submit>注册</button>-->
@@ -42,15 +65,61 @@
 	
 	<script type="text/javascript">
 	layui.use(['form','layer','jquery'],function(){
+<<<<<<< HEAD
 	    var form = layui.form,
 	        layer = parent.layer === undefined ? layui.layer : top.layer
 	        $ = layui.jquery;
+=======
+<<<<<<< HEAD
+	    var form = layui.form,
+	        layer = parent.layer === undefined ? layui.layer : top.layer
+	        $ = layui.jquery;
+=======
+<<<<<<< HEAD
+	    var form = layui.form;//获得from模块
+	    var layer = parent.layer === undefined ? layui.layer : top.layer;//获得弹出层组件
+	    var  $ = layui.jquery;//获得jquery模块
+	    //监听提交
+	    form.on('submit(formDemo)', function(data){
+		 		  console.log(data.field);
+				 		  $.ajax({
+				         	url:'login',
+				            data:data.field,
+				            dataType:'json',
+				            type:'post',
+				            success:function (data) {
+				            	console.log(data);
+				                if (data.status == '1'){
+				                	layer.msg(data.msg);
+				                    location.href = "toIndex";
+				                }else{
+				                	layer.msg(data.msg);
+				                }
+				            }
+				         }) 
+		 	  });
+	    
+=======
+	    var form = layui.form,
+	        layer = parent.layer === undefined ? layui.layer : top.layer
+	        $ = layui.jquery;
+>>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
+>>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
+>>>>>>> zhangyunjie
 
 	  /*   $(".loginBody .seraph").click(function(){
 	        layer.msg("这只是做个样式，至于功能，你见过哪个后台能这样登录的？还是老老实实的找管理员去注册吧",{
 	            time:5000
 	        });
 	    }) */
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
+>>>>>>> zhangyunjie
 
 	    //登录按钮
 	    form.on("submit(login)",function(data){
@@ -60,6 +129,13 @@
 	        },1000);
 	        return false;
 	    })
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
+>>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
+>>>>>>> zhangyunjie
 	    //表单输入效果
 	    $(".loginBody .input-item").click(function(e){
 	        e.stopPropagation();
