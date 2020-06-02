@@ -48,15 +48,8 @@
 	 		 var $ = layui.jquery;//获得jquery模块
 	 		 var table = layui.table;//获得table模块
 			   //使用layUI表格组件异步加载数据,生成数据表格
-<<<<<<< HEAD
+
 			  table.render({
-=======
-<<<<<<< HEAD
-			 table.render({
-=======
-			  table.render({
->>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
->>>>>>> zhangyunjie
 	 		 	  title:"公司列表"
 				 ,elem: '#dataTable'   
 	             ,url: 'findCompanyList'//layui对ajax进行了封装,是一个异步请求, 服务器返回一个json
@@ -97,15 +90,7 @@
 			    switch(obj.event){
 			      case 'add':
 			    	  layer.open({
-<<<<<<< HEAD
 			  		    title:"编辑公司信息",//标题
-=======
-<<<<<<< HEAD
-			  		    title:"添加公司信息",//标题
-=======
-			  		    title:"编辑公司信息",//标题
->>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
->>>>>>> zhangyunjie
 			  		    type:2,//弹出框类型 type=2 页面层 iframe
 			  		    offset: '10px',
 			  		    content:"toAddCompany",//加载页面中某个标签内容
@@ -141,15 +126,7 @@
 			    	layer.open({
 			           	type:2,//表示使用iframe嵌入一个窗口引入一个页面
 			           	title:"编辑公司",
-<<<<<<< HEAD
-			           	content:"?id="+data.id,//访问控制器,查询部门,菜单数据
-=======
-<<<<<<< HEAD
 			           	content:"toCompanyModify?id="+data.id,//访问控制器,查询部门,菜单数据
-=======
-			           	content:"?id="+data.id,//访问控制器,查询部门,菜单数据
->>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
->>>>>>> zhangyunjie
 			           	area: ['500px', '370px'],//设置宽高
 			           	offset: '10px'
 			        });
@@ -157,33 +134,8 @@
 			  });
 			  //批量,单个删除使用同一个方法
 			   function deleteArticle(id){
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 				   $.post("companyDel", {id:id},function(data){
 				   	    if(data.status==1){
-				   	    	layer.msg(data.mag);
-=======
-<<<<<<< HEAD
-				   $.post("", {id:id},function(data){
-=======
-<<<<<<< HEAD
->>>>>>> zhangyunjie
-				   $.post("", {id:id},function(data){
-=======
-<<<<<<< HEAD
-				   $.post("companyDel", {id:id},function(data){
-=======
-				   $.post("", {id:id},function(data){
->>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
->>>>>>> zhangyunjie
-<<<<<<< HEAD
-				   	    if(data==1){
-=======
->>>>>>> d47052da0dd85e409feae8f7ffd0417c82ba2fe8
-				   	    if(data==1){
->>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
->>>>>>> zhangyunjie
 				   	     table.reload('dataTable','data');//重新加载表格数据
 				   	    }else{
 				   	    	layer.msg(data.msg, {icon: 2});
