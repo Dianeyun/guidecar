@@ -101,7 +101,7 @@
 	   <div class="layui-form-item">
 	    <label class="layui-form-label">录单时间</label>
 	    <div class="layui-input-inline">
-	      <input type="text" id="recordingtime" name="recordingtime" required lay-verify="required" placeholder="请输入录单时间" autocomplete="off" class="layui-input">
+	      <input type="date" id="recordingtime" name="recordingtime" required lay-verify="required" placeholder="请输入录单时间" autocomplete="off" class="layui-input">
 	    </div>
 	  </div>
 	   <div class="layui-form-item">
@@ -133,7 +133,7 @@
 		 	  form.on('submit(formDemo)', function(data){
 		 		  console.log(data.field);
 				 		  $.ajax({
-				         	url:'addMayBili',
+				         	url:'addWayBill',
 				            data:data.field,
 				            dataType:'json',
 				            type:'post',
@@ -141,7 +141,8 @@
 				            	console.log(data);
 				                if (data.status == '1'){
 				                	layer.msg(data.msg);
-				                    location.href = "toUser";
+				                	layer.closeAll('iframe');//关闭所有的iframe层  
+				                    location.href = "toWayBiliList";
 				                }else{
 				                	layer.msg(data.msg);
 				                }

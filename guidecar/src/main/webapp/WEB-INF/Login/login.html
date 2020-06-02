@@ -57,9 +57,15 @@
 				            type:'post',
 				            success:function (data) {
 				            	console.log(data);
-				                if (data.status == '1'){
+				                if (data.status == '2'){
 				                	layer.msg(data.msg);
 				                    location.href = "toIndex";
+				                }else if(data.status=='1'){
+				                	layer.msg(data.msg);
+				                	 location.href = "../waybili/toUser";
+				                }else if(data.status=='0'){
+				                	layer.msg(data.msg);
+				                	 location.href = "../waybili/toUser2";
 				                }else{
 				                	layer.msg(data.msg);
 				                }

@@ -127,6 +127,8 @@ public class CompanyController {
 		mv.setViewName("Company/companyModify");
 		return mv;
 	}
+	
+	
 	@RequestMapping(value="/companyModify", produces = "application/json;charset=utf-8")
 	@ResponseBody
 	public String CompanyModify(Company company) {

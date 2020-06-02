@@ -20,8 +20,36 @@ public interface WayBiliDao {
 	 * @return
 	 */
 	int findWayBiliCount( );
+	/**
+	 * 添加订单
+	 * @param waybill
+	 */
+	int addWayBill(WayBill waybill);
 	
-	void addWayBill(WayBill waybill);
+	
+	/**
+	 * 根据id查询
+	 * @param id
+	 * @return
+	 */
+	WayBill findWayBillById(int id);
+	
+	
+	/**
+	 * 根据id删除
+	 * @param id
+	 * @return
+	 */
+	int delWayBill(int id);
+	
+	
+	
+	/**
+	 * 修改订单
+	 * @param waybill
+	 * @return
+	 */
+	int WayBillModify(WayBill waybill);
 	
 	
 	

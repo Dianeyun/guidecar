@@ -34,7 +34,7 @@
            where 1 = 1       
     </select>
     <!-- 添加订单 -->
-    <insert id="addWaBili" parameterType="com.xzy.entity.WayBill">
+    <insert id="addWayBill" parameterType="com.xzy.entity.WayBill">
     	insert 
     	into waybill
     	(
@@ -53,7 +53,6 @@
     	damages,
     	dept,
     	wb_status,
-    	recordingtime,
     	remarks
     	
     	) 
@@ -74,10 +73,66 @@
     		#{damages},
     		#{dept},
     		#{wbStatus},
-    		#{recordingtime},
     		#{remarks}
     		
     		)
     </insert>
+    
+    <!-- 根据id查询订单信息 -->
+    <select id="findWayBillById" parameterType="int" resultType="com.xzy.entity.WayBill">
+    select
+        id,
+        wb_id,
+        name,
+        consignee_name,
+        consignee_phone,
+        consignor_name,
+        consignor_phone,
+        packing,
+        number,
+        weight,
+        freight,
+        deliveryfee,
+        pickupfee,
+        damages,
+        dept,
+        wb_status,
+        recordingtime,
+        remarks
+     from  waybill
+        where 
+        id=#{id}
+         
+    
+    </select>
+    
+    <!-- 根据id删除订单 -->
+    <delete id="delWayBill" parameterType="int">
+     delete from waybill where id=#{id}
+    
+    </delete>
+    
+    <update id="updateWayBill" parameterType="com.xzy.entity.WayBill">
+    update waybill set 
+                       wb_id=#{wbId},
+                       name=#{name},
+                       consignee_name=#{consigneeName},
+                       consignee_phone=#{consigneePhone},
+                       consignor_name=#{consignorName},
+                       consignor_phone=#{consignorPhone},
+                       packing=#{packing},
+                       number=#{number},
+                       weight=#{weight},
+                       freight=#{freight},
+                       deliveryfee=#{deliveryfee},
+                       pickupfee=#{pickupfee},
+                       damages=#{damages},
+                       dept=#{dept},
+                       
+                       
+                       
+    
+    </update>
+    
    
 </mapper>
