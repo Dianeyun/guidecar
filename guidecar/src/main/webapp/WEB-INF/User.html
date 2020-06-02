@@ -10,6 +10,10 @@
 <div class="layui-layout layui-layout-admin">
   <div class="layui-header">
     <div class="layui-logo">指南车物流平台管理系统</div>
+   
+    <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item">
+        <a href="javascript:;" id="usera">
     <!-- 头部区域（可配合layui已有的水平导航） -->
     <ul class="layui-nav layui-layout-left">
       <li class="layui-nav-item"><a href="">控制台</a></li>
@@ -28,6 +32,7 @@
       <li class="layui-nav-item">
         <a href="javascript:;">
           <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+          贤心
         </a>
         <dl class="layui-nav-child">
           <dd><a href="">基本资料</a></dd>
@@ -37,7 +42,7 @@
       <li class="layui-nav-item"><a href="">退了</a></li>
     </ul>
   </div>
-  
+
   	<!--头部结束  -->
   			<div class="layui-side layui-bg-black">
     			<div class="layui-side-scroll">
@@ -57,7 +62,25 @@
 					
    				</div>
   			</div>
-  
+  	<!--头部结束  -->
+  			<div class="layui-side layui-bg-black">
+    			<div class="layui-side-scroll">
+    				 <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+    				<ul class="layui-nav layui-nav-tree"  lay-filter="test">
+       					 <li class="layui-nav-item layui-nav-itemed">
+        					  <a class="" href="javascript:;">用户管理</a>
+          					<dl class="layui-nav-child">
+          						 <dd><a data-id="0" data-url="../waybili/toWayBiliList" data-title="文章管理" data-type="tabAdd" class="menu">订单管理</a></dd>
+								<!-- <dd><a data-id="1" data-url="user/toUserList" data-title="会员管理" data-type="tabAdd" class="menu">会员管理</a></dd>
+								<dd><a data-id="2" data-url="" data-title="评价管理" data-type="tabAdd" class="menu">评价管理</a></dd> -->
+							
+							</dl>
+      					 </li>
+						 
+					</ul>
+					
+   				</div>
+  			</div>
   			<div class="layui-body">
    			 <!-- 选项卡面板 -->
        			<div class="layui-tab" lay-filter="tabs" lay-allowclose="true">
@@ -65,6 +88,7 @@
 					<div class="layui-tab-content"></div>
    				 </div>
   			</div>
+
   
   			<!-- <div class="layui-footer"> 
   			  底部固定区域
@@ -153,50 +177,4 @@
 
 		</script>
 	</body>
-  <div class="layui-side layui-bg-black">
-    <div class="layui-side-scroll">
-      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-      <ul class="layui-nav layui-nav-tree"  lay-filter="test">
-        <li class="layui-nav-item layui-nav-itemed">
-          <a class="" href="javascript:;">所有商品</a>
-          <dl class="layui-nav-child">
-            <dd><a href="javascript:;">列表一</a></dd>
-            <dd><a href="javascript:;">列表二</a></dd>
-            <dd><a href="javascript:;">列表三</a></dd>
-            <dd><a href="">超链接</a></dd>
-          </dl>
-        </li>
-        <li class="layui-nav-item">
-          <a href="javascript:;">解决方案</a>
-          <dl class="layui-nav-child">
-            <dd><a href="javascript:;">列表一</a></dd>
-            <dd><a href="javascript:;">列表二</a></dd>
-            <dd><a href="">超链接</a></dd>
-          </dl>
-        </li>
-        <li class="layui-nav-item"><a href="">云市场</a></li>
-        <li class="layui-nav-item"><a href="">发布商品</a></li>
-      </ul>
-    </div>
-  </div>
-  
-  <div class="layui-body">
-    <!-- 内容主体区域 -->
-    <div style="padding: 15px;">内容主体区域</div>
-  </div>
-  
-  <div class="layui-footer">
-    <!-- 底部固定区域 -->
-    © layui.com - 底部固定区域
-  </div>
-</div>
-<script src="../src/layui.js"></script>
-<script>
-//JavaScript代码区域
-layui.use('element', function(){
-  var element = layui.element;
-  
-});
-</script>
-</body>
 </html>

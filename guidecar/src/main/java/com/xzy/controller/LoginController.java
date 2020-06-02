@@ -1,21 +1,28 @@
 package com.xzy.controller;
 
 import org.springframework.web.bind.annotation.RestController;
+
+
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
 import org.springframework.web.servlet.ModelAndView;
-import com.xzy.service.UserService;
+
+import com.xzy.service.LoginService;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
+
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.xzy.entity.User;
 import com.xzy.entity.DataStatus;
+
 @RestController
 @RequestMapping("/user")
-public class UserController {
+public class LoginController {
+
 	@Autowired
-	private UserService userservice;
+	private LoginService loginService;
 	
 	@RequestMapping("/toLogin")
 	public ModelAndView toLogin() {
@@ -34,6 +41,8 @@ public class UserController {
 		mdv2.setViewName("Login/a");
 		return mdv2;
 	}
+	
+
 	@RequestMapping("/toIndex")
 	public ModelAndView index() {
 		ModelAndView mdv3=new ModelAndView();
@@ -60,7 +69,7 @@ public class UserController {
 	@RequestMapping("/findByUsername")
 	@ResponseBody
 	public User findByUsername(String username) {
-		return userservice.findByUsername(username);
+		return loginService.findByUsername(username);
 	}
 	
 	/**
@@ -72,7 +81,7 @@ public class UserController {
 	public String findAdd(User user) {
 		System.out.println(user);
 		DataStatus ds=new DataStatus();
-		int i=userservice.findAdd(user);
+		int i=loginService.findAdd(user);
 		if(i>0) {
 			ds.setStatus("1");
 			ds.setMsg("注册成功！！");
@@ -95,41 +104,38 @@ public class UserController {
 	@RequestMapping(value="/login" ,produces="application/json;charset=utf-8")
 	@ResponseBody
 	public String login(@RequestParam("name") String name,@RequestParam("password")String password) {
+
 		System.out.println(name+" "+password);
 		User user=new User();
 	    user.setName(name);
 	    user.setPassword(password);
 	    DataStatus ds=new DataStatus();
-	    if(userservice.findByUsernameAndPwd(user) !=null) {
+	    User  u=loginService.findByUsernameAndPwd(user); 
+	    if(u!=null) {
 	    	/*model.addAttribute("name",name);
 	    	mv.setViewName("index");*/
-	    	ds.setStatus("1");
-	    	ds.setMsg("登录成功");
-	   
+	    	if(u.getType()==2) {
+	    		ds.setStatus("2");
+		    	ds.setMsg("登录成功");
+		    	System.out.println("x"+u.getType());
+	    	}else if(u.getType()==1) {
+	    		ds.setStatus("1");
+		    	ds.setMsg("登录成功");
+		    	System.out.println("z"+u.getType());
+	    	}else {
+	    		ds.setStatus("0");
+		    	ds.setMsg("登录成功");
+		    	System.out.println("z"+u.getType());
+	    	}
 	    }else {
-	    	ds.setStatus("0");
+	    	ds.setStatus("-1");
 	    	ds.setStatus("账号或密码错误！");
 	    }
 	    return ds.toGson(ds);
 	}
-	/**
-	 * 
-	 * @param user
-	 */
-	@RequestMapping("/update")
-	@ResponseBody
-	public void update(@RequestBody User user) {
-		 userservice.update(user);
-	}
 	
-	@RequestMapping("/login")
-	@ResponseBody
-	public void login(String name,String password,Model model) {
-		//System.out.println("用户登录："+name+password);
-
-	}
 	
-
 }
+	
 	
 
