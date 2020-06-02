@@ -6,13 +6,33 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+<<<<<<< HEAD
 import com.xzy.dao.CompanyDao;
 import com.xzy.entity.Company;
+=======
+<<<<<<< HEAD
+import com.xzy.dao.CompanyDao;
+import com.xzy.entity.Company;
+=======
+>>>>>>> a7828c9b350017c79b65171db32dcad3185a020f
+>>>>>>> zhangyunjie
 /**
  * 公司业务处理
  * @author J·Y
  *
  */
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+import com.xzy.dao.CompanyDao;
+<<<<<<< HEAD
+import com.xzy.entity.Company;
+=======
+>>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
+>>>>>>> a7828c9b350017c79b65171db32dcad3185a020f
+>>>>>>> zhangyunjie
 @Service
 public class CompanyService {
 	@Autowired
@@ -38,8 +58,14 @@ public class CompanyService {
 		return companyDao.findCompanyCount();
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+>>>>>>> zhangyunjie
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> a7828c9b350017c79b65171db32dcad3185a020f
 >>>>>>> zhangyunjie
 	/**
 	 * 添加公司
@@ -50,7 +76,10 @@ public class CompanyService {
 		return companyDao.addCompany(company);
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> zhangyunjie
 =======
 >>>>>>> zhangyunjie
 
@@ -78,4 +107,12 @@ public class CompanyService {
 	public int companyModify(Company company) {
 		return companyDao.companyModify(company);
 	}
+<<<<<<< HEAD
+=======
+=======
+=======
+	
+>>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
+>>>>>>> a7828c9b350017c79b65171db32dcad3185a020f
+>>>>>>> zhangyunjie
 }

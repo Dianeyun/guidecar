@@ -6,15 +6,27 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
 
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+>>>>>>> zhangyunjie
+
+import java.util.HashMap;
+import java.util.Map;
+
+<<<<<<< HEAD
+import javax.servlet.http.HttpServletRequest;
 =======
 import java.util.HashMap;
 import java.util.Map;
 >>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
+=======
+>>>>>>> zhangyunjie
 import java.util.List;
 import com.xzy.entity.WayBill;
 
@@ -53,6 +65,10 @@ public class WayBiliController {
 	}
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> zhangyunjie
 	/**
 	 * 修改页面
 	 * @param id
@@ -76,10 +92,13 @@ public class WayBiliController {
 	 * @param limit
 	 * @return
 	 */
+<<<<<<< HEAD
 =======
 	
 	
 >>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
+=======
+>>>>>>> zhangyunjie
 	@RequestMapping(value="/findWayBiliList",produces="application/json;charset=utf-8")
 	@ResponseBody
 	public String findWayBiliList(int page, int limit) {
@@ -107,6 +126,10 @@ public class WayBiliController {
 	}
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> zhangyunjie
 
 	/**
 	 * 添加订单数据
@@ -149,9 +172,13 @@ public class WayBiliController {
 		}
 		return ds.toGson(ds);
 	}
+<<<<<<< HEAD
 	
 
 =======
+=======
+
+>>>>>>> zhangyunjie
 	
 	@RequestMapping(value="/addWaBili",produces="application/json;charset=utf-8")
 	@ResponseBody
@@ -164,8 +191,11 @@ public class WayBiliController {
 	
 	
 	
+<<<<<<< HEAD
 >>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
 	
 	
+=======
+>>>>>>> zhangyunjie
 
 }

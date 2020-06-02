@@ -12,6 +12,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+<<<<<<< HEAD
+=======
+import org.springframework.web.bind.annotation.ResponseBody;
+>>>>>>> zhangyunjie
 /**
  * ¹«Ë¾¿ØÖÆÆ÷
  * @author J¡¤Y
@@ -111,6 +115,10 @@ public class CompanyController {
 		return ds.toGson(ds);
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> zhangyunjie
 =======
 
 >>>>>>> zhangyunjie
@@ -143,4 +151,13 @@ public class CompanyController {
 		}
 		return ds.toGson(ds);
 	}
+<<<<<<< HEAD
+=======
+
+	public String addCompany() {
+		DataStatus ds=new DataStatus();
+		
+		return ds.toGson(ds);
+	}
+>>>>>>> zhangyunjie
 }

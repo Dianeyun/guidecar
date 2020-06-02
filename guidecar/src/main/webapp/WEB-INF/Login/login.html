@@ -18,6 +18,15 @@
 		<div class="login_face"><img src="../images/face.jpg" class="user"></div>
 		<div class="layui-form-item input-item">
 			<label for="userName">用户名</label>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a7828c9b350017c79b65171db32dcad3185a020f
+>>>>>>> zhangyunjie
 			<input type="text" placeholder="请输入用户名" autocomplete="off" id="userName" name="name" class="layui-input" lay-verify="required">
 		</div>
 		<div class="layui-form-item input-item">
@@ -27,18 +36,44 @@
 		<div class="layui-form-item">
 			<button class="layui-btn layui-block" lay-filter="formDemo" lay-submit >登录</button>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		</div>
+>>>>>>> zhangyunjie
+=======
+		</div>
+=======
+=======
+>>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
+			<input type="text" placeholder="请输入用户名" autocomplete="off" id="userName" class="layui-input" lay-verify="required">
+		</div>
+		<div class="layui-form-item input-item">
+			<label for="password">密码</label>
+			<input type="password" placeholder="请输入密码" autocomplete="off" id="password" class="layui-input" lay-verify="required">
+		</div>
+		<div class="layui-form-item">
+			<button class="layui-btn layui-block" lay-filter="login" lay-submit >登录</button>
+<<<<<<< HEAD
+=======
+>>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
+>>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
+>>>>>>> a7828c9b350017c79b65171db32dcad3185a020f
 >>>>>>> zhangyunjie
 		</div>
 		<div class="layui-form-item">
 			<!--<button class="layui-btn layui-block" lay-filter="register" lay-submit>注册</button>-->
 			<a class="layui-btn layui-block" href="toA">注册</a>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 			<a href = "" style ="padding#:0px 0px 0px 18px" onclick = "window.open('forgetPassword.jsp')">忘记密码？</a>  <!-- 打开新窗口 -->
 =======
 			<a href = "" style ="padding#:0px 0px 0px 18px" onclick = "window.open('forgetPassword.jsp')">忘记密码？</a>  <!--
+>>>>>>> zhangyunjie
+=======
+			<a href = "" style ="padding#:0px 0px 0px 18px" onclick = "window.open('forgetPassword.jsp')">忘记密码？</a>  <!--
+=======
+>>>>>>> a7828c9b350017c79b65171db32dcad3185a020f
 >>>>>>> zhangyunjie
 		</div>
 		<div class="layui-form-item layui-row">
@@ -52,6 +87,18 @@
 	
 	<script type="text/javascript">
 	layui.use(['form','layer','jquery'],function(){
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+	    var form = layui.form,
+	        layer = parent.layer === undefined ? layui.layer : top.layer
+	        $ = layui.jquery;
+=======
+<<<<<<< HEAD
+>>>>>>> a7828c9b350017c79b65171db32dcad3185a020f
+>>>>>>> zhangyunjie
 	    var form = layui.form;//获得from模块
 	    var layer = parent.layer === undefined ? layui.layer : top.layer;//获得弹出层组件
 	    var  $ = layui.jquery;//获得jquery模块
@@ -65,6 +112,7 @@
 				            type:'post',
 				            success:function (data) {
 				            	console.log(data);
+<<<<<<< HEAD
 				                if (data.status == '2'){
 				                	layer.msg(data.msg);
 				                    location.href = "toIndex";
@@ -74,6 +122,23 @@
 				                }else if(data.status=='0'){
 				                	layer.msg(data.msg);
 				                	 location.href = "../waybili/toUser2";
+=======
+<<<<<<< HEAD
+				                if (data.status == '2'){
+				                	layer.msg(data.msg);
+				                    location.href = "toIndex";
+				                }else if(data.status=='1'){
+				                	layer.msg(data.msg);
+				                	 location.href = "../waybili/toUser";
+				                }else if(data.status=='0'){
+				                	layer.msg(data.msg);
+				                	 location.href = "../waybili/toUser2";
+=======
+				                if (data.status == '1'){
+				                	layer.msg(data.msg);
+				                    location.href = "toIndex";
+>>>>>>> a7828c9b350017c79b65171db32dcad3185a020f
+>>>>>>> zhangyunjie
 				                }else{
 				                	layer.msg(data.msg);
 				                }
@@ -81,12 +146,32 @@
 				         }) 
 		 	  });
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+	    
+=======
+	    var form = layui.form,
+	        layer = parent.layer === undefined ? layui.layer : top.layer
+	        $ = layui.jquery;
+>>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
+>>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
+>>>>>>> zhangyunjie
 
 	  /*   $(".loginBody .seraph").click(function(){
 	        layer.msg("这只是做个样式，至于功能，你见过哪个后台能这样登录的？还是老老实实的找管理员去注册吧",{
 	            time:5000
 	        });
 	    }) */
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
+
+>>>>>>> zhangyunjie
 	    //登录按钮
 	    form.on("submit(login)",function(data){
 	        $(this).text("登录中...").attr("disabled","disabled").addClass("layui-disabled");
@@ -95,7 +180,15 @@
 	        },1000);
 	        return false;
 	    })
+<<<<<<< HEAD
 =======
+>>>>>>> zhangyunjie
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
+>>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
+>>>>>>> a7828c9b350017c79b65171db32dcad3185a020f
 >>>>>>> zhangyunjie
 	    //表单输入效果
 	    $(".loginBody .input-item").click(function(e){

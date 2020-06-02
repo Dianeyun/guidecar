@@ -3,8 +3,21 @@ package com.xzy.dao;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+<<<<<<< HEAD
 import com.xzy.entity.Company;
 
+=======
+<<<<<<< HEAD
+import com.xzy.entity.Company;
+
+=======
+<<<<<<< HEAD
+
+import com.xzy.entity.Company;
+=======
+>>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
+>>>>>>> a7828c9b350017c79b65171db32dcad3185a020f
+>>>>>>> zhangyunjie
 /**
  * 公司映射SQL接口
  * @author J·Y
@@ -21,12 +34,23 @@ public interface CompanyDao {
 	 * @return  总条数
 	 */
 	int findCompanyCount();
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a7828c9b350017c79b65171db32dcad3185a020f
+>>>>>>> zhangyunjie
 	/**
 	 * 添加公司
 	 * @param company 公司信息
 	 * @return 1-成功   0-失败
 	 */
 	int addCompany(Company company);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> zhangyunjie
 
 	/**
 	 * 根据id删除公司
@@ -47,4 +71,11 @@ public interface CompanyDao {
 	 */
 	int companyModify(Company company);
 
+<<<<<<< HEAD
+=======
+=======
+=======
+>>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
+>>>>>>> a7828c9b350017c79b65171db32dcad3185a020f
+>>>>>>> zhangyunjie
 }
