@@ -22,7 +22,9 @@
 	<delete id="delCompany" parameterType="int">
 		delete from company where id=#{id}
 	</delete>
+ 
     <!-- 添加公司 -->
+
     <insert id="addCompany" parameterType="com.xzy.entity.Company">
     	insert into company(name,fshort,bulino,corname,phone,detaress,comadmin,comnumber) 
     		values(#{name},#{fshort},#{bulino},#{corname},#{phone},#{detaress},#{comadmin},#{comnumber})

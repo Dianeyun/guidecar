@@ -114,6 +114,7 @@ public class CompanyController {
 		}
 		return ds.toGson(ds);
 	}
+
 	/**
 	 * 打开修改页面
 	 * @param id 公司id值

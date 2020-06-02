@@ -10,6 +10,7 @@ public class User {
 	private int id; //用户id
 	private String name;  //用户账号
 	private String password;  //用户密码
+
 	private String nickName;  //用户昵称
 	private String sex;  //用户性别
 	private String phone;  //用户电话
@@ -19,12 +20,12 @@ public class User {
 	private int type;  //用户类型 '0-平台管理员  1-公司管理员 2-公司用户'
 	private String location;  //用户地址
 	private int companyId;  //用户公司id
+
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	public User(int id, String name, String password, String nickName, String sex, String phone, String email,
-
 			Date regtime, int deptId, int type, String location, int companyId) {
 		super();
 		this.id = id;
@@ -88,12 +89,14 @@ public class User {
 	public void setRegtime(Date regtime) {
 		this.regtime = regtime;
 	}
+
 	public int getDeptId() {
 		return deptId;
 	}
 	public void setDeptId(int deptId) {
 		this.deptId = deptId;
 	}
+	
 	public int getType() {
 		return type;
 	}

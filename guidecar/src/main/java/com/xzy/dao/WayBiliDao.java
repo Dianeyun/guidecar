@@ -20,6 +20,7 @@ public interface WayBiliDao {
 	 * @return
 	 */
 	int findWayBiliCount( );
+
 	/**
 	 * Ìí¼Ó¶©µ¥
 	 * @param waybill

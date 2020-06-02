@@ -10,7 +10,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
-
 import java.util.List;
 import com.xzy.entity.WayBill;
 
@@ -47,7 +46,6 @@ public class WayBiliController {
 		mav2.setViewName("WayBili/waybiliList");
 		return mav2;
 	}
-	
 	
 	/**
 	 * 修改页面
@@ -98,7 +96,7 @@ public class WayBiliController {
 		return  mav;
 	}
 	
-	
+
 	/**
 	 * 添加订单数据
 	 * @param waybill
@@ -139,19 +137,9 @@ public class WayBiliController {
 			ds.setMsg("删除失败");
 		}
 		return ds.toGson(ds);
-				
 	}
 	
-	
-	
-	@RequestMapping(value="/")
-	
-	
-	
-	
-	
-	
-	
+
 	
 	
 

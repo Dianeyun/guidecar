@@ -12,6 +12,9 @@
         <!-- 用户注册 -->
         <insert id="findAdd" parameterType="com.xzy.entity.User" >
 
+
+
+        <insert id="findAdd" parameterType="com.xzy.entity.User" >
            insert into
                   user
               (
@@ -28,10 +31,12 @@
  
  
 
+
+
                values
                (
                  #{name},
-                 #{password},
+                 #{password},                
                  #{nickName},
                  #{sex},
                  #{phone},

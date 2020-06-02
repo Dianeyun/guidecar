@@ -13,6 +13,7 @@ import com.xzy.entity.Company;
  * @author J·Y
  *
  */
+
 @Service
 public class CompanyService {
 	@Autowired
@@ -37,7 +38,6 @@ public class CompanyService {
 	public int findCompanyCount() {
 		return companyDao.findCompanyCount();
 	}
-
 	/**
 	 * 添加公司
 	 * @param company  公司信息

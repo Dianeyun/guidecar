@@ -34,6 +34,7 @@
            where 1 = 1       
     </select>
     <!-- 添加订单 -->
+
     <insert id="addWayBill" parameterType="com.xzy.entity.WayBill">
     	insert 
     	into waybill
@@ -77,6 +78,7 @@
     		
     		)
     </insert>
+
     
     <!-- 根据id查询订单信息 -->
     <select id="findWayBillById" parameterType="int" resultType="com.xzy.entity.WayBill">
@@ -133,6 +135,6 @@
                        
     
     </update>
-    
+
    
 </mapper>

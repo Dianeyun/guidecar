@@ -74,7 +74,7 @@ public class WayBiliService {
 	 */
 	public int WayBillModify(WayBill waybill) {
 		return wayBiliDao.WayBillModify(waybill);
-		
+
 	}
 	
 	
