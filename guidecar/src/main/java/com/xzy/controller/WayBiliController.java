@@ -5,11 +5,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+<<<<<<< HEAD
 
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+=======
+import java.util.HashMap;
+import java.util.Map;
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
 import java.util.List;
 import com.xzy.entity.WayBill;
 
@@ -47,6 +52,7 @@ public class WayBiliController {
 		return mav2;
 	}
 	
+<<<<<<< HEAD
 	/**
 	 * 修改页面
 	 * @param id
@@ -70,6 +76,10 @@ public class WayBiliController {
 	 * @param limit
 	 * @return
 	 */
+=======
+	
+	
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
 	@RequestMapping(value="/findWayBiliList",produces="application/json;charset=utf-8")
 	@ResponseBody
 	public String findWayBiliList(int page, int limit) {
@@ -96,6 +106,7 @@ public class WayBiliController {
 		return  mav;
 	}
 	
+<<<<<<< HEAD
 
 	/**
 	 * 添加订单数据
@@ -140,6 +151,20 @@ public class WayBiliController {
 	}
 	
 
+=======
+	
+	@RequestMapping(value="/addWaBili",produces="application/json;charset=utf-8")
+	@ResponseBody
+	public String addMayBili(WayBill waybill) {
+		
+		DataStatus ds=new DataStatus();
+		
+		return ds.toGson(ds);
+	}
+	
+	
+	
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
 	
 	
 

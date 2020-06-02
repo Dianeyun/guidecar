@@ -134,7 +134,24 @@
 			  });
 			  //批量,单个删除使用同一个方法
 			   function deleteArticle(id){
+<<<<<<< HEAD
 				   $.post("companyDel", {id:id},function(data){
+=======
+<<<<<<< HEAD
+				   $.post("", {id:id},function(data){
+=======
+<<<<<<< HEAD
+				   $.post("", {id:id},function(data){
+=======
+<<<<<<< HEAD
+				   $.post("companyDel", {id:id},function(data){
+=======
+				   $.post("", {id:id},function(data){
+>>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
+>>>>>>> zhangyunjie
+>>>>>>> d47052da0dd85e409feae8f7ffd0417c82ba2fe8
+				   	    if(data==1){
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
 				   	     table.reload('dataTable','data');//重新加载表格数据
 				   	    }else{
 				   	    	layer.msg(data.msg, {icon: 2});

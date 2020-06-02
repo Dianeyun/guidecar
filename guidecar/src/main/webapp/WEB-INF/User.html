@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+layui.code
+>>>>>>> d47052da0dd85e409feae8f7ffd0417c82ba2fe8
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,12 +13,30 @@
 <<<<<<< HEAD
   <title>指南车物流</title>
   <link rel="stylesheet" href="../layui/css/layui.css">
+<<<<<<< HEAD
+=======
+=======
+  <title>layout 后台大布局 - Layui</title>
+  <link rel="stylesheet" href="../src/css/layui.css">
+>>>>>>> d47052da0dd85e409feae8f7ffd0417c82ba2fe8
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
   <div class="layui-header">
+<<<<<<< HEAD
 
     <div class="layui-logo">指南车物流平台管理系统</div>
+=======
+<<<<<<< HEAD
+    <div class="layui-logo">指南车物流平台管理系统</div>
+   
+    <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item">
+        <a href="javascript:;" id="usera">
+=======
+    <div class="layui-logo">layui 后台布局</div>
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
     <!-- 头部区域（可配合layui已有的水平导航） -->
     <ul class="layui-nav layui-layout-left">
       <li class="layui-nav-item"><a href="">控制台</a></li>
@@ -31,7 +56,11 @@
         <a href="javascript:;">
           <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
           贤心
+<<<<<<< HEAD
 
+=======
+>>>>>>> d47052da0dd85e409feae8f7ffd0417c82ba2fe8
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
         </a>
         <dl class="layui-nav-child">
           <dd><a href="">基本资料</a></dd>
@@ -63,6 +92,30 @@
   			</div>
 
   
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  	<!--头部结束  -->
+  			<div class="layui-side layui-bg-black">
+    			<div class="layui-side-scroll">
+    				 <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+    				<ul class="layui-nav layui-nav-tree"  lay-filter="test">
+       					 <li class="layui-nav-item layui-nav-itemed">
+        					  <a class="" href="javascript:;">用户管理</a>
+          					<dl class="layui-nav-child">
+          						 <dd><a data-id="0" data-url="../waybili/toWayBiliList" data-title="文章管理" data-type="tabAdd" class="menu">订单管理</a></dd>
+								<!-- <dd><a data-id="1" data-url="user/toUserList" data-title="会员管理" data-type="tabAdd" class="menu">会员管理</a></dd>
+								<dd><a data-id="2" data-url="" data-title="评价管理" data-type="tabAdd" class="menu">评价管理</a></dd> -->
+							
+							</dl>
+      					 </li>
+						 
+					</ul>
+					
+   				</div>
+  			</div>
+  
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
   			<div class="layui-body">
    			 <!-- 选项卡面板 -->
        			<div class="layui-tab" lay-filter="tabs" lay-allowclose="true">
@@ -70,6 +123,8 @@
 					<div class="layui-tab-content"></div>
    				 </div>
   			</div>
+<<<<<<< HEAD
+=======
   
   			<!-- <div class="layui-footer"> 
   			  底部固定区域
@@ -158,4 +213,132 @@
 
 		</script>
 	</body>
+=======
+  <div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+      <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+        <li class="layui-nav-item layui-nav-itemed">
+          <a class="" href="javascript:;">所有商品</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">列表一</a></dd>
+            <dd><a href="javascript:;">列表二</a></dd>
+            <dd><a href="javascript:;">列表三</a></dd>
+            <dd><a href="">超链接</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;">解决方案</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">列表一</a></dd>
+            <dd><a href="javascript:;">列表二</a></dd>
+            <dd><a href="">超链接</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item"><a href="">云市场</a></li>
+        <li class="layui-nav-item"><a href="">发布商品</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="layui-body">
+    <!-- 内容主体区域 -->
+    <div style="padding: 15px;">内容主体区域</div>
+  </div>
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
+  
+  			<!-- <div class="layui-footer"> 
+  			  底部固定区域
+    			© layui.com - 底部固定区域
+  			</div> -->
+		</div>
+		<script src="../layui/layui.js"></script>
+		<script>
+			//JavaScript代码区域
+			layui.use(['element','jquery','layer'], function(){
+  				var element = layui.element;
+  				var $= layui.jquery;
+  			 	var layer = layui.layer;	
+  			 	/* $(function(){
+  			 		var s=$.cookie('userName');
+  			 		//console.log("1111");
+  			 		//console.log(s);
+  			 		$('#usera').html(s);
+  			 	}); */
+  				$('.menu').on('click',function(){
+  								
+  								var dataid = $(this);
+  								
+  								if ($(".layui-tab-title li[lay-id]").length <= 0) {
+  									//如果比零小，则直接打开新的tab项
+  									
+  									active.tabAdd(dataid.attr("data-url"), dataid
+  													.attr("data-id"), dataid
+  													.attr("data-title"));
+  								} else {
+  									//否则判断该tab项是否以及存在
+  									var isData = false; //初始化一个标志，为false说明未打开该tab项 为true则说明已有
+  									$.each($(".layui-tab-title li[lay-id]"),
+  											function() {
+  												//如果点击左侧菜单栏所传入的id 在右侧tab项中的lay-id属性可以找到，则说明该tab项已经打开
+  												if ($(this).attr("lay-id") == dataid
+  														.attr("data-id")) {
+  													isData = true;
+  												}
+  											})
+  									if (isData == false) {
+  										//标志为false 新增一个tab项
+  										active.tabAdd(dataid.attr("data-url"), dataid.attr("data-id"), dataid.attr("data-title"));
+  									}
+  								}
+  								//最后不管是否新增tab，最后都转到要打开的选项页面上
+  								active.tabChange(dataid.attr("data-id"));
+  							});
+  				
+  				
+  						var active = {
+  								//在这里给active绑定几项事件，后面可通过active调用这些事件
+  								tabAdd : function(url, id, name) {
+  									
+  									//新增一个Tab项 传入三个参数，分别对应其标题，tab页面的地址，还有一个规定的id，是标签中data-id的属性值
+  									//关于tabAdd的方法所传入的参数可看layui的开发文档中基础方法部分
+  									element.tabAdd('tabs', {
+  										title : name,
+  										content : '<iframe data-frameid="' + id
+  												+ '" scrolling="auto" frameborder="0" src="'
+  												+ url
+  												+ '" style="width:100%;height:99%;"></iframe>',
+  										id : id
+  									//规定好的id
+  									})
+  									FrameWH(); //计算ifram层的大小
+  								},
+  								tabChange : function(id) {
+  									//切换到指定Tab项
+  									element.tabChange('tabs', id); //根据传入的id传入到指定的tab项
+  								},
+  								tabDelete : function(id) {
+  									element.tabDelete("tabs", id);//删除
+  								}
+  							};
+  							function FrameWH() {
+  								var h = $(window).height();
+  								$("iframe").css("height", h + "px");
+  							}
+  				
+  				
+  				
+  				
+  
+<<<<<<< HEAD
+			});
+
+		</script>
+	</body>
+=======
+});
+</script>
+</body>
+>>>>>>> d47052da0dd85e409feae8f7ffd0417c82ba2fe8
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
 </html>
