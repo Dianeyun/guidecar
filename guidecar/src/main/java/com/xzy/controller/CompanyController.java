@@ -11,15 +11,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import org.springframework.web.bind.annotation.ResponseBody;
 /**
- * 公司控制器
+ * 公司控器器
  * @author J·Y
  *
  */
-@Controller
-@RequestMapping("company")
-public class CompanyController {
+import org.springframework.web.servlet.ModelAndView;
 
+import com.google.gson.Gson;
+import com.xzy.entity.Company;
+import com.xzy.entity.DataStatus;
+import com.xzy.service.CompanyService;
+@Controller
+@RequestMapping("/company")
+public class CompanyController {
 	@Autowired
 	private CompanyService companyService;
 	/**
@@ -137,6 +143,12 @@ public class CompanyController {
 			ds.setStatus("0");
 			ds.setMsg("修改失败");
 		}
+		return ds.toGson(ds);
+	}
+
+	public String addCompany() {
+		DataStatus ds=new DataStatus();
+		
 		return ds.toGson(ds);
 	}
 }

@@ -1,6 +1,7 @@
 package com.xzy.controller;
 
 import org.springframework.web.bind.annotation.RestController;
+<<<<<<< HEAD
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -14,6 +15,79 @@ import com.xzy.entity.DataStatus;
 @RestController
 @RequestMapping("/user")
 public class UserController {
+=======
+<<<<<<< HEAD
+
+import org.springframework.web.bind.annotation.RequestMapping;
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+import org.springframework.web.bind.annotation.RequestMapping;
+=======
+
+
+
+
+
+
+=======
+>>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
+>>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
+import org.springframework.web.servlet.ModelAndView;
+
+import com.xzy.service.UserService;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
+<<<<<<< HEAD
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import com.xzy.entity.User;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+
+
+=======
+<<<<<<< HEAD
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.xzy.entity.DataStatus;
+=======
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+>>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
+import com.xzy.entity.User;
+
+
+
+<<<<<<< HEAD
+>>>>>>> yq
+
+
+>>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
+
+@RestController
+@RequestMapping("/user")
+public class UserController {
+<<<<<<< HEAD
+	
+=======
+<<<<<<< HEAD
+	
+	
+=======
+=======
+@RestController
+@RequestMapping("/user")
+public class UserController {
+	
+>>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
+>>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
+>>>>>>> a7828c9b350017c79b65171db32dcad3185a020f
 	@Autowired
 	private UserService userservice;
 	
@@ -34,12 +108,30 @@ public class UserController {
 		mdv2.setViewName("Login/a");
 		return mdv2;
 	}
+<<<<<<< HEAD
+=======
+	
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a7828c9b350017c79b65171db32dcad3185a020f
 	@RequestMapping("/toIndex")
 	public ModelAndView index() {
 		ModelAndView mdv3=new ModelAndView();
 		mdv3.setViewName("index");
 		return mdv3;
 	}
+<<<<<<< HEAD
+=======
+	
+	
+=======
+>>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
+>>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
+     
+	
+	
+>>>>>>> a7828c9b350017c79b65171db32dcad3185a020f
 	/**
 	 * 
 	 * @param id 
@@ -64,6 +156,12 @@ public class UserController {
 	}
 	
 	/**
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a7828c9b350017c79b65171db32dcad3185a020f
 	 * ×¢²á
 	 * @param user
 	 */
@@ -95,8 +193,12 @@ public class UserController {
 	@RequestMapping(value="/login" ,produces="application/json;charset=utf-8")
 	@ResponseBody
 	public String login(@RequestParam("name") String name,@RequestParam("password")String password) {
+<<<<<<< HEAD
 		System.out.println(name+" "+password);
 		User user=new User();
+=======
+	    User user=new User();
+>>>>>>> a7828c9b350017c79b65171db32dcad3185a020f
 	    user.setName(name);
 	    user.setPassword(password);
 	    DataStatus ds=new DataStatus();
@@ -111,21 +213,32 @@ public class UserController {
 	    	ds.setStatus("ÕËºÅ»òÃÜÂë´íÎó£¡");
 	    }
 	    return ds.toGson(ds);
+<<<<<<< HEAD
 	}
 	/**
+=======
+	    
+=======
+>>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
+>>>>>>> a7828c9b350017c79b65171db32dcad3185a020f
 	 * 
 	 * @param user
 	 */
 	@RequestMapping("/update")
 	@ResponseBody
 	public void update(@RequestBody User user) {
+<<<<<<< HEAD
 		 userservice.update(user);
+=======
+		userservice.update(user);
+>>>>>>> a7828c9b350017c79b65171db32dcad3185a020f
 	}
 	
 	@RequestMapping("/login")
 	@ResponseBody
 	public void login(String name,String password,Model model) {
 		//System.out.println("ÓÃ»§µÇÂ¼£º"+name+password);
+<<<<<<< HEAD
 
 	}
 	
@@ -133,3 +246,31 @@ public class UserController {
 }
 	
 
+=======
+<<<<<<< HEAD
+	}
+	
+
+	
+	
+=======
+>>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
+	}
+	
+	
+	
+<<<<<<< HEAD
+
+	
+>>>>>>> yq
+	
+=======
+>>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
+>>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
+	
+	
+	
+
+	
+}
+>>>>>>> a7828c9b350017c79b65171db32dcad3185a020f
