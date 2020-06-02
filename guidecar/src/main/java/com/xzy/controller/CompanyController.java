@@ -4,13 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 import javax.servlet.http.HttpServletRequest;
-=======
->>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
->>>>>>> zhangyunjie
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -87,23 +81,6 @@ public class CompanyController {
 	 */
 	@RequestMapping(value="/addCompany", produces = "application/json;charset=utf-8")
 	@ResponseBody
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-<<<<<<< HEAD
-	public String addCompany() {
-=======
-<<<<<<< HEAD
->>>>>>> zhangyunjie
-	public String addCompany(Company company) {
-		
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
->>>>>>> zhangyunjie
 	public String addCompany(Company company) {
 		//System.out.println(company);
 		company.setComnumber((int)((Math.random()*9+1)*1000));
@@ -123,24 +100,12 @@ public class CompanyController {
 	 * @param id 公司id
 	 * @return  删除成功与否信息
 	 */
-<<<<<<< HEAD
-	public String delCompany(int id) {
-		DataStatus ds=new DataStatus();
-		if(1=1) {
-=======
-<<<<<<< HEAD
 	@RequestMapping(value="/companyDel", produces = "application/json;charset=utf-8")
 	@ResponseBody
 	public String delCompany(int id) {
 		int i=companyService.delCompany(id);
 		DataStatus ds=new DataStatus();
 		if(i>0) {
-=======
-	public String delCompany(int id) {
-		DataStatus ds=new DataStatus();
-		if(1=1) {
->>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
->>>>>>> zhangyunjie
 			ds.setStatus("1");
 			ds.setMsg("删除成功！！");
 		}else{
@@ -149,12 +114,6 @@ public class CompanyController {
 		}
 		return ds.toGson(ds);
 	}
-<<<<<<< HEAD
-=======
-	public String addCompany() {
->>>>>>> zhangyunjie
-=======
-<<<<<<< HEAD
 	/**
 	 * 打开修改页面
 	 * @param id 公司id值
@@ -182,28 +141,4 @@ public class CompanyController {
 		}
 		return ds.toGson(ds);
 	}
-=======
-=======
-	public String addCompany() {
->>>>>>> zhangyunjie
->>>>>>> d47052da0dd85e409feae8f7ffd0417c82ba2fe8
->>>>>>> zhangyunjie
-		DataStatus ds=new DataStatus();
-		
-		return ds.toGson(ds);
-	}
-	
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
->>>>>>> zhangyunjie
-=======
-<<<<<<< HEAD
-=======
->>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
->>>>>>> zhangyunjie
->>>>>>> d47052da0dd85e409feae8f7ffd0417c82ba2fe8
->>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
->>>>>>> zhangyunjie
 }
