@@ -34,7 +34,12 @@
            where 1 = 1       
     </select>
     <!-- 添加订单 -->
+<<<<<<< HEAD
+
+    <insert id="addWayBill" parameterType="com.xzy.entity.WayBill">
+=======
     <insert id="addWaBili" parameterType="com.xzy.entity.WayBill">
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
     	insert 
     	into waybill
     	(
@@ -53,7 +58,10 @@
     	damages,
     	dept,
     	wb_status,
+<<<<<<< HEAD
+=======
     	recordingtime,
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
     	remarks
     	
     	) 
@@ -74,10 +82,74 @@
     		#{damages},
     		#{dept},
     		#{wbStatus},
+<<<<<<< HEAD
+=======
     		#{recordingtime},
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
     		#{remarks}
     		
     		)
     </insert>
+<<<<<<< HEAD
+
+    
+    <!-- 根据id查询订单信息 -->
+    <select id="findWayBillById" parameterType="int" resultType="com.xzy.entity.WayBill">
+    select
+        id,
+        wb_id,
+        name,
+        consignee_name,
+        consignee_phone,
+        consignor_name,
+        consignor_phone,
+        packing,
+        number,
+        weight,
+        freight,
+        deliveryfee,
+        pickupfee,
+        damages,
+        dept,
+        wb_status,
+        recordingtime,
+        remarks
+     from  waybill
+        where 
+        id=#{id}
+         
+    
+    </select>
+    
+    <!-- 根据id删除订单 -->
+    <delete id="delWayBill" parameterType="int">
+     delete from waybill where id=#{id}
+    
+    </delete>
+    
+    <update id="updateWayBill" parameterType="com.xzy.entity.WayBill">
+    update waybill set 
+                       wb_id=#{wbId},
+                       name=#{name},
+                       consignee_name=#{consigneeName},
+                       consignee_phone=#{consigneePhone},
+                       consignor_name=#{consignorName},
+                       consignor_phone=#{consignorPhone},
+                       packing=#{packing},
+                       number=#{number},
+                       weight=#{weight},
+                       freight=#{freight},
+                       deliveryfee=#{deliveryfee},
+                       pickupfee=#{pickupfee},
+                       damages=#{damages},
+                       dept=#{dept},
+                       
+                       
+                       
+    
+    </update>
+
+=======
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
    
 </mapper>

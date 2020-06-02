@@ -37,7 +37,10 @@ public class CompanyService {
 	public int findCompanyCount() {
 		return companyDao.findCompanyCount();
 	}
+<<<<<<< HEAD
 
+=======
+>>>>>>> zhangyunjie
 	/**
 	 * 添加公司
 	 * @param company  公司信息
@@ -46,7 +49,10 @@ public class CompanyService {
 	public int addCompany(Company company) {
 		return companyDao.addCompany(company);
 	}
+<<<<<<< HEAD
 
+=======
+>>>>>>> zhangyunjie
 
 	/**
 	 * 根据id删除公司

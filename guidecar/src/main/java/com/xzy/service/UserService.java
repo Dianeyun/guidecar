@@ -14,7 +14,14 @@ public class UserService {
 	public User findById(int id) {
 		return userDao.findById(id);
 	}
+<<<<<<< HEAD
 
+=======
+	
+	public User findById(int id) {
+		return userDao.findById(id);
+	}
+>>>>>>> zhangyunjie
 	
 	//根据用户名查询用户
 
@@ -35,12 +42,47 @@ public class UserService {
 	}
 
 	
+<<<<<<< HEAD
+=======
+	//根据用户id查询用户
+	public User findById(int id) {
+		return userDao.findById(id);
+	}
+	//根据用户名查询用户
+	public User findByUsername(String username) {
+		return userDao.findByUsername(username);
+	}
+>>>>>>> zhangyunjie
 	//新增用户
 	
 	public int findAdd(User user) {
 		return userDao.findAdd(user);
 		
 	}
+<<<<<<< HEAD
 	
+=======
+	//登录
+	//根据用户id和密码查询
+	/*public User findByUsernameAndPwd(String name,String password) {
+		User user=userDao.findByUsernameAndPwd(name, password);
+		return user;
+	}*/
+	public User findByUsernameAndPwd(User user) {
+		User u=userDao.findByUsernameAndPwd(user);
+		return u;
+	}
+
+	//新增用户
+	
+	public void update(User user) {
+		userDao.update(user);
+	}
+	//登录
+	//根据用户id和密码查询
+	public void findByUsernameAndPwd(String name,String password) {
+		userDao.findByUsernameAndPwd(name, password);
+	}
+>>>>>>> zhangyunjie
 
 }

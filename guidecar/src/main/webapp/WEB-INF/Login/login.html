@@ -26,12 +26,20 @@
 		</div>
 		<div class="layui-form-item">
 			<button class="layui-btn layui-block" lay-filter="formDemo" lay-submit >登录</button>
+<<<<<<< HEAD
+=======
+		</div>
+>>>>>>> zhangyunjie
 		</div>
 		<div class="layui-form-item">
 			<!--<button class="layui-btn layui-block" lay-filter="register" lay-submit>注册</button>-->
 			<a class="layui-btn layui-block" href="toA">注册</a>
+<<<<<<< HEAD
 
 			<a href = "" style ="padding#:0px 0px 0px 18px" onclick = "window.open('forgetPassword.jsp')">忘记密码？</a>  <!-- 打开新窗口 -->
+=======
+			<a href = "" style ="padding#:0px 0px 0px 18px" onclick = "window.open('forgetPassword.jsp')">忘记密码？</a>  <!--
+>>>>>>> zhangyunjie
 		</div>
 		<div class="layui-form-item layui-row">
 			<!-- <a href="javascript:;" class="seraph icon-qq layui-col-xs4 layui-col-sm4 layui-col-md4 layui-col-lg4"></a>
@@ -57,15 +65,22 @@
 				            type:'post',
 				            success:function (data) {
 				            	console.log(data);
-				                if (data.status == '1'){
+				                if (data.status == '2'){
 				                	layer.msg(data.msg);
 				                    location.href = "toIndex";
+				                }else if(data.status=='1'){
+				                	layer.msg(data.msg);
+				                	 location.href = "../waybili/toUser";
+				                }else if(data.status=='0'){
+				                	layer.msg(data.msg);
+				                	 location.href = "../waybili/toUser2";
 				                }else{
 				                	layer.msg(data.msg);
 				                }
 				            }
 				         }) 
 		 	  });
+<<<<<<< HEAD
 
 	  /*   $(".loginBody .seraph").click(function(){
 	        layer.msg("这只是做个样式，至于功能，你见过哪个后台能这样登录的？还是老老实实的找管理员去注册吧",{
@@ -80,6 +95,8 @@
 	        },1000);
 	        return false;
 	    })
+=======
+>>>>>>> zhangyunjie
 	    //表单输入效果
 	    $(".loginBody .input-item").click(function(e){
 	        e.stopPropagation();

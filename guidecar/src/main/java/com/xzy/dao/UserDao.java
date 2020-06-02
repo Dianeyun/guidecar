@@ -1,7 +1,10 @@
 package com.xzy.dao;
 
 import com.xzy.entity.User;
+<<<<<<< HEAD
 
+=======
+>>>>>>> zhangyunjie
 import org.apache.ibatis.annotations.Param;
 
 public interface UserDao {
@@ -14,8 +17,15 @@ public interface UserDao {
 	//注册
 	int findAdd(User user);
 
+<<<<<<< HEAD
 	
 	void update(User user);
+=======
+
+	
+	void update(User user);
+
+>>>>>>> zhangyunjie
 
 	//登录
 	//根据用户名和密码查询用户
@@ -23,6 +33,7 @@ public interface UserDao {
 	
 	
 	
+<<<<<<< HEAD
 	
 
     	
@@ -38,4 +49,7 @@ public interface UserDao {
 	
 	
 
+=======
+
+>>>>>>> zhangyunjie
 }

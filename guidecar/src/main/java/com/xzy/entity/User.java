@@ -24,7 +24,10 @@ public class User {
 		// TODO Auto-generated constructor stub
 	}
 	public User(int id, String name, String password, String nickName, String sex, String phone, String email,
+<<<<<<< HEAD
 
+=======
+>>>>>>> zhangyunjie
 			Date regtime, int deptId, int type, String location, int companyId) {
 		super();
 		this.id = id;
@@ -93,6 +96,10 @@ public class User {
 	}
 	public void setDeptId(int deptId) {
 		this.deptId = deptId;
+<<<<<<< HEAD
+=======
+
+>>>>>>> zhangyunjie
 	}
 	public int getType() {
 		return type;
@@ -115,6 +122,10 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", password=" + password + ", nickName=" + nickName + ", sex="
+<<<<<<< HEAD
+=======
+
+>>>>>>> zhangyunjie
 				+ sex + ", phone=" + phone + ", email=" + email + ", regtime=" + regtime + ", deptId=" + deptId
 				+ ", type=" + type + ", location=" + location + ", companyId=" + companyId + "]";
 	}

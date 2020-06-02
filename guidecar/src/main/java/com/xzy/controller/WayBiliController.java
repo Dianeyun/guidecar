@@ -5,8 +5,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+<<<<<<< HEAD
+
 import java.util.HashMap;
 import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+=======
+import java.util.HashMap;
+import java.util.Map;
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
 import java.util.List;
 import com.xzy.entity.WayBill;
 
@@ -44,8 +52,34 @@ public class WayBiliController {
 		return mav2;
 	}
 	
+<<<<<<< HEAD
+	/**
+	 * 修改页面
+	 * @param id
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping("/toWayBillModify")
+	public ModelAndView toWayBillModify(int id,HttpServletRequest request) {
+		WayBill waybill=wayBiliService.findWayBillById(id);
+		request.setAttribute("waybili", waybill);
+		ModelAndView mav3=new ModelAndView();
+		mav3.setViewName("WayBili/waybiliModify");
+		return mav3;
+	}
 	
 	
+	
+	/**
+	 * 查询订单列表
+	 * @param page
+	 * @param limit
+	 * @return
+	 */
+=======
+	
+	
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
 	@RequestMapping(value="/findWayBiliList",produces="application/json;charset=utf-8")
 	@ResponseBody
 	public String findWayBiliList(int page, int limit) {
@@ -72,6 +106,52 @@ public class WayBiliController {
 		return  mav;
 	}
 	
+<<<<<<< HEAD
+
+	/**
+	 * 添加订单数据
+	 * @param waybill
+	 * @return
+	 */
+	@RequestMapping(value="/addWayBill",produces="application/json;charset=utf-8")
+	@ResponseBody
+	public String addMayBili(WayBill waybill) {
+		int i=wayBiliService.addWayBill(waybill);
+		DataStatus ds=new DataStatus();
+		if(i>0) {
+			ds.setStatus("1");
+			ds.setMsg("添加成功！");
+		}else {
+			ds.setStatus("0");
+			ds.setMsg("添加失败");
+		}
+		return ds.toGson(ds);
+		
+	}
+	
+	
+	/**
+	 * 根据id删除
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping(value="/delWayBill",produces="application/json;charset=utf-8")
+	@ResponseBody
+	public String delWayBill(int id) {
+		int i=wayBiliService.delWayBill(id);
+		DataStatus ds=new DataStatus();
+		if(i>0) {
+			ds.setStatus("1");
+			ds.setMsg("删除成功");
+		}else {
+			ds.setStatus("0");
+			ds.setMsg("删除失败");
+		}
+		return ds.toGson(ds);
+	}
+	
+
+=======
 	
 	@RequestMapping(value="/addWaBili",produces="application/json;charset=utf-8")
 	@ResponseBody
@@ -84,6 +164,7 @@ public class WayBiliController {
 	
 	
 	
+>>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
 	
 	
 

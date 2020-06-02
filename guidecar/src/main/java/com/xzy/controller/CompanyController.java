@@ -110,6 +110,10 @@ public class CompanyController {
 		}
 		return ds.toGson(ds);
 	}
+<<<<<<< HEAD
+=======
+
+>>>>>>> zhangyunjie
 	/**
 	 * 打开修改页面
 	 * @param id 公司id值
@@ -123,6 +127,8 @@ public class CompanyController {
 		mv.setViewName("Company/companyModify");
 		return mv;
 	}
+	
+	
 	@RequestMapping(value="/companyModify", produces = "application/json;charset=utf-8")
 	@ResponseBody
 	public String CompanyModify(Company company) {
