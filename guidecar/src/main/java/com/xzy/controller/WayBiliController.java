@@ -145,16 +145,6 @@ public class WayBiliController {
 		}
 		return ds.toGson(ds);
 	}
-
-	
-	@RequestMapping(value="/addWaBili",produces="application/json;charset=utf-8")
-	@ResponseBody
-	public String addMayBili(WayBill waybill) {
-		
-		DataStatus ds=new DataStatus();
-		
-		return ds.toGson(ds);
-	}
 	
 	
 	

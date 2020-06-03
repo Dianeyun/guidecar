@@ -37,7 +37,6 @@ public class WayBiliService {
 		return wayBiliDao.findWayBiliCount();
 	}
 	
-<<<<<<< HEAD
 	/**
 	 * Ìí¼Ó¶©µ¥
 	 * @param waybill
@@ -75,12 +74,6 @@ public class WayBiliService {
 	 */
 	public int WayBillModify(WayBill waybill) {
 		return wayBiliDao.WayBillModify(waybill);
-
-=======
-	public void addWayBill(WayBill  waybill) {
-		wayBiliDao.addWayBill(waybill);
-		
->>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
 	}
 	
 	

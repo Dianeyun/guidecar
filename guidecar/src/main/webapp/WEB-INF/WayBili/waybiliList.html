@@ -141,13 +141,8 @@
 			  });
 			  //批量,单个删除使用同一个方法
 			   function deleteArticle(id){
-<<<<<<< HEAD
 				   $.post("delWayBill", {id:id},function(data){
 				   	    if(data.status==1){
-=======
-				   $.post("", {id:id},function(data){
-				   	    if(data==1){
->>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
 				   	     table.reload('dataTable','data');//重新加载表格数据
 				   	    }else{
 				   	    	layer.msg(data.msg, {icon: 2});

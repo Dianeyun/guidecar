@@ -10,19 +10,7 @@
         select * from user where username=#{username}
         </select>
         <!-- 用户注册 -->
-<<<<<<< HEAD
         <insert id="findAdd" parameterType="com.xzy.entity.User" >
-=======
-<<<<<<< HEAD
-        <insert id="add" parameterType="com.xzy.dao.UserDao">
-=======
-<<<<<<< HEAD
-        <insert id="findAdd" parameterType="com.xzy.entity.User" >
-=======
-        <insert id="add" parameterType="com.xzy.dao.UserDao">
->>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
->>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
->>>>>>> a7828c9b350017c79b65171db32dcad3185a020f
            insert into
                   user
               (
@@ -35,32 +23,13 @@
                   dept_id,
                   location,
                   company_id
-<<<<<<< HEAD
 
-              )  
+              )    
 
-                  
-=======
-<<<<<<< HEAD
-              )    
-=======
-<<<<<<< HEAD
-              )  
-=======
-              )    
->>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
->>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
->>>>>>> a7828c9b350017c79b65171db32dcad3185a020f
                values
                (
                  #{name},
                  #{password},
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> a7828c9b350017c79b65171db32dcad3185a020f
                  #{nickName},
                  #{sex},
                  #{phone},
@@ -68,38 +37,11 @@
                  #{deptId},
                  #{location},
                  #{companyId}
-<<<<<<< HEAD
-
-         
-=======
-=======
->>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
-                 #{nick_name},
-                 #{sex},
-                 #{phone},
-                 #{email},
-                 #{dept_id},
-                 #{location},
-                 #{company_id}
-<<<<<<< HEAD
-=======
->>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
->>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
->>>>>>> a7828c9b350017c79b65171db32dcad3185a020f
                )
      </insert>
      <!-- 用户登录 -->
       <select id="findByUsernameAndPwd"  parameterType="map" resultType="com.xzy.entity.User">
             select name,password from user  where name=#{name} and password=#{password}
-<<<<<<< HEAD
-
       </select>     
   
 </mapper>
-=======
-      
-      </select>     
-     
-        
-        </mapper>
->>>>>>> a7828c9b350017c79b65171db32dcad3185a020f

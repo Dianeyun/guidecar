@@ -27,7 +27,6 @@
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/"></property>
 		<property name="suffix" value=".html"></property>
-<<<<<<< HEAD
 	</bean> -->
 	
 	<!-- 配置html视图解析器 -->
@@ -61,8 +60,6 @@
 		<property name="suffix" value=".jsp" />		<!-- jsp后缀 -->
 		<property name="contentType" value="text/html;charset=UTF-8"/>
 		<property name="order" value="0" />		<!-- 配置优先等级，越小优先级越高 -->
-=======
->>>>>>> a7828c9b350017c79b65171db32dcad3185a020f
 	</bean>
 	<!-- 配置连接池对象 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
