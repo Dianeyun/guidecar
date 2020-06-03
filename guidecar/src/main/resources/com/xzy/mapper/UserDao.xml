@@ -10,27 +10,7 @@
         select * from user where username=#{username}
         </select>
         <!-- 用户注册 -->
-<<<<<<< HEAD
         <insert id="findAdd" parameterType="com.xzy.entity.User" >
-<<<<<<< HEAD
-
-=======
->>>>>>> zhangyunjie
-=======
-<<<<<<< HEAD
-        <insert id="findAdd" parameterType="com.xzy.entity.User" >
-=======
-<<<<<<< HEAD
-        <insert id="add" parameterType="com.xzy.dao.UserDao">
-=======
-<<<<<<< HEAD
-        <insert id="findAdd" parameterType="com.xzy.entity.User" >
-=======
-        <insert id="add" parameterType="com.xzy.dao.UserDao">
->>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
->>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
->>>>>>> a7828c9b350017c79b65171db32dcad3185a020f
->>>>>>> zhangyunjie
            insert into
                   user
               (
@@ -43,47 +23,11 @@
                   dept_id,
                   location,
                   company_id
-<<<<<<< HEAD
-<<<<<<< HEAD
               )     
- 
- 
-
-=======
-=======
->>>>>>> zhangyunjie
-
-              )  
-
-                  
-<<<<<<< HEAD
->>>>>>> zhangyunjie
-=======
-=======
-<<<<<<< HEAD
-              )    
-=======
-<<<<<<< HEAD
-              )  
-=======
-              )    
->>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
->>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
->>>>>>> a7828c9b350017c79b65171db32dcad3185a020f
->>>>>>> zhangyunjie
                values
                (
                  #{name},
                  #{password},
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> a7828c9b350017c79b65171db32dcad3185a020f
->>>>>>> zhangyunjie
                  #{nickName},
                  #{sex},
                  #{phone},
@@ -91,56 +35,11 @@
                  #{deptId},
                  #{location},
                  #{companyId}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
-         
->>>>>>> zhangyunjie
-=======
-
-         
-=======
-=======
->>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
-                 #{nick_name},
-                 #{sex},
-                 #{phone},
-                 #{email},
-                 #{dept_id},
-                 #{location},
-                 #{company_id}
-<<<<<<< HEAD
-=======
->>>>>>> b6ec5007b0f82461b25e9dc45395442b9bc5fb93
->>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
->>>>>>> a7828c9b350017c79b65171db32dcad3185a020f
->>>>>>> zhangyunjie
                )
      </insert>
      <!-- 用户登录 -->
       <select id="findByUsernameAndPwd"  parameterType="map" resultType="com.xzy.entity.User">
             select name,password from user  where name=#{name} and password=#{password}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> zhangyunjie
       </select>     
   
 </mapper>
-=======
-<<<<<<< HEAD
-
-      </select>     
-  
-</mapper>
->>>>>>> zhangyunjie
-=======
-      
-      </select>     
-     
-        
-        </mapper>
->>>>>>> a7828c9b350017c79b65171db32dcad3185a020f
->>>>>>> zhangyunjie

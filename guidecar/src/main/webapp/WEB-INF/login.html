@@ -50,43 +50,6 @@
 	    var form = layui.form,
 	        layer = parent.layer === undefined ? layui.layer : top.layer
 	        $ = layui.jquery;
-
-	  /*   $(".loginBody .seraph").click(function(){
-	        layer.msg("这只是做个样式，至于功能，你见过哪个后台能这样登录的？还是老老实实的找管理员去注册吧",{
-	            time:5000
-	        });
-	    }) */
-
-	    //登录按钮
-	    form.on("submit(login)",function(data){
-	        $(this).text("登录中...").attr("disabled","disabled").addClass("layui-disabled");
-	        setTimeout(function(){
-<<<<<<< HEAD
-	            window.location.href = "/company/toIndex";
-
-	            window.location.href = "/layuicms2.0";
-
-=======
-<<<<<<< HEAD
-	            window.location.href = "/company/toIndex";
-
-	            window.location.href = "/layuicms2.0";
-
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-	            window.location.href = "/layuicms2.0";
-=======
-	            window.location.href = "/company/toIndex";
->>>>>>> master
-=======
-	            window.location.href = "/layuicms2.0";
->>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
->>>>>>> a7828c9b350017c79b65171db32dcad3185a020f
->>>>>>> zhangyunjie
-	        },1000);
-	        return false;
-	    })
 	    //表单输入效果
 	    $(".loginBody .input-item").click(function(e){
 	        e.stopPropagation();

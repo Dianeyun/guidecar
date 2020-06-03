@@ -5,32 +5,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
-
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
->>>>>>> zhangyunjie
-
 import java.util.HashMap;
 import java.util.Map;
-
-<<<<<<< HEAD
-import javax.servlet.http.HttpServletRequest;
-=======
-import java.util.HashMap;
-import java.util.Map;
->>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
-=======
->>>>>>> zhangyunjie
 import java.util.List;
 import com.xzy.entity.WayBill;
-
-
 import com.google.gson.Gson;
 import com.xzy.entity.DataStatus;
 import com.xzy.service.WayBiliService;
@@ -63,12 +42,6 @@ public class WayBiliController {
 		mav2.setViewName("WayBili/waybiliList");
 		return mav2;
 	}
-	
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> zhangyunjie
 	/**
 	 * ÐÞ¸ÄÒ³Ãæ
 	 * @param id
@@ -92,13 +65,6 @@ public class WayBiliController {
 	 * @param limit
 	 * @return
 	 */
-<<<<<<< HEAD
-=======
-	
-	
->>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
-=======
->>>>>>> zhangyunjie
 	@RequestMapping(value="/findWayBiliList",produces="application/json;charset=utf-8")
 	@ResponseBody
 	public String findWayBiliList(int page, int limit) {
@@ -124,12 +90,7 @@ public class WayBiliController {
 		mav.setViewName("WayBili/waybiliAdd");
 		return  mav;
 	}
-	
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> zhangyunjie
 
 	/**
 	 * Ìí¼Ó¶©µ¥Êý¾Ý
@@ -170,32 +131,30 @@ public class WayBiliController {
 			ds.setStatus("0");
 			ds.setMsg("É¾³ýÊ§°Ü");
 		}
+
 		return ds.toGson(ds);
+		
 	}
-<<<<<<< HEAD
 	
-
-=======
-=======
-
->>>>>>> zhangyunjie
 	
-	@RequestMapping(value="/addWaBili",produces="application/json;charset=utf-8")
+	/**
+	 * ÐÞ¸Ä¶©µ¥
+	 * @param waybill
+	 * @return
+	 */
+	@RequestMapping(value="/updateWayBill",produces="application/json;charset=utf-8")
 	@ResponseBody
-	public String addMayBili(WayBill waybill) {
-		
+	public String updateWayBill(WayBill waybill) {
+		int i=wayBiliService.updateWayBill(waybill);
 		DataStatus ds=new DataStatus();
-		
+		if(i>0) {
+			ds.setStatus("1");
+			ds.setMsg("ÐÞ¸Ä³É¹¦");
+		}else {
+			ds.setStatus("0");
+			ds.setMsg("ÐÞ¸ÄÊ§°Ü");
+		}
 		return ds.toGson(ds);
 	}
-	
-	
-	
-<<<<<<< HEAD
->>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
-	
-	
-=======
->>>>>>> zhangyunjie
 
 }

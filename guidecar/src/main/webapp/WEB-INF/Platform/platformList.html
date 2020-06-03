@@ -48,10 +48,6 @@
 	 		 var $ = layui.jquery;//获得jquery模块
 	 		 var table = layui.table;//获得table模块
 			   //使用layUI表格组件异步加载数据,生成数据表格
-<<<<<<< HEAD:guidecar/src/main/webapp/WEB-INF/Platform/platformList.html
-
-=======
->>>>>>> zhangyunjie:guidecar/src/main/webapp/WEB-INF/Company/companyList.html
 			  table.render({
 	 		 	  title:"公司列表"
 				 ,elem: '#dataTable'   
@@ -129,11 +125,7 @@
 			    	layer.open({
 			           	type:2,//表示使用iframe嵌入一个窗口引入一个页面
 			           	title:"编辑公司",
-<<<<<<< HEAD:guidecar/src/main/webapp/WEB-INF/Platform/platformList.html
 			           	content:"toCompanyModify?id="+data.id,//访问控制器,查询部门,菜单数据
-=======
-			           	content:"?id="+data.id,//访问控制器,查询部门,菜单数据
->>>>>>> zhangyunjie:guidecar/src/main/webapp/WEB-INF/Company/companyList.html
 			           	area: ['500px', '370px'],//设置宽高
 			           	offset: '10px'
 			        });
@@ -141,21 +133,8 @@
 			  });
 			  //批量,单个删除使用同一个方法
 			   function deleteArticle(id){
-<<<<<<< HEAD:guidecar/src/main/webapp/WEB-INF/Platform/platformList.html
 				   $.post("companyDel", {id:id},function(data){
-<<<<<<< HEAD:guidecar/src/main/webapp/WEB-INF/Platform/platformList.html
 				   	    if(data.status==1){
-=======
-				   	    if(data==1){
->>>>>>> zhangyunjie:guidecar/src/main/webapp/WEB-INF/Platform/platformList.html
-=======
-<<<<<<< HEAD
-				   $.post("companyDel", {id:id},function(data){
-=======
-				   $.post("", {id:id},function(data){
->>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
-				   	    if(data==1){
->>>>>>> zhangyunjie:guidecar/src/main/webapp/WEB-INF/Company/companyList.html
 				   	     table.reload('dataTable','data');//重新加载表格数据
 				   	    }else{
 				   	    	layer.msg(data.msg, {icon: 2});
