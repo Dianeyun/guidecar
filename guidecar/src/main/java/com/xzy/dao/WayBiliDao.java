@@ -20,7 +20,6 @@ public interface WayBiliDao {
 	 * @return
 	 */
 	int findWayBiliCount( );
-<<<<<<< HEAD
 
 	/**
 	 * Ìí¼Ó¶©µ¥
@@ -51,11 +50,9 @@ public interface WayBiliDao {
 	 * @param waybill
 	 * @return
 	 */
-	int WayBillModify(WayBill waybill);
-=======
-	
-	void addWayBill(WayBill waybill);
->>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
+	int updateWayBill(WayBill waybill);
+
+
 	
 	
 	

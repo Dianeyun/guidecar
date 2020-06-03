@@ -2,7 +2,7 @@ package com.xzy.dao;
 
 import com.xzy.entity.User;
 
-import org.apache.ibatis.annotations.Param;
+
 
 public interface LoginDao {
 	

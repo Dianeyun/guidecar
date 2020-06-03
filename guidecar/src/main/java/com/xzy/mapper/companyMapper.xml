@@ -7,24 +7,14 @@
 	<select id="findCompanyList" parameterType="map" resultType="map">
 		select id,name,regtime,fshort,bulino,corname,phone,detaress,comnumber,comadmin
 		 from company limit #{start},#{pageSize}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-		
-=======
-<<<<<<< HEAD
-=======
-		
->>>>>>> zhangyunjie
->>>>>>> d47052da0dd85e409feae8f7ffd0417c82ba2fe8
->>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
+
 	</select>
 	<!-- 查询公司总数 -->
 	<select id="findCompanyCount" resultType="int">
        select count(*) from company 
            where 1 = 1       
     </select>
-<<<<<<< HEAD
+
     <!-- 根据id查询公司信息 -->
     <select id="findCompanyById" parameterType="int" resultType="com.xzy.entity.Company">
     	select id,name,regtime,fshort,bulino,corname,phone,detaress,comnumber,comadmin
@@ -35,20 +25,8 @@
 		delete from company where id=#{id}
 	</delete>
  
-    <!-- 添加公司 -->
 
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
     <!-- 添加公司 -->
-=======
->>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
->>>>>>> zhangyunjie
->>>>>>> d47052da0dd85e409feae8f7ffd0417c82ba2fe8
->>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
     <insert id="addCompany" parameterType="com.xzy.entity.Company">
     	insert into company(name,fshort,bulino,corname,phone,detaress,comadmin,comnumber) 
     		values(#{name},#{fshort},#{bulino},#{corname},#{phone},#{detaress},#{comadmin},#{comnumber})

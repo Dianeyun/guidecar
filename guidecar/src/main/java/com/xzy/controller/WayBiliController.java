@@ -5,20 +5,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
-<<<<<<< HEAD
-
 import java.util.HashMap;
 import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
-=======
-import java.util.HashMap;
-import java.util.Map;
->>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
 import java.util.List;
 import com.xzy.entity.WayBill;
-
-
 import com.google.gson.Gson;
 import com.xzy.entity.DataStatus;
 import com.xzy.service.WayBiliService;
@@ -52,7 +43,7 @@ public class WayBiliController {
 		return mav2;
 	}
 	
-<<<<<<< HEAD
+
 	/**
 	 * 修改页面
 	 * @param id
@@ -62,9 +53,10 @@ public class WayBiliController {
 	@RequestMapping("/toWayBillModify")
 	public ModelAndView toWayBillModify(int id,HttpServletRequest request) {
 		WayBill waybill=wayBiliService.findWayBillById(id);
-		request.setAttribute("waybili", waybill);
+		System.out.println(waybill);
+		request.setAttribute("waybill", waybill);
 		ModelAndView mav3=new ModelAndView();
-		mav3.setViewName("WayBili/waybiliModify");
+		mav3.setViewName("WayBili/waybiliUpdate");
 		return mav3;
 	}
 	
@@ -76,10 +68,7 @@ public class WayBiliController {
 	 * @param limit
 	 * @return
 	 */
-=======
-	
-	
->>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
+
 	@RequestMapping(value="/findWayBiliList",produces="application/json;charset=utf-8")
 	@ResponseBody
 	public String findWayBiliList(int page, int limit) {
@@ -106,7 +95,7 @@ public class WayBiliController {
 		return  mav;
 	}
 	
-<<<<<<< HEAD
+
 
 	/**
 	 * 添加订单数据
@@ -150,21 +139,29 @@ public class WayBiliController {
 		return ds.toGson(ds);
 	}
 	
-
-=======
 	
-	@RequestMapping(value="/addWaBili",produces="application/json;charset=utf-8")
+	/**
+	 * 修改订单
+	 * @param waybill
+	 * @return
+	 */
+	@RequestMapping(value="/updateWayBill",produces="application/json;charset=utf-8")
 	@ResponseBody
-	public String addMayBili(WayBill waybill) {
-		
+	public String updateWayBill(WayBill waybill) {
+		int i=wayBiliService.updateWayBill(waybill);
 		DataStatus ds=new DataStatus();
-		
+		if(i>0) {
+			ds.setStatus("1");
+			ds.setMsg("修改成功");
+		}else {
+			ds.setStatus("0");
+			ds.setMsg("修改失败");
+		}
 		return ds.toGson(ds);
 	}
 	
-	
-	
->>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
+
+
 	
 	
 

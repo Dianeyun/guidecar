@@ -11,10 +11,6 @@
         </select>
         <!-- 用户注册 -->
         <insert id="findAdd" parameterType="com.xzy.entity.User" >
-
-
-
-        <insert id="findAdd" parameterType="com.xzy.entity.User" >
            insert into
                   user
               (

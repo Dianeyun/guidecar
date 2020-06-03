@@ -1,5 +1,6 @@
 package com.xzy.controller;
 
+import java.sql.Timestamp;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -34,7 +35,7 @@ public class CompanyController {
 	@RequestMapping("/toIndex")
 	public ModelAndView toIndex() {
 		ModelAndView mav=new ModelAndView();
-		mav.setViewName("index");
+		mav.setViewName("PlatformIndex");
 		return  mav;
 	}
 	/**
@@ -81,17 +82,6 @@ public class CompanyController {
 	 */
 	@RequestMapping(value="/addCompany", produces = "application/json;charset=utf-8")
 	@ResponseBody
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-	public String addCompany() {
-=======
-<<<<<<< HEAD
-	public String addCompany(Company company) {
-		
-=======
-<<<<<<< HEAD
->>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
 	public String addCompany(Company company) {
 		//System.out.println(company);
 		company.setComnumber((int)((Math.random()*9+1)*1000));
@@ -125,7 +115,7 @@ public class CompanyController {
 		}
 		return ds.toGson(ds);
 	}
-<<<<<<< HEAD
+
 
 	/**
 	 * 打开修改页面
@@ -146,12 +136,7 @@ public class CompanyController {
 	@ResponseBody
 	public String CompanyModify(Company company) {
 		int i=companyService.companyModify(company);
-=======
-=======
-	public String addCompany() {
->>>>>>> zhangyunjie
->>>>>>> d47052da0dd85e409feae8f7ffd0417c82ba2fe8
->>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
+
 		DataStatus ds=new DataStatus();
 		if(i>0) {
 			ds.setStatus("1");
@@ -162,15 +147,5 @@ public class CompanyController {
 		}
 		return ds.toGson(ds);
 	}
-<<<<<<< HEAD
-=======
-	
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> d75f37ac26b1671ae3b85d3716fd4ea6959e117a
->>>>>>> zhangyunjie
->>>>>>> d47052da0dd85e409feae8f7ffd0417c82ba2fe8
->>>>>>> bea4996526394f6440a7c03c25b825957a3cb83d
+
 }
