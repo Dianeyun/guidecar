@@ -12,5 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/company")
 public class CompanyController {
-
+	
+	@RequestMapping("/toIndex")
+	public String toCompanyIndex() {
+		return "PlatformIndex";
+	}
+	
+	
 }

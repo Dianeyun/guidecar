@@ -33,7 +33,7 @@ public class PlatformController {
 	@RequestMapping("/toIndex")
 	public ModelAndView toIndex() {
 		ModelAndView mav=new ModelAndView();
-		mav.setViewName("index");
+		mav.setViewName("PlatformIndex");
 		return  mav;
 	}
 	/**
