@@ -6,7 +6,6 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.xzy.dao.CompanyDao;
 import com.xzy.entity.Company;
 /**
@@ -14,8 +13,6 @@ import com.xzy.entity.Company;
  * @author J¡¤Y
  *
  */
-
-
 @Service
 public class CompanyService {
 	@Autowired

@@ -11,38 +11,64 @@
 </head>
 <body class="layui-view-body">
     <form class="layui-form" action="">
-    <div class="layui-form-item" style="display: none;">
+      <div class="layui-form-item" style="display: none;">
 	    <label class="layui-form-label">id</label>
 	    <div class="layui-input-block">
-	      <input type="text" id="id" name="id" value="${article.id }" required  lay-verify="required" placeholder="请输入名字" autocomplete="off" class="layui-input">
+	      <input type="text" id="id" name="id" value="${company.id}" required  lay-verify="required" placeholder="请输入id" autocomplete="off" disabled="disabled" class="layui-input">
 	    </div>
-	  </div>
-	  <div class="layui-form-item">
-	    <label class="layui-form-label">名字</label>
+	</div>
+    <div class="layui-form-item">
+	    <label class="layui-form-label">公司编号</label>
 	    <div class="layui-input-block">
-	      <input type="text" id="title" name="title" value="${article.title }" required  lay-verify="required" placeholder="请输入名字" autocomplete="off" class="layui-input">
+	      <input type="text" id="comnumber" name="comnumber" value="${company.comnumber}" required  lay-verify="required" placeholder="请输入编号" autocomplete="off" disabled="disabled" class="layui-input">
 	    </div>
-	  </div>
-	  <div class="layui-form-item">
-	    <label class="layui-form-label">作者</label>
+	</div>
+	<div class="layui-form-item">
+	    <label class="layui-form-label">公司简称</label>
 	    <div class="layui-input-inline">
-	      <input type="text" id="author" name="author" value="${article.author }" required lay-verify="required" placeholder="请输入作者" autocomplete="off" class="layui-input">
+	      <input type="text" id="fshort" name="fshort" value="${company.fshort}" required lay-verify="required" placeholder="请输入简称" autocomplete="off" class="layui-input">
+	    </div>
+	</div>
+	<div class="layui-form-item">
+	    <label class="layui-form-label">公司全称</label>
+	    <div class="layui-input-inline">
+	      <input type="text" id="name" name="name" value="${company.name}" required lay-verify="required" placeholder="请输入全称" autocomplete="off" class="layui-input">
+	    </div>
+	</div>
+	<div class="layui-form-item">
+	    <label class="layui-form-label">注册时间</label>
+	    <div class="layui-input-inline">
+	      <input type="date" id="regtime" name="regtime" value="${company.regtime}" required lay-verify="required" placeholder="请输入时间" autocomplete="off" class="layui-input">
+	    </div>
+	</div>
+	<div class="layui-form-item">
+	    <label class="layui-form-label">营业证号</label>
+	    <div class="layui-input-inline">
+	      <input type="text" id="bulino" name="bulino" value="${company.bulino}" required lay-verify="required" placeholder="请输入号码" autocomplete="off" class="layui-input">
 	    </div>
 	  </div>
-	  <div class="layui-form-item">
-	    <label class="layui-form-label">类型</label>
-	    <div class="layui-input-block">
-	     <select id="city" name="typeId" lay-verify="required">
-			<c:forEach  items="${typeList }" var="Type">
-				<option value="${Type.id }" ${Type.id==article.typeId?'selected':'' }>${Type.name }</option>
-			</c:forEach>
-		</select>    
+	   <div class="layui-form-item">
+	    <label class="layui-form-label">公司法人</label>
+	    <div class="layui-input-inline">
+	      <input type="text" id="corname" name="corname" value="${company.corname}" required lay-verify="required" placeholder="请输入法人" autocomplete="off" class="layui-input">
 	    </div>
 	  </div>
-	  <div class="layui-form-item layui-form-text">
-	    <label class="layui-form-label">内容</label>
-	    <div class="layui-input-block">
-	      <textarea id="content" name="content" placeholder="请输入内容" class="layui-textarea">${article.content}</textarea>
+	   <div class="layui-form-item">
+	    <label class="layui-form-label">公司电话</label>
+	    <div class="layui-input-inline">
+	      <input type="text" id="phone" name="phone" value="${company.phone}" required lay-verify="required" placeholder="请输入电话" autocomplete="off" class="layui-input">
+	    </div>
+	  </div>
+	   <div class="layui-form-item">
+	    <label class="layui-form-label">公司地址</label>
+	    <div class="layui-input-inline">
+	      <input type="text" id="detaress" name="detaress" value="${company.detaress}" required lay-verify="required" placeholder="请输入地址" autocomplete="off" class="layui-input">
+	    </div>
+	  </div>
+	   <div class="layui-form-item">
+	    <label class="layui-form-label">公司账号</label>
+	    <div class="layui-input-inline">
+	      <input type="text" id="comadmin" name="comadmin" value="${company.comadmin}" required lay-verify="required" placeholder="请输入账号" autocomplete="off" disabled="disabled" class="layui-input">
 	    </div>
 	  </div>
 	  <div class="layui-form-item">
@@ -68,16 +94,16 @@
 		 	  form.on('submit(formModeify)', function(data){
 		 		   //$("#d1").css("display","");
 		 		   console.log(data.field);
-		 		   var article=data.field;
+		 		   var company=data.field;
 				 		  $.ajax({
-				         	url:'articleModify2',
-				            data:article,
+				         	url:'companyModify',
+				            data:company,
 				            dataType:'json',
 				            type:'post',
 				            success:function (data) {
 				                if (data.status == '1'){
 				                	layer.msg(data.msg);
-				                	$("#d1").css("display","none");
+				                	layer.closeAll('iframe');//关闭所有的iframe层  
 				                }else{
 				                    layer.msg(data.msg);
 				                    

@@ -66,22 +66,13 @@ public class WayBiliService {
 		return wayBiliDao.delWayBill(id);
 	}
 	
-	
 	/**
 	 * ÐÞ¸Ä¶©µ¥
 	 * @param waybill
 	 * @return
 	 */
-	public int WayBillModify(WayBill waybill) {
-		return wayBiliDao.WayBillModify(waybill);
+	public int updateWayBill(WayBill waybill) {
+		return wayBiliDao.updateWayBill(waybill);
 	}
-	
-	
-	
-	
-
-	
-	
-	
 
 }

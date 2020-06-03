@@ -26,7 +26,6 @@ public interface CompanyDao {
 	 * @return 1-成功   0-失败
 	 */
 	int addCompany(Company company);
-
 	/**
 	 * 根据id删除公司
 	 * @param id id值
@@ -45,5 +44,4 @@ public interface CompanyDao {
 	 * @return  1-成功  0-失败
 	 */
 	int companyModify(Company company);
-
 }

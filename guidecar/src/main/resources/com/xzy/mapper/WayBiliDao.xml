@@ -6,6 +6,7 @@
 	<!--查询订单列表  -->
 	<select id="findWayBiliList" parameterType="map" resultType="map">
 		select 
+		id,
 		wb_id,
 		name,
 		consignee_name,
@@ -24,7 +25,13 @@
 		recordingtime,
 		remarks
 		
-		 from waybill limit #{start},#{pageSize}
+		 from waybill <if test="name !=null &amp;&amp; name!='' ">
+		                   and name=#{name}
+		              </if> 
+		              <if test="wb_id !=null &amp;&amp; wb_id!='' ">
+		                   and wb_id=#{wb_id}
+		              </if>
+		              limit #{start},#{pageSize}
 		
 	</select>
 	<!-- 查询订单总数 -->
@@ -33,8 +40,10 @@
             waybill 
            where 1 = 1       
     </select>
+    
     <!-- 添加订单 -->
-    <insert id="addWaBili" parameterType="com.xzy.entity.WayBill">
+    <insert id="addWayBill" parameterType="com.xzy.entity.WayBill">
+
     	insert 
     	into waybill
     	(
@@ -103,7 +112,6 @@
      from  waybill
         where 
         id=#{id}
-         
     
     </select>
     
@@ -112,7 +120,6 @@
      delete from waybill where id=#{id}
     
     </delete>
-    
     <update id="updateWayBill" parameterType="com.xzy.entity.WayBill">
     update waybill set 
                        wb_id=#{wbId},

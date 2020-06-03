@@ -8,12 +8,12 @@ import java.sql.Date;
  */
 public class WayBill {
 	private int id;  //订单id
-	private String wbId;  //订单号
+	private String wb_id;  //订单号
 	private String name;  //货物名称
-	private String consigneeName;  //收货人姓名
-	private String consigneePhone;  //收货人电话
-	private String consignorName;  //发货人姓名
-	private String consignorPhone;  //发货人电话
+	private String consignee_name;  //收货人姓名
+	private String consignee_phone;  //收货人电话
+	private String consignor_name;  //发货人姓名
+	private String consignor_phone;  //发货人电话
 	private String packing;  //包装描述
 	private int number;  //件数
 	private int weight;  //重量
@@ -22,24 +22,26 @@ public class WayBill {
 	private int pickupfee;  //提货费
 	private int damages;  //赔偿费
 	private String dept;  //目的部门
-	private String wbStatus;  //订单状态
+	private String wb_status;  //订单状态
 	private Date recordingtime;  //录单时间
 	private String remarks;  //订单备注
+	private int company_id;  //公司id
 	public WayBill() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public WayBill(int id, String wbId, String name, String consigneeName, String consigneePhone, String consignorName,
-			String consignorPhone, String packing, int number, int weight, int freight, int deliveryfee, int pickupfee,
-			int damages, String dept, String wbStatus, Date recordingtime, String remarks) {
+	public WayBill(int id, String wb_id, String name, String consignee_name, String consignee_phone,
+			String consignor_name, String consignor_phone, String packing, int number, int weight, int freight,
+			int deliveryfee, int pickupfee, int damages, String dept, String wb_status, Date recordingtime,
+			String remarks, int company_id) {
 		super();
 		this.id = id;
-		this.wbId = wbId;
+		this.wb_id = wb_id;
 		this.name = name;
-		this.consigneeName = consigneeName;
-		this.consigneePhone = consigneePhone;
-		this.consignorName = consignorName;
-		this.consignorPhone = consignorPhone;
+		this.consignee_name = consignee_name;
+		this.consignee_phone = consignee_phone;
+		this.consignor_name = consignor_name;
+		this.consignor_phone = consignor_phone;
 		this.packing = packing;
 		this.number = number;
 		this.weight = weight;
@@ -48,9 +50,10 @@ public class WayBill {
 		this.pickupfee = pickupfee;
 		this.damages = damages;
 		this.dept = dept;
-		this.wbStatus = wbStatus;
+		this.wb_status = wb_status;
 		this.recordingtime = recordingtime;
 		this.remarks = remarks;
+		this.company_id = company_id;
 	}
 	public int getId() {
 		return id;
@@ -58,11 +61,11 @@ public class WayBill {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getWbId() {
-		return wbId;
+	public String getWb_id() {
+		return wb_id;
 	}
-	public void setWbId(String wbId) {
-		this.wbId = wbId;
+	public void setWb_id(String wb_id) {
+		this.wb_id = wb_id;
 	}
 	public String getName() {
 		return name;
@@ -70,29 +73,29 @@ public class WayBill {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getConsigneeName() {
-		return consigneeName;
+	public String getConsignee_name() {
+		return consignee_name;
 	}
-	public void setConsigneeName(String consigneeName) {
-		this.consigneeName = consigneeName;
+	public void setConsignee_name(String consignee_name) {
+		this.consignee_name = consignee_name;
 	}
-	public String getConsigneePhone() {
-		return consigneePhone;
+	public String getConsignee_phone() {
+		return consignee_phone;
 	}
-	public void setConsigneePhone(String consigneePhone) {
-		this.consigneePhone = consigneePhone;
+	public void setConsignee_phone(String consignee_phone) {
+		this.consignee_phone = consignee_phone;
 	}
-	public String getConsignorName() {
-		return consignorName;
+	public String getConsignor_name() {
+		return consignor_name;
 	}
-	public void setConsignorName(String consignorName) {
-		this.consignorName = consignorName;
+	public void setConsignor_name(String consignor_name) {
+		this.consignor_name = consignor_name;
 	}
-	public String getConsignorPhone() {
-		return consignorPhone;
+	public String getConsignor_phone() {
+		return consignor_phone;
 	}
-	public void setConsignorPhone(String consignorPhone) {
-		this.consignorPhone = consignorPhone;
+	public void setConsignor_phone(String consignor_phone) {
+		this.consignor_phone = consignor_phone;
 	}
 	public String getPacking() {
 		return packing;
@@ -142,11 +145,11 @@ public class WayBill {
 	public void setDept(String dept) {
 		this.dept = dept;
 	}
-	public String getWbStatus() {
-		return wbStatus;
+	public String getWb_status() {
+		return wb_status;
 	}
-	public void setWbStatus(String wbStatus) {
-		this.wbStatus = wbStatus;
+	public void setWb_status(String wb_status) {
+		this.wb_status = wb_status;
 	}
 	public Date getRecordingtime() {
 		return recordingtime;
@@ -160,14 +163,21 @@ public class WayBill {
 	public void setRemarks(String remarks) {
 		this.remarks = remarks;
 	}
+	public int getCompany_id() {
+		return company_id;
+	}
+	public void setCompany_id(int company_id) {
+		this.company_id = company_id;
+	}
 	@Override
 	public String toString() {
-		return "WayBill [id=" + id + ", wbId=" + wbId + ", name=" + name + ", consigneeName=" + consigneeName
-				+ ", consigneePhone=" + consigneePhone + ", consignorName=" + consignorName + ", consignorPhone="
-				+ consignorPhone + ", packing=" + packing + ", number=" + number + ", weight=" + weight + ", freight="
+		return "WayBill [id=" + id + ", wb_id=" + wb_id + ", name=" + name + ", consignee_name=" + consignee_name
+				+ ", consignee_phone=" + consignee_phone + ", consignor_name=" + consignor_name + ", consignor_phone="
+				+ consignor_phone + ", packing=" + packing + ", number=" + number + ", weight=" + weight + ", freight="
 				+ freight + ", deliveryfee=" + deliveryfee + ", pickupfee=" + pickupfee + ", damages=" + damages
-				+ ", dept=" + dept + ", wbStatus=" + wbStatus + ", recordingtime=" + recordingtime + ", remarks="
-				+ remarks + "]";
+				+ ", dept=" + dept + ", wb_status=" + wb_status + ", recordingtime=" + recordingtime + ", remarks="
+				+ remarks + ", company_id=" + company_id + "]";
 	}
+	
 	
 }

@@ -14,11 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import java.util.List;
 import com.xzy.entity.WayBill;
-
-
 import com.google.gson.Gson;
 import com.xzy.entity.DataStatus;
 import com.xzy.service.WayBiliService;
@@ -143,9 +140,34 @@ public class WayBiliController {
 			ds.setStatus("0");
 			ds.setMsg("删除失败");
 		}
+
+		return ds.toGson(ds);
+		
+	}
+	
+	
+	/**
+	 * 修改订单
+	 * @param waybill
+	 * @return
+	 */
+	@RequestMapping(value="/updateWayBill",produces="application/json;charset=utf-8")
+	@ResponseBody
+	public String updateWayBill(WayBill waybill) {
+		int i=wayBiliService.updateWayBill(waybill);
+		DataStatus ds=new DataStatus();
+		if(i>0) {
+			ds.setStatus("1");
+			ds.setMsg("修改成功");
+		}else {
+			ds.setStatus("0");
+			ds.setMsg("修改失败");
+		}
 		return ds.toGson(ds);
 	}
 	
+
+
 	
 	
 

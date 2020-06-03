@@ -43,7 +43,6 @@ public interface WayBiliDao {
 	int delWayBill(int id);
 	
 	
-	
 	/**
 	 * ÐÞ¸Ä¶©µ¥
 	 * @param waybill
@@ -53,6 +52,9 @@ public interface WayBiliDao {
 
 	
 	int addWayBill(WayBill waybill);
+
+	int updateWayBill(WayBill waybill);
+
 
 	
 	
