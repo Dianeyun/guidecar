@@ -25,7 +25,7 @@ public interface WayBiliDao {
 	 * Ìí¼Ó¶©µ¥
 	 * @param waybill
 	 */
-
+	int addWayBill(WayBill waybill);
 	
 	
 	/**
@@ -49,11 +49,6 @@ public interface WayBiliDao {
 	 * @param waybill
 	 * @return
 	 */
-	int WayBillModify(WayBill waybill);
-
-	
-	int addWayBill(WayBill waybill);
-
 	int updateWayBill(WayBill waybill);
 
 

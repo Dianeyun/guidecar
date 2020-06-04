@@ -3,11 +3,12 @@ package com.xzy.controller;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.xzy.service.LoginService;
 
+import org.omg.CORBA.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.xzy.entity.User;
@@ -100,7 +101,8 @@ public class LoginController {
 	@RequestMapping(value="/login" ,produces="application/json;charset=utf-8")
 	@ResponseBody
 	public String login(@RequestParam("name") String name,@RequestParam("password")String password) {
-
+		
+		
 		System.out.println(name+" "+password);
 		User user=new User();
 	    user.setName(name);
@@ -127,6 +129,7 @@ public class LoginController {
 	    	ds.setStatus("-1");
 	    	ds.setStatus("’À∫≈ªÚ√‹¬Î¥ÌŒÛ£°");
 	    }
+	   
 	    return ds.toGson(ds);
 	}
 	

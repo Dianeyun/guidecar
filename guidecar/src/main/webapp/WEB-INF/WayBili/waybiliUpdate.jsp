@@ -95,6 +95,12 @@
 	      <input type="text" id="remarks" name="remarks" value="${waybill.remarks}" required lay-verify="required" placeholder="请输入备注" autocomplete="off"  class="layui-input">
 	    </div>
 	  </div>
+	  	   <div class="layui-form-item">
+	    <label class="layui-form-label">公司id</label>
+	    <div class="layui-input-inline">
+	      <input type="text" id="company_id" name="company_id" value="${waybill.company_id}" required lay-verify="required" placeholder="请输入公司id" autocomplete="off"  class="layui-input">
+	    </div>
+	  </div>
 	  <div class="layui-form-item">
 	    <div class="layui-input-block">
 	      <button class="layui-btn" lay-submit lay-filter="formModeify">立即修改</button>
@@ -113,7 +119,7 @@
         	var layer  = layui.layer;//获得弹出层组件
 		 	
 		 	var $ = layui.jquery;//获得jquery模块
-		 	  
+		 	console.log(${waybili.wb_id});
 		 	//监听修改提交
 		 	  form.on('submit(formModeify)', function(data){
 		 		   //$("#d1").css("display","");

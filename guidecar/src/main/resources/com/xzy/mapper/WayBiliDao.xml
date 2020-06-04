@@ -6,32 +6,35 @@
 	<!--查询订单列表  -->
 	<select id="findWayBiliList" parameterType="map" resultType="map">
 		select 
-		id,
-		wb_id,
-		name,
-		consignee_name,
-		consignee_phone,
-		consignor_name,
-		consignor_phone,
-		packing,
-		number,
-		weight,
-		freight,
-		deliveryfee,
-		pickupfee,
-		damages,
-		dept,
-		wb_status,
-		recordingtime,
-		remarks
+		w.id,
+		w.wb_id,
+		w.name,
+		w.consignee_name,
+		w.consignee_phone,
+		w.consignor_name,
+		w.consignor_phone,
+		w.packing,
+		w.number,
+		w.weight,
+		w.freight,
+		w.deliveryfee,
+		w.pickupfee,
+		w.damages,
+		w.dept,
+		w.wb_status,
+		w.recordingtime,
+		w.remarks,
+		c.fshort
 		
-		 from waybill <if test="name !=null &amp;&amp; name!='' ">
-		                   and name=#{name}
-		              </if> 
-		              <if test="wb_id !=null &amp;&amp; wb_id!='' ">
-		                   and wb_id=#{wb_id}
-		              </if>
-		              limit #{start},#{pageSize}
+		 from waybill w,company c
+		 where w.company_id=c.id
+		 <if test="name !=null &amp;&amp; name!='' ">
+		          and name=#{name}
+		 </if> 
+		 <if test="wb_id !=null &amp;&amp; wb_id!='' ">
+		          and wb_id=#{wb_id}
+		 </if>
+		         limit #{start},#{pageSize}
 		
 	</select>
 	<!-- 查询订单总数 -->
@@ -62,17 +65,19 @@
     	dept,
     	wb_status,
     	recordingtime,
-    	remarks
+    	remarks,
+    	company_id
+    
     	
     	) 
     	values
     		(
-    		#{wbId},
+    		#{wb_id},
     		#{name},
-    		#{consigneeName},
-    		#{consigneePhone},
-    		#{consignorName},
-    		#{consignorPhone},
+    		#{consignee_name},
+    		#{consignee_phone},
+    		#{consignor_name},
+    		#{consignor_phone},
     		#{packing},
     		#{number},
     		#{weight},
@@ -81,9 +86,10 @@
     		#{pickupfee},
     		#{damages},
     		#{dept},
-    		#{wbStatus},
+    		#{wb_status},
     		#{recordingtime},
-    		#{remarks}
+    		#{remarks},
+    		#{company_id}
     		
     		)
     </insert>
@@ -107,7 +113,8 @@
         dept,
         wb_status,
         recordingtime,
-        remarks
+        remarks,
+        company_id
      from  waybill
         where 
         id=#{id}
@@ -121,12 +128,12 @@
     </delete>
     <update id="updateWayBill" parameterType="com.xzy.entity.WayBill">
     update waybill set 
-                       wb_id=#{wbId},
+                       wb_id=#{wb_id},
                        name=#{name},
-                       consignee_name=#{consigneeName},
-                       consignee_phone=#{consigneePhone},
-                       consignor_name=#{consignorName},
-                       consignor_phone=#{consignorPhone},
+                       consignee_name=#{consignee_name},
+                       consignee_phone=#{consignee_phone},
+                       consignor_name=#{consignor_name},
+                       consignor_phone=#{consignor_phone},
                        packing=#{packing},
                        number=#{number},
                        weight=#{weight},
@@ -135,7 +142,13 @@
                        pickupfee=#{pickupfee},
                        damages=#{damages},
                        dept=#{dept},
-                       dept=#{dept}
+                       wb_status=#{wb_status},
+                       remarks=#{remarks},
+                       company_id=#{company_id}
+                       where id=#{id}
+                       
+                       
+                       
     </update>
 
    

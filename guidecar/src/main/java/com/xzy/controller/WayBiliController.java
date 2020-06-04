@@ -48,12 +48,13 @@ public class WayBiliController {
 	 * @param request
 	 * @return
 	 */
-	@RequestMapping("/toWayBillModify")
+	@RequestMapping("/toWayBillUpdate")
 	public ModelAndView toWayBillModify(int id,HttpServletRequest request) {
 		WayBill waybill=wayBiliService.findWayBillById(id);
-		request.setAttribute("waybili", waybill);
+		System.out.println(waybill);
+		request.setAttribute("waybill", waybill);
 		ModelAndView mav3=new ModelAndView();
-		mav3.setViewName("WayBili/waybiliModify");
+		mav3.setViewName("WayBili/waybiliUpdate");
 		return mav3;
 	}
 	
@@ -67,16 +68,16 @@ public class WayBiliController {
 	 */
 	@RequestMapping(value="/findWayBiliList",produces="application/json;charset=utf-8")
 	@ResponseBody
-	public String findWayBiliList(int page, int limit) {
+	public String findWayBiliList(int page, int limit,String wb_id,String name) {
+		
 		Map<String,Object> map=new HashMap<String,Object>();
-		List<Map<String,Object>> list=wayBiliService.findWayBiliList(page, limit);
+		List<Map<String,Object>> list=wayBiliService.findWayBiliList(page, limit,wb_id,name);
 		int count=wayBiliService.findWayBiliCount();
 		map.put("code", 0);
 		map.put("msg", 0);
 		map.put("count", count);//总记录数,layui框架自动用于分页计算总页数
 		map.put("data", list);//表格数据
 		Gson g=new Gson();
-		System.out.println(g.toJson(map));
 		return g.toJson(map);
 	}
 	
@@ -100,6 +101,7 @@ public class WayBiliController {
 	@RequestMapping(value="/addWayBill",produces="application/json;charset=utf-8")
 	@ResponseBody
 	public String addMayBili(WayBill waybill) {
+		System.out.println("qwe"+waybill);
 		int i=wayBiliService.addWayBill(waybill);
 		DataStatus ds=new DataStatus();
 		if(i>0) {

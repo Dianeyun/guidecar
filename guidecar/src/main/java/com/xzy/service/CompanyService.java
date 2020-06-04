@@ -44,6 +44,7 @@ public class CompanyService {
 	 */
 	public int addCompany(Company company) {
 		return companyDao.addCompany(company);
+	}
 	/**
 	 * 根据id删除公司
 	 * @param id id值
