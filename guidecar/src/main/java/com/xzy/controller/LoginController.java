@@ -5,10 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.xzy.service.LoginService;
-
-import org.omg.CORBA.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.xzy.entity.User;
@@ -43,7 +40,7 @@ public class LoginController {
 	@RequestMapping("/toIndex")
 	public ModelAndView index() {
 		ModelAndView mdv3=new ModelAndView();
-		mdv3.setViewName("index");
+		mdv3.setViewName("PlatformIndex");
 		return mdv3;
 	}
 	/**

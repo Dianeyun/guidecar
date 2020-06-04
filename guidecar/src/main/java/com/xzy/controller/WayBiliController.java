@@ -8,6 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import com.xzy.entity.WayBill;
 import com.google.gson.Gson;
@@ -49,6 +50,23 @@ public class WayBiliController {
 	 * @return
 	 */
 	@RequestMapping("/toWayBillUpdate")
+	public ModelAndView toWayBillModify(int id,HttpServletRequest request) {
+		WayBill waybill=wayBiliService.findWayBillById(id);
+		System.out.println(waybill);
+		request.setAttribute("waybill", waybill);
+		ModelAndView mav3=new ModelAndView();
+		mav3.setViewName("WayBili/waybiliUpdate");
+		return mav3;
+	}
+	
+
+	/**
+	 * 修改页面
+	 * @param id
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping("/toWayBillModify")
 	public ModelAndView toWayBillModify(int id,HttpServletRequest request) {
 		WayBill waybill=wayBiliService.findWayBillById(id);
 		System.out.println(waybill);
@@ -135,9 +153,10 @@ public class WayBiliController {
 		}
 
 		return ds.toGson(ds);
-		
 	}
 	
+
+
 	
 	/**
 	 * 修改订单

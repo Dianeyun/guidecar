@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import com.xzy.entity.Company;
-
 /**
  * 公司映射SQL接口
  * @author J·Y
@@ -21,6 +20,7 @@ public interface CompanyDao {
 	 * @return  总条数
 	 */
 	int findCompanyCount();
+
 	/**
 	 * 添加公司
 	 * @param company 公司信息

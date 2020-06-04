@@ -42,8 +42,6 @@ public interface WayBiliDao {
 	 * @return
 	 */
 	int delWayBill(int id);
-	
-	
 	/**
 	 * ÐÞ¸Ä¶©µ¥
 	 * @param waybill

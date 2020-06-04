@@ -13,6 +13,7 @@ import com.xzy.entity.Company;
  * @author J¡¤Y
  *
  */
+
 @Service
 public class CompanyService {
 	@Autowired
@@ -69,4 +70,5 @@ public class CompanyService {
 	public int companyModify(Company company) {
 		return companyDao.companyModify(company);
 	}
+
 }

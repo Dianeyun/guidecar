@@ -25,6 +25,7 @@ public class User {
 	}
 	public User(int id, String name, String password, String nickName, String sex, String phone, String email,
 			Date regtime, int deptId, int type, String location, int companyId) {
+
 		super();
 		this.id = id;
 		this.name = name;
@@ -39,6 +40,7 @@ public class User {
 		this.location = location;
 		this.companyId = companyId;
 	}
+
 	public int getId() {
 		return id;
 	}
@@ -87,12 +89,14 @@ public class User {
 	public void setRegtime(Date regtime) {
 		this.regtime = regtime;
 	}
+
 	public int getDeptId() {
 		return deptId;
 	}
 	public void setDeptId(int deptId) {
 		this.deptId = deptId;
 	}
+
 	public int getType() {
 		return type;
 	}

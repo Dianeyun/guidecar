@@ -7,12 +7,14 @@
 	<select id="findCompanyList" parameterType="map" resultType="map">
 		select id,name,regtime,fshort,bulino,corname,phone,detaress,comnumber,comadmin
 		 from company limit #{start},#{pageSize}
+
 	</select>
 	<!-- 查询公司总数 -->
 	<select id="findCompanyCount" resultType="int">
        select count(*) from company 
            where 1 = 1       
     </select>
+
     <!-- 根据id查询公司信息 -->
     <select id="findCompanyById" parameterType="int" resultType="com.xzy.entity.Company">
     	select id,name,regtime,fshort,bulino,corname,phone,detaress,comnumber,comadmin
@@ -22,7 +24,6 @@
 	<delete id="delCompany" parameterType="int">
 		delete from company where id=#{id}
 	</delete>
- 
     <!-- 添加公司 -->
     <insert id="addCompany" parameterType="com.xzy.entity.Company">
     	insert into company(name,fshort,bulino,corname,phone,detaress,comadmin,comnumber) 

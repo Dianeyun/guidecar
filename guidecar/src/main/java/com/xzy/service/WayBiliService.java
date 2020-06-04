@@ -38,7 +38,6 @@ public class WayBiliService {
 	public int findWayBiliCount() {
 		return wayBiliDao.findWayBiliCount();
 	}
-	
 	/**
 	 * 添加订单
 	 * @param waybill
@@ -47,7 +46,6 @@ public class WayBiliService {
 	public int addWayBill(WayBill waybill) {
 		return wayBiliDao.addWayBill(waybill);
 	}
-	
 	
 	/**
 	 * 根据id查询
@@ -58,6 +56,14 @@ public class WayBiliService {
 		return wayBiliDao.findWayBillById(id);
 	}
 	
+	/**
+	 * 根据id查询
+	 * @param id
+	 * @return
+	 */
+	public WayBill findWayBillById(int id) {
+		return wayBiliDao.findWayBillById(id);
+	}
 	
 	/**
 	 * 根据id删除
