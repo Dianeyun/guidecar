@@ -1,22 +1,32 @@
 package com.xzy.controller;
 
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.web.servlet.ModelAndView;
+
+import com.xzy.service.CompanyService;
 import com.xzy.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.xzy.entity.User;
+import com.xzy.entity.Company;
 import com.xzy.entity.DataStatus;
 
+import java.util.HashMap;
+import java.util.Map;
 @RestController
 @RequestMapping("/user")
 public class LoginController {
 
 	@Autowired
 	private LoginService loginService;
+	@Autowired
+	private CompanyService companyService;
 	
 	@RequestMapping("/toLogin")
 	public ModelAndView toLogin() {
@@ -66,6 +76,7 @@ public class LoginController {
 		return loginService.findByUsername(username);
 	}
 	
+	
 	/**
 	 * 注册
 	 * @param user
@@ -97,30 +108,30 @@ public class LoginController {
 
 	@RequestMapping(value="/login" ,produces="application/json;charset=utf-8")
 	@ResponseBody
-	public String login(@RequestParam("name") String name,@RequestParam("password")String password) {
-		
+	public String login(@RequestParam("name") String name,@RequestParam("password")String password,HttpSession sess) {
 		
 		System.out.println(name+" "+password);
 		User user=new User();
 	    user.setName(name);
 	    user.setPassword(password);
 	    DataStatus ds=new DataStatus();
-	    User  u=loginService.findByUsernameAndPwd(user); 
+	    User u=loginService.findByUsernameAndPwd(user);
+	    int id=u.getCompany_id();
+	   Company company= companyService.findCompanyById(id);
 	    if(u!=null) {
 	    	/*model.addAttribute("name",name);
 	    	mv.setViewName("index");*/
+	    	sess.setAttribute("user",u);
+	    	sess.setAttribute("company",company);
 	    	if(u.getType()==2) {
 	    		ds.setStatus("2");
 		    	ds.setMsg("登录成功");
-		    	System.out.println("x"+u.getType());
 	    	}else if(u.getType()==1) {
 	    		ds.setStatus("1");
 		    	ds.setMsg("登录成功");
-		    	System.out.println("z"+u.getType());
 	    	}else {
 	    		ds.setStatus("0");
 		    	ds.setMsg("登录成功");
-		    	System.out.println("z"+u.getType());
 	    	}
 	    }else {
 	    	ds.setStatus("-1");

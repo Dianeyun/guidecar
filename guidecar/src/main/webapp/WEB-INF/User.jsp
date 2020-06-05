@@ -1,4 +1,11 @@
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page import="com.xzy.entity.*" %>
+<%
+      User u=(User)request.getSession().getAttribute("user");
+	 Company company=(Company)request.getSession().getAttribute("company");
+ %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,36 +13,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>指南车物流</title>
   <link rel="stylesheet" href="../layui/css/layui.css">
-  <title>layout 后台大布局 - Layui</title>
-  <link rel="stylesheet" href="../src/css/layui.css">
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
   <div class="layui-header">
-    <div class="layui-logo">指南车物流平台管理系统</div>
-    <ul class="layui-nav layui-layout-right">
-      <li class="layui-nav-item">
-        <a href="javascript:;" id="usera">
-    <div class="layui-logo">layui 后台布局</div>
-    <!-- 头部区域（可配合layui已有的水平导航） -->
-    <ul class="layui-nav layui-layout-left">
-      <li class="layui-nav-item"><a href="">控制台</a></li>
-      <li class="layui-nav-item"><a href="">商品管理</a></li>
-      <li class="layui-nav-item"><a href="">用户</a></li>
-      <li class="layui-nav-item">
-        <a href="javascript:;">其它系统</a>
-        <dl class="layui-nav-child">
-          <dd><a href="">邮件管理</a></dd>
-          <dd><a href="">消息管理</a></dd>
-          <dd><a href="">授权管理</a></dd>
-        </dl>
-      </li>
-    </ul>
+    <div class="layui-logo"><%=company.getName() %></div>
     <ul class="layui-nav layui-layout-right">
       <li class="layui-nav-item">
         <a href="javascript:;">
           <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
-          贤心
+        <%= u.getNick_name()%>
         </a>
         <dl class="layui-nav-child">
           <dd><a href="">基本资料</a></dd>
@@ -53,7 +40,8 @@
        					 <li class="layui-nav-item layui-nav-itemed">
         					  <a class="" href="javascript:;">用户管理</a>
           					<dl class="layui-nav-child">
-          						 <dd><a data-id="0" data-url="../waybili/toWayBiliList" data-title="文章管理" data-type="tabAdd" class="menu">订单管理</a></dd>
+          						 <dd><a data-id="0" data-url="../waybili/toWayBiliList" data-title="用户管理" data-type="tabAdd" class="menu">订单管理</a></dd>
+          						 <dd><a data-id="0" data-url="../waybili/toWayBiliList" data-title="仓库管理" data-type="tabAdd" class="menu">仓库管理</a></dd>
 								<!-- <dd><a data-id="1" data-url="user/toUserList" data-title="会员管理" data-type="tabAdd" class="menu">会员管理</a></dd>
 								<dd><a data-id="2" data-url="" data-title="评价管理" data-type="tabAdd" class="menu">评价管理</a></dd> -->
 							
@@ -80,11 +68,14 @@
 		</div>
 		<script src="../layui/layui.js"></script>
 		<script>
+		
+		  
 			//JavaScript代码区域
 			layui.use(['element','jquery','layer'], function(){
   				var element = layui.element;
   				var $= layui.jquery;
-  			 	var layer = layui.layer;	
+  			 	var layer = layui.layer;
+  			 
   			 	/* $(function(){
   			 		var s=$.cookie('userName');
   			 		//console.log("1111");

@@ -1,5 +1,7 @@
 package com.xzy.dao;
 
+
+
 import com.xzy.entity.User;
 
 public interface LoginDao {

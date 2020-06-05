@@ -128,6 +128,7 @@
     </delete>
     <update id="updateWayBill" parameterType="com.xzy.entity.WayBill">
     update waybill set 
+                       
                        wb_id=#{wb_id},
                        name=#{name},
                        consignee_name=#{consignee_name},

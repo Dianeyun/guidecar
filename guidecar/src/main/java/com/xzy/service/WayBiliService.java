@@ -57,15 +57,6 @@ public class WayBiliService {
 	}
 	
 	/**
-	 * 根据id查询
-	 * @param id
-	 * @return
-	 */
-	public WayBill findWayBillById(int id) {
-		return wayBiliDao.findWayBillById(id);
-	}
-	
-	/**
 	 * 根据id删除
 	 * @param id
 	 * @return

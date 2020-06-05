@@ -119,7 +119,6 @@
         	var layer  = layui.layer;//获得弹出层组件
 		 	
 		 	var $ = layui.jquery;//获得jquery模块
-		 	console.log(${waybili.wb_id});
 		 	//监听修改提交
 		 	  form.on('submit(formModeify)', function(data){
 		 		   //$("#d1").css("display","");
