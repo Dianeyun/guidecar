@@ -6,35 +6,32 @@
 	<!--查询订单列表  -->
 	<select id="findWayBiliList" parameterType="map" resultType="map">
 		select 
-		w.id,
-		w.wb_id,
-		w.name,
-		w.consignee_name,
-		w.consignee_phone,
-		w.consignor_name,
-		w.consignor_phone,
-		w.packing,
-		w.number,
-		w.weight,
-		w.freight,
-		w.deliveryfee,
-		w.pickupfee,
-		w.damages,
-		w.dept,
-		w.wb_status,
-		w.recordingtime,
-		w.remarks,
-		c.fshort
+		id,
+		wb_id,
+		name,
+		consignor_name,
+		consignor_phone,
+		packing,
+		number,
+		weight,
+		freight,
+		deliveryfee,
+		pickupfee,
+		damages,
+		dept,
+		wb_status,
+		recordingtime,
+		remarks
 		
-		 from waybill w,company c
-		 where w.company_id=c.id
+		 from waybill
+		 where company_id=#{company_id}  and wb_status=#{wb_status}
 		 <if test="name !=null &amp;&amp; name!='' ">
 		          and name=#{name}
 		 </if> 
 		 <if test="wb_id !=null &amp;&amp; wb_id!='' ">
 		          and wb_id=#{wb_id}
 		 </if>
-		         limit #{start},#{pageSize}
+		         limit #{start},#{pageSize} 
 		
 	</select>
 	<!-- 查询订单总数 -->
@@ -117,7 +114,7 @@
         company_id
      from  waybill
         where 
-        id=#{id}
+        id=#{id} 
     
     </select>
     
@@ -149,6 +146,18 @@
                        where id=#{id}
                        
     </update>
+    
+    
+    <update id="updateStatus" parameterType="com.xzy.entity.WayBill">
+      update
+           waybill set
+                      wb_status=#{wb_status}  where id=#{id}
+                      
+          
+    </update>
+    
+    
+    
 
    
 </mapper>

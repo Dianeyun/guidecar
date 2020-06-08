@@ -19,7 +19,9 @@
 		<script type="text/html" id="rowbar">
   			<a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
   			<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+            <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="go">出库</a>
 		</script>
+		
 
 	<!-- 查询条件 -->
 	<div class="demoTable">
@@ -56,13 +58,12 @@
 	             ,toolbar:'#toolbar'
 	             ,page:true
 	             ,limit:2
+	             ,where:{wb_status:"入库"}
 	             ,limits:[2,4,6,8] 
 	             ,cols: [[ //表头
 	    			  {field: 'id', type:'checkbox',fixed: 'left'}
 	    			  ,{field: 'wb_id', title: '运单号'}
 	                  ,{field: 'name', title: '货物名称'} 
-	                  ,{field: 'consignee_name', title: '收货人姓名'}
-	                  ,{field: 'consignee_phone', title: '收货人电话'}
 	                  ,{field: 'consignor_name', title: '发货人姓名'}
 	                  ,{field: 'consignor_phone', title: '发货人电话'}
 	                  ,{field: 'packing', title: '包装'}
@@ -76,7 +77,6 @@
 	                  ,{field: 'wb_status', title: '运单状态'}
 	                  ,{field: 'recordingtime', title: '录单时间'}
 	                  ,{field: 'remarks', title: '备注'}
-	                  ,{field: 'fshort', title: '公司'}
 	                  ,{fixed: 'right', width:150, align:'center', toolbar: '#rowbar'}
 	            ]]
 	      });
@@ -143,11 +143,29 @@
 			           	area: ['500px', '370px'],//设置宽高
 			           	offset: '10px'
 			        });
-			    } 
+			    } else if(layEvent =='go'){//出库
+			    	layer.confirm('确定要出库吗',function(index){
+			    		updateStatus(data.id,data.wb_status);
+			    		layer.close(index);
+			   
+					    	  	  
+			    	})
+			    }
 			  });
 			  //批量,单个删除使用同一个方法
 			   function deleteArticle(id){
 				   $.post("delWayBill", {id:id},function(data){
+				   	    if(data.status==1){
+				   	     table.reload('dataTable','data');//重新加载表格数据
+				   	    }else{
+				   	    	layer.msg(data.msg, {icon: 2});
+				   	    } 
+				      })
+			   }
+			  
+			  //修改订单状态
+			   function  updateStatus(id,status){
+				   $.post("updateStatus", {wb_status:status,id:id},function(data){
 				   	    if(data.status==1){
 				   	     table.reload('dataTable','data');//重新加载表格数据
 				   	    }else{

@@ -4,14 +4,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.annotation.RequestScope;
 import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import com.xzy.entity.WayBill;
 import com.google.gson.Gson;
 import com.xzy.entity.DataStatus;
+import com.xzy.entity.User;
 import com.xzy.service.WayBiliService;
 @RestController
 @RequestMapping("/waybili")
@@ -42,6 +46,21 @@ public class WayBiliController {
 		mav2.setViewName("WayBili/waybiliList");
 		return mav2;
 	}
+	
+	
+	/**
+	 * 仓库页面
+	 * @return
+	 */
+	@RequestMapping("/toWayBiliDepot")
+	public ModelAndView toWayBiliDepot() {
+		ModelAndView mav=new ModelAndView();
+		mav.setViewName("WayBili/waybiliDepot");
+		return mav;
+	}
+	
+	  
+	
 	/**
 	 * 修改页面
 	 * @param id
@@ -58,6 +77,20 @@ public class WayBiliController {
 		return mav3;
 	}
 	
+	/**
+	 * 订单签收页面
+	 * @return
+	 */
+	@RequestMapping("/toWayBiliSign")
+	public ModelAndView toWayBiliSign() {
+		ModelAndView mav=new ModelAndView();
+		mav.setViewName("WayBili/waybiliSign");
+		return mav;
+	}
+	
+	
+	
+	
 	
 	
 	/**
@@ -68,10 +101,11 @@ public class WayBiliController {
 	 */
 	@RequestMapping(value="/findWayBiliList",produces="application/json;charset=utf-8")
 	@ResponseBody
-	public String findWayBiliList(int page, int limit,String wb_id,String name) {
-		
+	public String findWayBiliList(int page, int limit,String wb_status,String wb_id,String name,HttpSession sess) {
+		User u=(User) sess.getAttribute("user");//获取session 中的user
+		int i=u.getCompany_id();
 		Map<String,Object> map=new HashMap<String,Object>();
-		List<Map<String,Object>> list=wayBiliService.findWayBiliList(page, limit,wb_id,name);
+		List<Map<String,Object>> list=wayBiliService.findWayBiliList(page, limit,wb_status,i,wb_id,name);
 		int count=wayBiliService.findWayBiliCount();
 		map.put("code", 0);
 		map.put("msg", 0);
@@ -159,5 +193,39 @@ public class WayBiliController {
 		}
 		return ds.toGson(ds);
 	}
-
+	
+	@RequestMapping(value="/updateStatus",produces="application/json;charset=utf-8")
+	@ResponseBody
+	public String updateStatus(WayBill waybill) {
+		int i=0;
+		//waybill.setWb_status(waybill.getWb_status()+1);//获取Wb_status的值加一 重新添加到实体类
+	    if("入库".equals(waybill.getWb_status())) {
+	    	waybill.setWb_status("在途");
+	    	i=wayBiliService.updateStatus(waybill);
+	    }else if("在途".equals(waybill.getWb_status())){
+	    	waybill.setWb_status("签收");
+	    	i=wayBiliService.updateStatus(waybill);
+	    }else if("签收".equals(waybill.getWb_status())) {
+	    	waybill.setWb_status("已签收");
+	    	i=wayBiliService.updateStatus(waybill);
+	    }
+	    DataStatus ds=new DataStatus();
+	     if(i>0) {
+	    	     ds.setStatus("1");
+				ds.setMsg("修改成功");
+	     }else {
+	    	    ds.setStatus("1");
+				ds.setMsg("修改成功");
+	     }
+	     
+	     return  ds.toGson(ds);
+	     
+	     
+	}
+	
+	
+	
+	
+	
+	
 }

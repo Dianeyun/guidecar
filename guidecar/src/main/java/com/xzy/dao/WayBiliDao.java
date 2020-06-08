@@ -48,6 +48,14 @@ public interface WayBiliDao {
 	 * @return
 	 */
 	int updateWayBill(WayBill waybill);
+	
+	
+	/**
+	 * ÐÞ¸Ä¶©µ¥×´Ì¬
+	 * @param waybill
+	 * @return
+	 */
+	int updateStatus(WayBill waybill);
 
 
 	

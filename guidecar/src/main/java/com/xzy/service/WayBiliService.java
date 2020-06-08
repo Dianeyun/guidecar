@@ -21,13 +21,16 @@ public class WayBiliService {
 	 * @param limit 每页显示几条
 	 * @return
 	 */
-	public List<Map<String,Object>> findWayBiliList(int page,int limit,String wb_id,String name){
+	public List<Map<String,Object>> findWayBiliList(int page,int limit,
+			String wb_status,int company_id,String wb_id,String name){
 		//把查询条件,分页条件,排序都封装在map对象中
 				HashMap<String, Object> map = new HashMap<String, Object>();
 				map.put("pageSize", limit);
 				map.put("start", (page-1)*limit);
 				map.put("wb_id", wb_id);
 				map.put("name", name);
+				map.put("company_id", company_id);
+				map.put("wb_status", wb_status);
 				return  wayBiliDao.findWayBiliList(map);
 	}
 	
@@ -72,6 +75,15 @@ public class WayBiliService {
 	 */
 	public int updateWayBill(WayBill waybill) {
 		return wayBiliDao.updateWayBill(waybill);
+	}
+	
+	/**
+	 * 修改订单状态
+	 * @param waybill
+	 * @return
+	 */
+	public int updateStatus(WayBill waybill) {
+		return wayBiliDao.updateStatus(waybill);
 	}
 
 }

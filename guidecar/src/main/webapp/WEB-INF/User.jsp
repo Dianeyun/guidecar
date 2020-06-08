@@ -38,12 +38,19 @@
     				 <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
     				<ul class="layui-nav layui-nav-tree"  lay-filter="test">
        					 <li class="layui-nav-item layui-nav-itemed">
-        					  <a class="" href="javascript:;">用户管理</a>
+        					  <a class="" href="javascript:;">快递管理</a>
           					<dl class="layui-nav-child">
-          						 <dd><a data-id="0" data-url="../waybili/toWayBiliList" data-title="用户管理" data-type="tabAdd" class="menu">订单管理</a></dd>
-          						 <dd><a data-id="0" data-url="../waybili/toWayBiliList" data-title="仓库管理" data-type="tabAdd" class="menu">仓库管理</a></dd>
+          						 <dd><a data-id="0" data-url="../waybili/toWayBiliList" data-title="订单管理" data-type="tabAdd" class="menu">订单管理</a></dd>
 								<!-- <dd><a data-id="1" data-url="user/toUserList" data-title="会员管理" data-type="tabAdd" class="menu">会员管理</a></dd>
 								<dd><a data-id="2" data-url="" data-title="评价管理" data-type="tabAdd" class="menu">评价管理</a></dd> -->
+							
+							</dl>
+							<dl class="layui-nav-child">
+          						 <dd><a data-id="1" data-url="../waybili/toWayBiliDepot" data-title="出库管理" data-type="tabAdd" class="menu">入库管理</a></dd>
+							
+							</dl>
+							<dl class="layui-nav-child">
+          						 <dd><a data-id="2" data-url="../waybili/toWayBiliSign" data-title="签收管理" data-type="tabAdd" class="menu">签收管理</a></dd>
 							
 							</dl>
       					 </li>
