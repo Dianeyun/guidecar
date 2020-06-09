@@ -26,7 +26,7 @@
         </a>
         <dl class="layui-nav-child">
           <dd><a href="javascript:;" id="up">基本资料</a></dd>
-          <dd><a href="">安全设置</a></dd>
+          <dd><a href="">修改密码</a></dd>
         </dl>
       </li>
       <li class="layui-nav-item"><a href="">退了</a></li>
@@ -154,8 +154,8 @@
   					layer.open({
 			           	type:2,//表示使用iframe嵌入一个窗口引入一个页面
 			           	title:"编辑信息",
-			           	content:"toUpdateUser?id="+<%=u.getId()%>,//访问控制器,查询部门,菜单数据
-			           	area: ['500px', '370px'],//设置宽高
+			           	content:"../user/toUpdateUser?id="+<%=u.getId()%>,//访问控制器,查询部门,菜单数据
+			           	area: ['500px', '400px'],//设置宽高
 			           	offset: '10px'
 			        });
   				});
