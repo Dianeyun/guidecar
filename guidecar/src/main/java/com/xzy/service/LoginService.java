@@ -11,7 +11,7 @@ import com.xzy.entity.User;
 @Transactional
 public class LoginService {
 	@Autowired
-	private LoginDao loginDao ;
+	private LoginDao loginDao;
 	public User findById(int id) {
 		return loginDao.findById(id);
 	}

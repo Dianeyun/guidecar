@@ -20,7 +20,7 @@ import com.xzy.entity.DataStatus;
 import java.util.HashMap;
 import java.util.Map;
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/login")
 public class LoginController {
 
 	@Autowired

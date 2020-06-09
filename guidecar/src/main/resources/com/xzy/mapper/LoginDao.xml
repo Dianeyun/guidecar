@@ -44,7 +44,7 @@
      </insert>
      <!-- 用户登录 -->
       <select id="findByUsernameAndPwd"  parameterType="com.xzy.entity.User" resultType="com.xzy.entity.User">
-            select name,password,type,nick_name,company_id from user where name=#{name} and password=#{password}
+            select id,name,password,type,nick_name,company_id from user where name=#{name} and password=#{password}
       </select>   
       
       <update id="">

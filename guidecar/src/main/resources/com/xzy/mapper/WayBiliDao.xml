@@ -123,6 +123,8 @@
      delete from waybill where id=#{id}
     
     </delete>
+    
+    <!-- 修改订单 -->
     <update id="updateWayBill" parameterType="com.xzy.entity.WayBill">
     update waybill set 
                        

@@ -25,7 +25,7 @@
         <%= u.getNick_name()%>
         </a>
         <dl class="layui-nav-child">
-          <dd><a href="">基本资料</a></dd>
+          <dd><a href="javascript:;" id="up">基本资料</a></dd>
           <dd><a href="">安全设置</a></dd>
         </dl>
       </li>
@@ -150,7 +150,15 @@
   								$("iframe").css("height", h + "px");
   							}
   				
-  				
+  				$("#up").on("click",function(){
+  					layer.open({
+			           	type:2,//表示使用iframe嵌入一个窗口引入一个页面
+			           	title:"编辑信息",
+			           	content:"toUpdateUser?id="+<%=u.getId()%>,//访问控制器,查询部门,菜单数据
+			           	area: ['500px', '370px'],//设置宽高
+			           	offset: '10px'
+			        });
+  				});
   				
   				
   
