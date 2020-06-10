@@ -26,7 +26,7 @@
         </a>
         <dl class="layui-nav-child">
           <dd><a href="javascript:;" id="up">基本资料</a></dd>
-          <dd><a href="">修改密码</a></dd>
+          <dd><a href="javascript:;" id="modify">修改密码</a></dd>
         </dl>
       </li>
       <li class="layui-nav-item"><a href="">退了</a></li>
@@ -158,6 +158,15 @@
 			           	area: ['500px', '400px'],//设置宽高
 			           	offset: '10px'
 			        });
+  				});
+  				$("#modify").on("click",function(){
+  					layer.open({
+  						type:2,
+  						title:"",
+  						content:"../user/toModifyUser?id="+<%=u.getId()%>,
+  						area: ['500px','400px'],
+  						offset: '10px'
+  					});
   				});
   				
   				
