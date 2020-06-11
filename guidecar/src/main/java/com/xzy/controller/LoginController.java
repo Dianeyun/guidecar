@@ -46,6 +46,18 @@ public class LoginController {
 		return mdv2;
 	}
 	
+	/**
+	 * 修改密码页面
+	 * @return
+	 */
+	@RequestMapping("/tochange")
+		public ModelAndView tochange() {
+			ModelAndView mdv=new ModelAndView();
+			mdv.setViewName("Login/change");
+			return mdv ;
+		}
+	
+	
 
 	@RequestMapping("/toIndex")
 	public ModelAndView index() {
@@ -140,6 +152,27 @@ public class LoginController {
 	   
 	    return ds.toGson(ds);
 	}
+	
+	
+	
+	@RequestMapping(value="/modifyPasswordByPhone",produces="application/json;charset=utf-8")
+	@ResponseBody
+	public String modifyPasswordByPhone(@RequestParam("phone") String phone,@RequestParam("password") String password) {
+		int i =loginService.modifyPasswordByPhone(phone,password);
+		DataStatus ds=new DataStatus();
+		if(i>0) {
+			ds.setStatus("1");
+			ds.setMsg("修改成功");
+		}else {
+			ds.setStatus("0");
+			ds.setMsg("修改失败");
+		}
+		return ds.toGson(ds);
+		
+	}
+	
+	
+	
 	
 	
 }

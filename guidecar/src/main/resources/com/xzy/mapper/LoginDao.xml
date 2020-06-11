@@ -47,8 +47,16 @@
             select id,name,password,type,nick_name,company_id from user where name=#{name} and password=#{password}
       </select>   
       
-      <update id="">
-            
+      <!-- 根据手机号查询密码 -->
+      <select id="findByPhone" parameterType="com.xzy.entity.User" resultType="com.xzy.entity.User">
+        select password from user where phone=#{phone}
+      </select>
+      
+      
+      <!-- 根据手机号修改密码 -->
+      <update id="modifyPasswordByPhone" parameterType="map">
+            update user 
+                        set password=#{password} where phone=#{phone}
       
       </update>
         

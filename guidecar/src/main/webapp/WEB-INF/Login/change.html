@@ -15,28 +15,28 @@
 <body class="loginBody">
 	<form class="layui-form">
   <div class="layui-form-item">
-    <label class="layui-form-label">用户名</label>
+    <label class="layui-form-label">手机号</label>
     <div class="layui-input-block">
-      <input type="hidden" name="name" id="name" required  lay-verify="required" autocomplete="off" class="layui-input">
+      <input type="text" name="phone" id="phone" required  lay-verify="required" placeholder="请输入手机号" autocomplete="off" class="layui-input" onblur="checkPhone()">
+      <span id="p2"></span>
     </div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">密码</label>
     <div class="layui-input-inline">
-      <input type="password" name="password" id="password" required lay-verify="required"  autocomplete="off" class="layui-input">
-      <label>注：密码长度至少六位</label>
+      <input type="password" name="password" id="password" required lay-verify="required"  placeholder="密码长度至少六位" autocomplete="off" class="layui-input" onblur="checkPass()">
+    	<span id="p3"></span>
     </div>
     
   </div>
    <div class="layui-form-item">
     <label class="layui-form-label">确认密码</label>
     <div class="layui-input-inline">
-      <input type="password" name="password2" id="password2" required lay-verify="required"  autocomplete="off" class="layui-input">
+      <input type="password" name="password2" id="password2" required lay-verify="required" placeholder="请再次输入密码" onblur="vaction()" autocomplete="off" class="layui-input">
+       <span id="p1"></span>
     </div>
     
   </div>
-
-  
 
   <div class="layui-form-item">
     <div class="layui-input-block">
@@ -47,30 +47,76 @@
   
 </form>
  <script type="text/javascript" src="../layui/layui.js"></script>
-<script>
+ 	<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
 //Demo
+var falg=true;
+function vaction(){
+	var newpass=$("#password").val();
+	var newpass1=$("#password2").val();
+	console.log(newpass+"  "+newpass1);
+	if(newpass!=newpass1){
+		$("#p1").html("密码不一致?请重新输入！");
+		falg=false;
+	}else{
+		falg=true;
+		$("#p1").html("");
+	}
+
+}
+
+<!--判断手机号是否正确-->
+function checkPhone(){
+	var phoneNum = /^1[3|4|5|7|8]\d{9}$/;
+	<!--表示以1开头，第二位可能是3/4/5/7/8等的任意一个，在加上后面的\d表示数字[0-9]的9位，总共加起来11位结束。-->
+	if(!phoneNum.test($("#phone").val())){
+		$("#p2").html("手机格式号码有误，请重填");
+	}else{
+		$("#p2").html("");
+	}
+
+}
+
+<!--判断密码格式是否有误-->
+function checkPass(){
+	var low=/(^\d{6,16}$)|(^[a-z]{6,16}$)|(^[A-Z]{6,16}$)|(^_{6,16}$)/g;
+	if(!low.test($("#password").val())){
+		$("#p3").html("密码输入有误,请重新输入");
+	}else{
+		$("#p3").html("");
+
+	}
+	
+}
+
+
 layui.use(['form','jquery','layer'], function(){
   var form = layui.form;
   var $=layui.jquery;
   var layer = layui.layer;
   //监听提交
   form.on('submit(formDemo)', function(data){
-		  console.log(data.field);
+		  //console.log(data.field);
+		  if(falg){
 	 		  $.ajax({
-	         	url:'findAdd',
-	            data:data.field,
+	         	url:'modifyPasswordByPhone',
+	            data:{phone:$("#phone").val(),password:$("#password").val()},
 	            dataType:'json',
 	            type:'post',
 	            success:function (data) {
 	            	console.log(data);
 	                if (data.status == '1'){
 	                	layer.msg(data.msg);
-	                    location.href = "toLogin";
+	                	layer.closeAll('iframe')//关闭所有iframe层
 	                }else{
 	                	layer.msg(data.msg);
 	                }
 	            }
 	         }) 
+		  }else{
+			  $("#p1").html("密码不一致？请重新输入！");
+		  }
+		  return false;
 	  });
 });
 

@@ -1,5 +1,8 @@
 package com.xzy.service;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -37,6 +40,19 @@ public class LoginService {
 	public int findAdd(User user) {
 		return loginDao.findAdd(user);
 		
+	}
+	
+	/**
+	 * 根据手机号修改你密码
+	 * @param password
+	 * @param phone
+	 * @return
+	 */
+	public int modifyPasswordByPhone(String phone,String password) {
+		Map<String,Object> map=new HashMap<String, Object>();
+		map.put("phone", phone);
+		map.put("password", password);
+		return loginDao.modifyPasswordByPhone(map);
 	}
 	
 
