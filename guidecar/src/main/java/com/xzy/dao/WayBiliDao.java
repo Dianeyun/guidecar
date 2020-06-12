@@ -58,7 +58,7 @@ public interface WayBiliDao {
 	int updateStatus(WayBill waybill);
 
 
-	
+	String deptNameByDeptId(int dept_id);
 	
 	
 	

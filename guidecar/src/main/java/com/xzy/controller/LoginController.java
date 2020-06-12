@@ -130,7 +130,7 @@ public class LoginController {
 	    User u=loginService.findByUsernameAndPwd(user);
 	    int id=u.getCompany_id();
 	   Company company= companyService.findCompanyById(id);
-	    if(u!=null) {
+	    if(u!=null) { 
 	    	/*model.addAttribute("name",name);
 	    	mv.setViewName("index");*/
 	    	sess.setAttribute("user",u);

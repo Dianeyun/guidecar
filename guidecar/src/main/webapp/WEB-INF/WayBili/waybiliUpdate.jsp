@@ -77,11 +77,6 @@
 	      <input type="text" id="damages" name="damages" value="${waybill.damages}" required lay-verify="required" placeholder="请输入赔偿费" autocomplete="off"  class="layui-input">
 	    </div>
 	  </div>
-	   <div class="layui-form-item">
-	    <label class="layui-form-label">目的部门</label>
-	    <div class="layui-input-inline">
-	      <input type="text" id="dept" name="dept" value="${waybill.dept}" required lay-verify="required" placeholder="请输入目的部门" autocomplete="off"  class="layui-input">
-	    </div>
 	  </div>
 	   <div class="layui-form-item">
 	    <label class="layui-form-label">运单状态</label>
@@ -93,12 +88,6 @@
 	    <label class="layui-form-label">备注</label>
 	    <div class="layui-input-inline">
 	      <input type="text" id="remarks" name="remarks" value="${waybill.remarks}" required lay-verify="required" placeholder="请输入备注" autocomplete="off"  class="layui-input">
-	    </div>
-	  </div>
-	  	   <div class="layui-form-item">
-	    <label class="layui-form-label">公司id</label>
-	    <div class="layui-input-inline">
-	      <input type="text" id="company_id" name="company_id" value="${waybill.company_id}" required lay-verify="required" placeholder="请输入公司id" autocomplete="off"  class="layui-input">
 	    </div>
 	  </div>
 	  <div class="layui-form-item">

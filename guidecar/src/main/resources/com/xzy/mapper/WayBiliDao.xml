@@ -158,7 +158,9 @@
           
     </update>
     
-    
+    <select id="deptNameByDeptId" parameterType="int" resultType="String">
+    	select name from dept where id=#{dept_id}
+    </select>
     
 
    

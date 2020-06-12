@@ -87,11 +87,20 @@
 	    </div>
 	  </div>
 	   <div class="layui-form-item">
-	    <label class="layui-form-label">目的部门</label>
-	    <div class="layui-input-inline">
-	      <input type="text" id="dept" name="dept" required lay-verify="required" placeholder="请输入目的部门" autocomplete="off" class="layui-input">
-	    </div>
-	  </div>
+    <label class="layui-form-label">目的部门</label>
+    <div class="layui-input-block">
+      <select name="city" lay-verify="required" id="dept" name="dept">
+        <option value=""></option>
+        <option value="0"></option>
+        <option value="1">人事部</option>
+        <option value="2">订单部</option>
+        <option value="3">运输部</option>
+        <option value="4">出库部</option>
+        <option value="5">进库部</option>
+        <option value="6">管理部</option>
+      </select>
+    </div>
+  </div>
 	   <div class="layui-form-item">
 	    <label class="layui-form-label">运单状态</label>
 	    <div class="layui-input-inline">
@@ -110,10 +119,10 @@
 	      <input type="text" id="remarks" name="remarks" required lay-verify="required" placeholder="请输入备注" autocomplete="off" class="layui-input">
 	    </div>
 	  </div>
-	  <div class="layui-form-item">
+	   <div class="layui-form-item">
 	    <label class="layui-form-label">公司id</label>
 	    <div class="layui-input-inline">
-	      <input type="text" id="companyid" name="company_id" required lay-verify="required" placeholder="请输入公司id" autocomplete="off" class="layui-input">
+	      <input type="text" id="company_id" name="company_id" required lay-verify="required" placeholder="请输入公司id" autocomplete="off" class="layui-input">
 	    </div>
 	  </div>
 	  <div class="layui-form-item">
@@ -148,7 +157,7 @@
 				                if (data.status == '1'){
 				                	layer.msg(data.msg);
 				                	layer.closeAll('iframe');//关闭所有的iframe层  
-				                    location.href = "toWayBiliList";
+				                    //location.href = "toWayBiliList";
 				                }else{
 				                	layer.msg(data.msg);
 				                }

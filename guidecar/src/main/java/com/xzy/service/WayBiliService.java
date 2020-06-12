@@ -85,5 +85,9 @@ public class WayBiliService {
 	public int updateStatus(WayBill waybill) {
 		return wayBiliDao.updateStatus(waybill);
 	}
+	
+	public String deptNameByDeptId(int dept_id) {
+		return wayBiliDao.deptNameByDeptId(dept_id);
+	}
 
 }
