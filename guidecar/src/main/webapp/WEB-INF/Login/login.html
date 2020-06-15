@@ -58,10 +58,10 @@
 				            type:'post',
 				            success:function (data) {
 				            	console.log(data);
-				                if (data.status == '2'){
+				                if (data.status == '1'){
 				                	layer.msg(data.msg);
-				                    location.href = "toIndex";
-				                }else if(data.status=='1'){
+				                    location.href = "../company/toIndex";
+				                }else if(data.status=='2'){
 				                	layer.msg(data.msg);
 				                	 location.href = "../waybili/toUser";
 				                }else if(data.status=='0'){

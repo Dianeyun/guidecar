@@ -40,10 +40,10 @@ public class PlatformController {
 	 * 打开公司列表页面
 	 * @return
 	 */
-	@RequestMapping("/toCompanyList")
+	@RequestMapping("/toPlatformList")
 	public ModelAndView toCompanyList() {
 		ModelAndView mav=new ModelAndView();
-		mav.setViewName("Company/companyList");
+		mav.setViewName("Platform/platformList");
 		return  mav;
 	}
 	/**
@@ -68,10 +68,10 @@ public class PlatformController {
 	 * 打开添加公司页面
 	 * @return  添加公司页面
 	 */
-	@RequestMapping("/toAddCompany")
+	@RequestMapping("/toAddPlatform")
 	public ModelAndView toAddCompany() {
 		ModelAndView mav=new ModelAndView();
-		mav.setViewName("Company/companyAdd");
+		mav.setViewName("Platform/platformAdd");
 		return  mav;
 	}
 	/**
@@ -118,12 +118,12 @@ public class PlatformController {
 	 * @param id 公司id值
 	 * @return 需要修改的公司的信息及修改页面
 	 */
-	@RequestMapping("/toCompanyModify")
+	@RequestMapping("/toPlatformModify")
 	public ModelAndView toCompanyModify(int id,HttpServletRequest request) {
 		Company company=companyService.findCompanyById(id);
 		request.setAttribute("company", company);
 		ModelAndView mv=new ModelAndView();
-		mv.setViewName("Company/companyModify");
+		mv.setViewName("Platform/platformModify");
 		return mv;
 	}
 	/**
