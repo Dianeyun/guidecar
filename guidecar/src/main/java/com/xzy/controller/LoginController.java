@@ -32,6 +32,7 @@ public class LoginController {
 	public ModelAndView toLogin() {
 		ModelAndView mdv=new ModelAndView();
 		mdv.setViewName("Login/login");
+		System.out.println("11");
 		return mdv;
 		
 	}
