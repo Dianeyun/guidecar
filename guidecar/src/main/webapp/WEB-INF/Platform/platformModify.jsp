@@ -97,7 +97,7 @@
 		 		   var company=data.field;
 				 		  $.ajax({
 				         	url:'companyModify',
-				            data:company,
+				            data:role,
 				            dataType:'json',
 				            type:'post',
 				            success:function (data) {
