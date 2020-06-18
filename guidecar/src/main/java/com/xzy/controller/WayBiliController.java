@@ -76,7 +76,6 @@ public class WayBiliController {
 	@RequestMapping("/toWayBillUpdate")
 	public ModelAndView toWayBillModify(int id,HttpServletRequest request) {
 		WayBill waybill=wayBiliService.findWayBillById(id);
-		System.out.println(waybill);
 		request.setAttribute("waybill", waybill);
 		ModelAndView mav3=new ModelAndView();
 		mav3.setViewName("WayBili/waybiliUpdate");
