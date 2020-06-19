@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.web.servlet.ModelAndView;
@@ -17,6 +18,7 @@ import com.xzy.entity.User;
 import com.xzy.entity.Company;
 import com.xzy.entity.DataStatus;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 @RestController
@@ -155,7 +157,12 @@ public class LoginController {
 	}
 	
 	
-	
+	/**
+	 * ÐÞ¸ÄÃÜÂë
+	 * @param phone
+	 * @param password
+	 * @return
+	 */
 	@RequestMapping(value="/modifyPasswordByPhone",produces="application/json;charset=utf-8")
 	@ResponseBody
 	public String modifyPasswordByPhone(@RequestParam("phone") String phone,@RequestParam("password") String password) {
@@ -173,6 +180,20 @@ public class LoginController {
 	}
 	
 	
+	/**
+	 * ÍË³öÉ¾³ýsession
+	 * @param request
+	 * @return
+	 * @throws IOException 
+	 */
+	@RequestMapping(value="/logout")
+	public ModelAndView logout(HttpServletRequest request) throws IOException {
+		ModelAndView mav=new ModelAndView();
+		HttpSession session=request.getSession();
+		session.removeAttribute("user");
+		mav.setViewName("Login/login");
+		return mav;
+	}
 	
 	
 	

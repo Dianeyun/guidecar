@@ -29,7 +29,7 @@
           <dd><a href="javascript:;" id="modify">修改密码</a></dd>
         </dl>
       </li>
-      <li class="layui-nav-item"><a href="">退了</a></li>
+      <li class="layui-nav-item"><a href="${pageContext.request.contextPath}/login/logout">退了</a></li>
     </ul>
   </div>
   	<!--头部结束  -->
@@ -53,6 +53,11 @@
           						 <dd><a data-id="2" data-url="../waybili/toWayBiliSign" data-title="签收管理" data-type="tabAdd" class="menu">签收管理</a></dd>
 							
 							</dl>
+							<dl class="layui-nav-child">
+          						 <dd><a data-id="3" data-url="../quality/toQuality" data-title="监督管理" data-type="tabAdd" class="menu">监督管理</a></dd>
+							
+							</dl>
+							
       					 </li>
 						 
 					</ul>
